@@ -33,7 +33,7 @@
             android:name="StartActivity"
             android:screenOrientation="landscape" >
         </activity>
-        <activity
+        <activity  
             android:name="HelpActivity"
             android:screenOrientation="landscape" >
         </activity>
