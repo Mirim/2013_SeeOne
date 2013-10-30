@@ -4,8 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class StartActivity extends Activity{
 	Intent intent;
@@ -23,7 +26,6 @@ public class StartActivity extends Activity{
 		switch (v.getId()) {
 		case R.id.espresso :
 			setContentView(R.layout.espresso);
-			break;
 		case R.id.americano :
 			break;
 		case R.id.caffelatte : 
@@ -33,6 +35,9 @@ public class StartActivity extends Activity{
 		case R.id.caffemocha : 
 			break;
 		case R.id.caramelmacchiato :
+			break;
+		case R.id.but_reorder :
+			setContentView(R.layout.start);
 			break;
 		}
 	}
