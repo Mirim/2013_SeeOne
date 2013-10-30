@@ -25,7 +25,6 @@ public class MainActivity extends Activity {
 		case R.id.coffee_start :
 			intent=new Intent(MainActivity.this, StartActivity.class);
 			startActivity(intent);
-			finish();
 			break;
 		case R.id.coffee_help :
 			intent=new Intent(MainActivity.this, HelpActivity.class);

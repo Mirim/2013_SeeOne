@@ -1,12 +1,14 @@
 package kr.hs.emirim.seeone;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
 public class StartActivity extends Activity{
+	Intent intent;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,7 @@ public class StartActivity extends Activity{
 	public void mOnClick(View v) {
 		switch (v.getId()) {
 		case R.id.espresso :
+			setContentView(R.layout.espresso);
 			break;
 		case R.id.americano :
 			break;
