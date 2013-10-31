@@ -27,14 +27,19 @@ public class StartActivity extends Activity{
 		case R.id.espresso :
 			setContentView(R.layout.espresso);
 		case R.id.americano :
+			setContentView(R.layout.americano);
 			break;
 		case R.id.caffelatte : 
+			setContentView(R.layout.caffelatte);
 			break;
 		case R.id.cappuccino : 
+			setContentView(R.layout.cappuccino);
 			break;
 		case R.id.caffemocha : 
+			setContentView(R.layout.caffemocha);
 			break;
 		case R.id.caramelmacchiato :
+			setContentView(R.layout.caramelmacchiato);
 			break;
 		case R.id.but_reorder :
 			setContentView(R.layout.start);
