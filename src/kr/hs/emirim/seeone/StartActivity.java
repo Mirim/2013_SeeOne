@@ -26,6 +26,7 @@ public class StartActivity extends Activity{
 		switch (v.getId()) {
 		case R.id.espresso :
 			setContentView(R.layout.espresso);
+			break;
 		case R.id.americano :
 			setContentView(R.layout.americano);
 			break;
