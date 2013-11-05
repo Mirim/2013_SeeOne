@@ -31,7 +31,7 @@ public class IntroActivity extends Activity{
 		view=(ImageView)findViewById(R.id.imageAnimation);
 		view.setBackgroundResource(R.drawable.introimg);
 		frameAnimation = (AnimationDrawable) view.getBackground();
-
+		//¿¬½À!
 		frameAnimation.start();
 		mHandler.sendEmptyMessageDelayed(0, 1700);
 	}
