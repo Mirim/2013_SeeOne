@@ -26,11 +26,10 @@
                 android:src="@drawable/img_espresso"
                 android:onClick="mOnClick" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="에스프레소"
-                android:textSize="18sp" />
+            <ImageView 
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:src="@drawable/k_espresso"/>
         </LinearLayout>
 
         <LinearLayout
@@ -47,11 +46,10 @@
                 android:src="@drawable/img_americano"
                 android:onClick="mOnClick"  />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="아메리카노"
-                android:textSize="18sp" />
+            <ImageView 
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:src="@drawable/k_americano"/>
         </LinearLayout>
 
         <LinearLayout
@@ -69,11 +67,10 @@
                 android:src="@drawable/img_caffelatte"
                 android:onClick="mOnClick"  />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="카페라떼"
-                android:textSize="18sp" />
+            <ImageView 
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:src="@drawable/k_caffelatte"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -97,11 +94,10 @@
                 android:src="@drawable/img_cappuccino"
                 android:onClick="mOnClick"  />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="카푸치노"
-                android:textSize="18sp" />
+            <ImageView 
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:src="@drawable/k_cappuchino"/>
         </LinearLayout>
 
         <LinearLayout
@@ -140,11 +136,10 @@
                 android:src="@drawable/img_caramelmacchiato"
                 android:onClick="mOnClick"  />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="카라멜마키아토"
-                android:textSize="18sp" />
+            <ImageView 
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:src="@drawable/k_caramel"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
