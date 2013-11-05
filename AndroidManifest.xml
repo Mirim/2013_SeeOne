@@ -46,6 +46,7 @@
             android:theme="@android:style/Theme.Dialog"
             android:windowSoftInputMode="stateHidden" 
             android:configChanges="orientation|keyboardHidden"></activity>
+        <activity android:screenOrientation="landscape" android:name="MakeActivity"></activity>
     </application>
 
 </manifest>

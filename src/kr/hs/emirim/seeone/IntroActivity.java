@@ -3,6 +3,7 @@ package kr.hs.emirim.seeone;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
+import android.opengl.Visibility;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -17,7 +18,8 @@ public class IntroActivity extends Activity{
 	int value=0;
 	AnimationDrawable frameAnimation;
 	ImageView view;
-
+	ImageView view2;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -31,7 +33,7 @@ public class IntroActivity extends Activity{
 		frameAnimation = (AnimationDrawable) view.getBackground();
 
 		frameAnimation.start();
-		mHandler.sendEmptyMessageDelayed(0, 2000);
+		mHandler.sendEmptyMessageDelayed(0, 1700);
 	}
 
 	Handler mHandler=new Handler(){

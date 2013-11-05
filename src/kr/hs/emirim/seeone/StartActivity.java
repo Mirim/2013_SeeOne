@@ -11,8 +11,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class StartActivity extends Activity{
-	Intent intent;
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -44,6 +43,11 @@ public class StartActivity extends Activity{
 			break;
 		case R.id.but_reorder :
 			setContentView(R.layout.start);
+			break;
+		case R.id.but_start :
+			Intent intent = new Intent(StartActivity.this, MakeActivity.class);
+			startActivity(intent);
+			finish();
 			break;
 		}
 	}
