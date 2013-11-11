@@ -1,9 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:background="@drawable/back">
-    
+    android:background="@drawable/back"
+    android:orientation="vertical" >
 
-</LinearLayout>
+    <ImageButton
+        android:id="@+id/sideboard"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:onClick="mOnClick"
+        android:src="@drawable/img_sideboard"
+        android:background="#00000000"/>
+
+    <ImageButton
+        android:id="@+id/opensideboard"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_alignTop="@id/sideboard"
+        android:onClick="mOnClick"
+        android:src="@drawable/img_opensideboard"
+        android:background="#00000000"/>
+
+    <Button
+        android:id="@+id/aBean"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="mOnClick"
+        android:text="A원두"
+        android:layout_centerInParent="true"/>
+
+    <Button
+        android:id="@+id/bBean"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/aBean"
+        android:layout_centerInParent="true"
+        android:onClick="mOnClick"
+        android:text="B원두" />
+
+</RelativeLayout>
