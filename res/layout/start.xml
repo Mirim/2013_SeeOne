@@ -114,11 +114,10 @@
                 android:src="@drawable/img_caffemocha"
                 android:onClick="mOnClick"  />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="카페모카"
-                android:textSize="18sp" />
+           <ImageView 
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:src="@drawable/k_caffemocha"/>
         </LinearLayout>
 
         <LinearLayout
