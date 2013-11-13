@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back_grinder">
+    android:background="@drawable/back">
     
     <ImageButton
         android:id="@+id/grinder_1"
@@ -21,4 +21,10 @@
         android:layout_marginLeft="150dp"
         android:background="#00000000"
         android:onClick="mOnClick"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/img_grindcounter"/>
 </RelativeLayout>
