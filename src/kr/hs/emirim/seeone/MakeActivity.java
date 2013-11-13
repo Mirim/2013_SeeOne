@@ -24,7 +24,6 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	ImageButton mOpenRefrigerator;
 	Button mA;
 	Button mB;
-	Rect mRect;
 
 	int i=2;
 

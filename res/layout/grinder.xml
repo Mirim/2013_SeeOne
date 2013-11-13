@@ -4,6 +4,13 @@
     android:layout_height="match_parent"
     android:background="@drawable/back">
     
+    <ImageView
+        android:adjustViewBounds="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/img_grindcounter"/>
+    
     <ImageButton
         android:id="@+id/grinder_1"
         android:layout_width="150dp"
@@ -21,10 +28,4 @@
         android:layout_marginLeft="150dp"
         android:background="#00000000"
         android:onClick="mOnClick"/>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:src="@drawable/img_grindcounter"/>
 </RelativeLayout>
