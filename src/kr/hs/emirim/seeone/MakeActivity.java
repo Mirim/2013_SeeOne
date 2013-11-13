@@ -54,6 +54,12 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mA.setVisibility(View.VISIBLE);
 			mB.setVisibility(View.VISIBLE);
 			break;
+		case R.id.opensideboard :
+			mOpenSideboard.setVisibility(View.INVISIBLE);
+			mSideboard.setVisibility(View.VISIBLE);
+			mA.setVisibility(View.INVISIBLE);
+			mB.setVisibility(View.INVISIBLE);
+			break;
 		case R.id.aBean :
 			setContentView(R.layout.grinder);
 			mGrinder1=(ImageButton)findViewById(R.id.grinder_1);
@@ -73,6 +79,10 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		case R.id.refrigerator :
 			mRefrigerator.setVisibility(View.INVISIBLE);
 			mOpenRefrigerator.setVisibility(View.VISIBLE);
+			break;
+		case R.id.openrefrigerator :
+			mOpenRefrigerator.setVisibility(View.INVISIBLE);
+			mRefrigerator.setVisibility(View.VISIBLE);
 			break;
 		}
 	}
