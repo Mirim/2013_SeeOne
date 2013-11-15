@@ -1,109 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:background="@drawable/back"
     android:orientation="vertical" >
 
-    <ImageView 
-        android:adjustViewBounds="true"
+    <ImageView
         android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/img_maincounter"
-        android:layout_alignParentBottom="true"/>
-    
-    <Button
-        android:id="@+id/sideboard"
-        android:layout_width="280dp"
-        android:layout_height="128dp"
-        android:onClick="mOnClick"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/img_sideboard"/>
+        android:layout_alignParentBottom="true"
+        android:adjustViewBounds="true"
+        android:src="@drawable/img_maincounter" />
 
-    <Button
-        android:id="@+id/opensideboard"
-        android:layout_width="320dp"
-        android:layout_height="158dp"
-        android:layout_alignTop="@id/sideboard"
-        android:onClick="mOnClick"
-        android:layout_marginLeft="5dp"
-        android:background="@drawable/img_opensideboard"/>
     <Button
         android:id="@+id/aBean"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:onClick="mOnClick"
-        android:text="A원두"
-        android:layout_centerInParent="true"/>
+        android:text="A원두" />
 
     <Button
         android:id="@+id/bBean"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/aBean"
         android:layout_centerInParent="true"
+        android:layout_toRightOf="@id/aBean"
         android:onClick="mOnClick"
         android:text="B원두" />
 
-    <Button 
+    <Button
         android:id="@+id/coffeemachine"
         android:layout_width="160dp"
         android:layout_height="102dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="5dp"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
         android:layout_marginBottom="30dp"
-        android:background="@drawable/img_coffeemachine"/>
-    
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/img_coffeemachine" />
+
     <Button
         android:id="@+id/refrigerator"
         android:layout_width="150dp"
         android:layout_height="226dp"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/img_refrigerator"
-        android:layout_marginRight="5dp"
+        android:layout_alignParentRight="true"
         android:layout_marginBottom="5dp"
-        android:onClick="mOnClick"/>
-    
+        android:layout_marginRight="5dp"
+        android:background="@drawable/img_refrigerator"
+        android:onClick="mOnClick" />
+
     <Button
         android:id="@+id/openrefrigerator"
         android:layout_width="150dp"
         android:layout_height="216dp"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/img_openrefrigerator"
-        android:layout_marginRight="5dp"
+        android:layout_alignParentRight="true"
         android:layout_marginBottom="5dp"
-        android:onClick="mOnClick"/>
-    
-    <ImageView 
+        android:layout_marginRight="5dp"
+        android:background="@drawable/img_openrefrigerator"
+        android:onClick="mOnClick" />
+
+    <ImageView
         android:id="@+id/memo"
         android:layout_width="120dp"
         android:layout_height="117dp"
-        android:background="@drawable/img_memo"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="10dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="30dp"/>
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/img_memo" />
 
-    <Button
-        android:id="@+id/caps"
-        android:layout_width="35dp"
-        android:layout_height="31dp"
-        android:layout_alignTop="@+id/refrigerator"
-        android:layout_marginTop="33dp"
-        android:layout_toRightOf="@+id/coffeemachine"
-        android:background="@drawable/img_caps" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
 
-    <Button
-        android:id="@+id/cup"
-        android:layout_width="35dp"
-        android:layout_height="48dp"
-        android:layout_alignBottom="@+id/caps"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@+id/caps"
-        android:background="@drawable/img_cup" />
+        <Button
+            android:id="@+id/sideboard"
+            android:layout_width="280dp"
+            android:layout_height="128dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/img_sideboard"
+            android:onClick="mOnClick" />
+
+        <Button
+            android:id="@+id/opensideboard"
+            android:layout_width="320dp"
+            android:layout_height="158dp"
+            android:layout_alignTop="@id/sideboard"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/img_opensideboard"
+            android:onClick="mOnClick" />
+
+        <Button
+            android:id="@+id/caps"
+            android:layout_width="35dp"
+            android:layout_height="31dp"
+            android:background="@drawable/img_caps"
+            android:layout_alignBottom="@+id/sideboard"
+            android:layout_toLeftOf="@+id/cup"
+            android:layout_marginRight="10dp"/>
+
+        <Button
+            android:id="@+id/cup"
+            android:layout_width="35dp"
+            android:layout_height="48dp"
+            android:background="@drawable/img_cup"
+            android:layout_alignRight="@+id/sideboard"
+            android:layout_alignBottom="@+id/sideboard"
+            android:layout_marginRight="20dp"/>
+    </RelativeLayout>
 
 </RelativeLayout>

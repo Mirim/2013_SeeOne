@@ -24,6 +24,8 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	Button mOpenRefrigerator;
 	Button mA;
 	Button mB;
+	Button mCup;
+	Button mCaps;
 
 	int i=2;
 
@@ -45,6 +47,10 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		mB=(Button)findViewById(R.id.bBean);
 		mA.setVisibility(View.INVISIBLE);
 		mB.setVisibility(View.INVISIBLE);
+		mCaps=(Button)findViewById(R.id.caps);
+		mCup=(Button)findViewById(R.id.cup);
+		mCaps.setVisibility(View.INVISIBLE);
+		mCup.setVisibility(View.INVISIBLE);
 	}
 	public void mOnClick(View v) {
 		switch (v.getId()) {
@@ -53,12 +59,16 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mOpenSideboard.setVisibility(View.VISIBLE);
 			mA.setVisibility(View.VISIBLE);
 			mB.setVisibility(View.VISIBLE);
+			mCaps.setVisibility(View.VISIBLE);
+			mCup.setVisibility(View.VISIBLE);
 			break;
 		case R.id.opensideboard :
 			mOpenSideboard.setVisibility(View.INVISIBLE);
 			mSideboard.setVisibility(View.VISIBLE);
 			mA.setVisibility(View.INVISIBLE);
 			mB.setVisibility(View.INVISIBLE);
+			mCaps.setVisibility(View.INVISIBLE);
+			mCup.setVisibility(View.INVISIBLE);
 			break;
 		case R.id.aBean :
 			setContentView(R.layout.grinder);
