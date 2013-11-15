@@ -18,11 +18,11 @@
             android:gravity="center_horizontal"
             android:orientation="vertical" >
 
-            <ImageButton
+            <Button
                 android:id="@+id/espresso"
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="120dp"
-                android:background="#00000000"
+                android:background="@drawable/img_espresso"
                 android:src="@drawable/img_espresso"
                 android:onClick="mOnClick" />
 
@@ -38,12 +38,11 @@
             android:gravity="center_horizontal"
             android:orientation="vertical" >
 
-            <ImageButton
+            <Button
                 android:id="@+id/americano"
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="120dp"
-                android:background="#00000000"
-                android:src="@drawable/img_americano"
+                android:background="@drawable/img_americano"
                 android:onClick="mOnClick"  />
 
             <ImageView 
@@ -59,12 +58,11 @@
             android:gravity="center_horizontal"
             android:orientation="vertical" >
 
-            <ImageButton
+            <Button
                 android:id="@+id/caffelatte"
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="120dp"
-                android:background="#00000000"
-                android:src="@drawable/img_caffelatte"
+                android:background="@drawable/img_caffelatte"
                 android:onClick="mOnClick"  />
 
             <ImageView 
@@ -86,12 +84,11 @@
             android:gravity="center_horizontal"
             android:orientation="vertical" >
 
-            <ImageButton
+            <Button
                 android:id="@+id/cappuccino"
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="120dp"
-                android:background="#00000000"
-                android:src="@drawable/img_cappuccino"
+                android:background="@drawable/img_cappuccino"
                 android:onClick="mOnClick"  />
 
             <ImageView 
@@ -106,12 +103,11 @@
             android:gravity="center_horizontal"
             android:orientation="vertical" >
 
-            <ImageButton
+            <Button
                 android:id="@+id/caffemocha"
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="120dp"
-                android:background="#00000000"
-                android:src="@drawable/img_caffemocha"
+                android:background="@drawable/img_caffemocha"
                 android:onClick="mOnClick"  />
 
            <ImageView 
@@ -127,12 +123,11 @@
             android:gravity="center_horizontal"
             android:orientation="vertical" >
 
-            <ImageButton
+            <Button
                 android:id="@+id/caramelmacchiato"
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="120dp"
-                android:background="#00000000"
-                android:src="@drawable/img_caramelmacchiato"
+                android:background="@drawable/img_caramelmacchiato"
                 android:onClick="mOnClick"  />
 
             <ImageView 

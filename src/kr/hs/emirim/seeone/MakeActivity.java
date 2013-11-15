@@ -16,12 +16,12 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 public class MakeActivity extends Activity implements OnTouchListener{
-	ImageButton mSideboard;
-	ImageButton mOpenSideboard;
-	ImageButton mGrinder1;
-	ImageButton mGrinder2;
-	ImageButton mRefrigerator;
-	ImageButton mOpenRefrigerator;
+	Button mSideboard;
+	Button mOpenSideboard;
+	Button mGrinder1;
+	Button mGrinder2;
+	Button mRefrigerator;
+	Button mOpenRefrigerator;
 	Button mA;
 	Button mB;
 
@@ -35,10 +35,10 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		win.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.make);
 
-		mSideboard=(ImageButton)findViewById(R.id.sideboard);
-		mOpenSideboard=(ImageButton)findViewById(R.id.opensideboard);
-		mRefrigerator=(ImageButton)findViewById(R.id.refrigerator);
-		mOpenRefrigerator=(ImageButton)findViewById(R.id.openrefrigerator);
+		mSideboard=(Button)findViewById(R.id.sideboard);
+		mOpenSideboard=(Button)findViewById(R.id.opensideboard);
+		mRefrigerator=(Button)findViewById(R.id.refrigerator);
+		mOpenRefrigerator=(Button)findViewById(R.id.openrefrigerator);
 		mOpenSideboard.setVisibility(View.INVISIBLE);
 		mOpenRefrigerator.setVisibility(View.INVISIBLE);
 		mA=(Button)findViewById(R.id.aBean);
@@ -62,16 +62,16 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			break;
 		case R.id.aBean :
 			setContentView(R.layout.grinder);
-			mGrinder1=(ImageButton)findViewById(R.id.grinder_1);
-			mGrinder2=(ImageButton)findViewById(R.id.grinder_2);
+			mGrinder1=(Button)findViewById(R.id.grinder_1);
+			mGrinder2=(Button)findViewById(R.id.grinder_2);
 			mGrinder1.setOnTouchListener(this);
 			mGrinder2.setOnTouchListener(this);
 			mGrinder2.setVisibility(View.INVISIBLE);
 			break;
 		case R.id.bBean :
 			setContentView(R.layout.grinder);
-			mGrinder1=(ImageButton)findViewById(R.id.grinder_1);
-			mGrinder2=(ImageButton)findViewById(R.id.grinder_2);
+			mGrinder1=(Button)findViewById(R.id.grinder_1);
+			mGrinder2=(Button)findViewById(R.id.grinder_2);
 			mGrinder1.setOnTouchListener(this);
 			mGrinder2.setOnTouchListener(this);
 			mGrinder2.setVisibility(View.INVISIBLE);
