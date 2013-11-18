@@ -13,5 +13,19 @@
 
     <ImageView 
         android:id="@+id/machine"
+        android:layout_width="350dp"
+        android:layout_height="224dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="35dp"
         android:src="@drawable/img_coffeemachine"/>
+    
+    <ImageView 
+        android:id="@+id/machine2"
+        android:layout_width="350dp"
+        android:layout_height="224dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/img_coffeemachine2"/>
 </RelativeLayout>
