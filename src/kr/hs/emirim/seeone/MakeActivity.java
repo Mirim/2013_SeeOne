@@ -31,6 +31,9 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	ImageView mCaps;
 	ImageView mTCup;
 	ImageView mNextBut;
+	ImageView mMachine;
+	ImageView mMachine2;
+	ImageView mMBut;
 
 	Display mDisplay;
 	int width;
@@ -119,6 +122,14 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			break;
 		case R.id.next_but :
 			setContentView(R.layout.coffeemachine);
+			mMachine=(ImageView)findViewById(R.id.machine);
+			mMachine2=(ImageView)findViewById(R.id.machine2);
+			mMBut=(ImageView)findViewById(R.id.machine_but);
+			mMachine2.setVisibility(View.INVISIBLE);
+			break;
+		case R.id.machine_but :
+			mMachine.setVisibility(View.INVISIBLE);
+			mMachine2.setVisibility(View.VISIBLE);
 			break;
 		}
 	}

@@ -28,4 +28,16 @@
         android:layout_centerInParent="true"
         android:layout_marginBottom="35dp"
         android:src="@drawable/img_coffeemachine2"/>
+
+    <ImageView
+        android:id="@+id/machine_but"
+        android:layout_width="80dp"
+        android:layout_height="20dp"
+        android:layout_alignLeft="@+id/machine"
+        android:layout_alignTop="@+id/machine"
+        android:layout_marginLeft="67dp"
+        android:layout_marginTop="50dp"
+        android:background="#00000000"
+        android:onClick="mOnClick"/>
+
 </RelativeLayout>
