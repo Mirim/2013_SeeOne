@@ -30,16 +30,6 @@
         android:text="B원두" />
 
     <Button
-        android:id="@+id/coffeemachine"
-        android:layout_width="160dp"
-        android:layout_height="102dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="30dp"
-        android:layout_marginLeft="5dp"
-        android:background="@drawable/img_coffeemachine" />
-
-    <Button
         android:id="@+id/refrigerator"
         android:layout_width="150dp"
         android:layout_height="226dp"
@@ -53,7 +43,7 @@
     <Button
         android:id="@+id/openrefrigerator"
         android:layout_width="150dp"
-        android:layout_height="216dp"
+        android:layout_height="226dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="5dp"
@@ -78,7 +68,7 @@
         <Button
             android:id="@+id/sideboard"
             android:layout_width="280dp"
-            android:layout_height="128dp"
+            android:layout_height="130dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/img_sideboard"
@@ -93,23 +83,44 @@
             android:background="@drawable/img_opensideboard"
             android:onClick="mOnClick" />
 
-        <Button
+        <ImageView
             android:id="@+id/caps"
             android:layout_width="35dp"
             android:layout_height="31dp"
-            android:background="@drawable/img_caps"
             android:layout_alignBottom="@+id/sideboard"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="10dp"
             android:layout_toLeftOf="@+id/cup"
-            android:layout_marginRight="10dp"/>
+            android:background="@drawable/img_caps" />
 
-        <Button
+        <ImageView
             android:id="@+id/cup"
             android:layout_width="35dp"
             android:layout_height="48dp"
-            android:background="@drawable/img_cup"
-            android:layout_alignRight="@+id/sideboard"
             android:layout_alignBottom="@+id/sideboard"
-            android:layout_marginRight="20dp"/>
-    </RelativeLayout>
+            android:layout_alignRight="@+id/sideboard"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/img_cup"
+            android:onClick="mOnClick" />
 
+        <ImageView
+            android:id="@+id/coffeemachine"
+            android:layout_width="160dp"
+            android:layout_height="102dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/img_coffeemachine" />
+
+        <ImageView
+            android:id="@+id/table_cup"
+            android:layout_width="35dp"
+            android:layout_height="48dp"
+            android:layout_alignLeft="@+id/cup"
+            android:layout_alignBottom="@+id/coffeemachine"
+            android:background="@drawable/img_cup" />
+
+    </RelativeLayout>
 </RelativeLayout>
