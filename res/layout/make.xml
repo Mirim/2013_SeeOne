@@ -60,7 +60,16 @@
         android:layout_marginRight="30dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/img_memo" />
-
+    
+    <CheckBox
+        android:id="@+id/re_shot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/memo"
+        android:text="샷"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="5dp"/>
+    
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
@@ -123,4 +132,68 @@
             android:background="@drawable/img_cup" />
 
     </RelativeLayout>
+
+    <CheckBox
+        android:id="@+id/re_hotw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/re_shot"
+        android:layout_below="@+id/re_shot"
+        android:text="뜨거운 물" />
+    
+    <CheckBox
+        android:id="@+id/re_mlik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/re_shot"
+        android:layout_below="@+id/re_shot"
+        android:text="스팀우유" />
+
+    <CheckBox
+        android:id="@+id/re_choco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/re_mlik"
+        android:layout_below="@+id/re_mlik"
+        android:text="초코시럽" />
+    
+    <CheckBox
+        android:id="@+id/re_mlik_bubble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/re_mlik"
+        android:layout_below="@+id/re_mlik"
+        android:text="우유거품" />
+    
+    <CheckBox
+        android:id="@+id/re_vanilla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/re_mlik"
+        android:layout_below="@+id/re_mlik"
+        android:text="바닐라시럽" />
+    
+    <CheckBox
+        android:id="@+id/re_whipping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/re_choco"
+        android:layout_below="@+id/re_choco"
+        android:text="휘핑크림" />
+    
+    <CheckBox
+        android:id="@+id/re_cinnamon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/re_choco"
+        android:layout_below="@+id/re_choco"
+        android:text="시나몬 파우더" />
+    
+    <CheckBox
+        android:id="@+id/re_caramel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/re_choco"
+        android:layout_below="@+id/re_choco"
+        android:text="카라멜 드리즐" />
 </RelativeLayout>
