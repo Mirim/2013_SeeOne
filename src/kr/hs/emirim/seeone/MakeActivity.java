@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MakeActivity extends Activity implements OnTouchListener{
 	Intent intent;
@@ -37,15 +38,15 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	ImageView mMachine2;
 	ImageView mMBut;
 	ImageView mMHandler;
-	CheckBox mShot;
-	CheckBox mHotW;
-	CheckBox mMlik;
-	CheckBox mChoco;
-	CheckBox mMlikB;
-	CheckBox mVanilla;
-	CheckBox mWhipping;
-	CheckBox mCinnamon;
-	CheckBox mCaramel;
+	TextView mShot;
+	TextView mHotW;
+	TextView mMlik;
+	TextView mChoco;
+	TextView mMlikB;
+	TextView mVanilla;
+	TextView mWhipping;
+	TextView mCinnamon;
+	TextView mCaramel;
 
 	Display mDisplay;
 	int width;
@@ -76,15 +77,15 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		mTCup=(ImageView)findViewById(R.id.table_cup);
 		mTCup.setVisibility(View.INVISIBLE);
 		
-		mShot=(CheckBox)findViewById(R.id.re_shot);
-		mHotW=(CheckBox)findViewById(R.id.re_hotw);
-		mMlik=(CheckBox)findViewById(R.id.re_mlik);
-		mChoco=(CheckBox)findViewById(R.id.re_choco);
-		mMlikB=(CheckBox)findViewById(R.id.re_mlik_bubble);
-		mVanilla=(CheckBox)findViewById(R.id.re_vanilla);
-		mWhipping=(CheckBox)findViewById(R.id.re_whipping);
-		mCinnamon=(CheckBox)findViewById(R.id.re_cinnamon);
-		mCaramel=(CheckBox)findViewById(R.id.re_caramel);
+		mShot=(TextView)findViewById(R.id.re_shot);
+		mHotW=(TextView)findViewById(R.id.re_hotw);
+		mMlik=(TextView)findViewById(R.id.re_mlik);
+		mChoco=(TextView)findViewById(R.id.re_choco);
+		mMlikB=(TextView)findViewById(R.id.re_mlikbubble);
+		mVanilla=(TextView)findViewById(R.id.re_vanilla);
+		mWhipping=(TextView)findViewById(R.id.re_whipping);
+		mCinnamon=(TextView)findViewById(R.id.re_cinnamon);
+		mCaramel=(TextView)findViewById(R.id.re_caramel);
 		mHotW.setVisibility(View.INVISIBLE);
 		mMlik.setVisibility(View.INVISIBLE);
 		mChoco.setVisibility(View.INVISIBLE);
@@ -115,6 +116,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mVanilla.setVisibility(View.VISIBLE);
 			mCaramel.setVisibility(View.VISIBLE);
 		}
+		else{}
 		
 		mDisplay=getWindowManager().getDefaultDisplay();
 		width=mDisplay.getWidth();

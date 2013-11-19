@@ -27,31 +27,27 @@ public class StartActivity extends Activity{
 		switch (v.getId()) {
 		case R.id.espresso :
 			setContentView(R.layout.espresso);
+			choice="에스프레소";
 			break;
 		case R.id.americano :
 			setContentView(R.layout.americano);
 			choice = "아메리카노";
-			//intent.putExtra("아메리카노", 1);
 			break;
 		case R.id.caffelatte : 
 			setContentView(R.layout.caffelatte);
 			choice = "카페라떼";
-			//intent.putExtra("카페라떼", 1);
 			break;
 		case R.id.cappuccino : 
 			setContentView(R.layout.cappuccino);
 			choice = "카푸치노";
-			//intent.putExtra("카푸치노", 1);
 			break;
 		case R.id.caffemocha : 
 			setContentView(R.layout.caffemocha);
 			choice = "카페모카";
-			//intent.putExtra("카페모카", 1);
 			break;
 		case R.id.caramelmacchiato :
 			setContentView(R.layout.caramelmacchiato);
 			choice = "카라멜마끼아또";
-			//intent.putExtra("카라멜마끼아또", 1);
 			break;
 		case R.id.but_reorder :
 			setContentView(R.layout.start);
@@ -59,7 +55,6 @@ public class StartActivity extends Activity{
 		case R.id.but_start :
 			intent = new Intent(StartActivity.this, MakeActivity.class);
 			intent.putExtra("choice", choice);
-			//startActivity(intent2);
 			startActivity(intent);
 			finish();
 			break;

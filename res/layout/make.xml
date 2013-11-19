@@ -60,16 +60,16 @@
         android:layout_marginRight="30dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/img_memo" />
-    
-    <CheckBox
-        android:id="@+id/re_shot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+    <ImageView
+        android:id="@+id/re_img_shot"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
         android:layout_alignLeft="@+id/memo"
-        android:text="샷"
-        android:layout_marginTop="25dp"
-        android:layout_marginLeft="5dp"/>
-    
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="35dp"
+        android:src="@drawable/ic_launcher" />
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
@@ -127,73 +127,153 @@
             android:id="@+id/table_cup"
             android:layout_width="35dp"
             android:layout_height="48dp"
-            android:layout_alignLeft="@+id/cup"
             android:layout_alignBottom="@+id/coffeemachine"
+            android:layout_alignLeft="@+id/cup"
             android:background="@drawable/img_cup" />
-
     </RelativeLayout>
 
-    <CheckBox
+    <TextView
+        android:id="@+id/re_shot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_img_shot"
+        android:layout_toRightOf="@+id/re_img_shot"
+        android:text="샷" />
+
+    <ImageView
+        android:id="@+id/re_img_hots"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignLeft="@+id/re_img_shot"
+        android:layout_below="@+id/re_img_shot"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
         android:id="@+id/re_hotw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_img_hots"
         android:layout_alignLeft="@+id/re_shot"
-        android:layout_below="@+id/re_shot"
         android:text="뜨거운 물" />
-    
-    <CheckBox
+
+    <ImageView
+        android:id="@+id/re_img_mlik"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignLeft="@+id/re_img_shot"
+        android:layout_below="@+id/re_img_shot"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
         android:id="@+id/re_mlik"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_img_mlik"
         android:layout_alignLeft="@+id/re_shot"
-        android:layout_below="@+id/re_shot"
         android:text="스팀우유" />
 
-    <CheckBox
+    <ImageView
+        android:id="@+id/re_img_choco"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignLeft="@+id/re_img_mlik"
+        android:layout_below="@+id/re_img_mlik"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
         android:id="@+id/re_choco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/re_mlik"
-        android:layout_below="@+id/re_mlik"
+        android:layout_alignBottom="@+id/re_img_choco"
+        android:layout_alignLeft="@+id/re_shot"
         android:text="초코시럽" />
-    
-    <CheckBox
-        android:id="@+id/re_mlik_bubble"
+
+    <ImageView
+        android:id="@+id/re_img_mlikbubble"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignLeft="@+id/re_img_mlik"
+        android:layout_below="@+id/re_img_mlik"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/re_mlikbubble"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/re_mlik"
-        android:layout_below="@+id/re_mlik"
+        android:layout_alignBottom="@+id/re_img_mlikbubble"
+        android:layout_alignLeft="@+id/re_shot"
         android:text="우유거품" />
-    
-    <CheckBox
+
+    <ImageView
+        android:id="@+id/re_img_vanilla"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignLeft="@+id/re_img_mlik"
+        android:layout_below="@+id/re_img_mlik"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
         android:id="@+id/re_vanilla"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/re_mlik"
-        android:layout_below="@+id/re_mlik"
+        android:layout_alignBottom="@+id/re_img_vanilla"
+        android:layout_alignLeft="@+id/re_shot"
         android:text="바닐라시럽" />
-    
-    <CheckBox
+
+    <ImageView
+        android:id="@+id/re_img_whipping"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignLeft="@+id/re_img_choco"
+        android:layout_below="@+id/re_img_choco"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
         android:id="@+id/re_whipping"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/re_choco"
-        android:layout_below="@+id/re_choco"
+        android:layout_alignBottom="@+id/re_img_whipping"
+        android:layout_alignLeft="@+id/re_shot"
         android:text="휘핑크림" />
-    
-    <CheckBox
+
+    <ImageView
+        android:id="@+id/re_img_cinnamon"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignLeft="@+id/re_img_choco"
+        android:layout_below="@+id/re_img_choco"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
         android:id="@+id/re_cinnamon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/re_choco"
-        android:layout_below="@+id/re_choco"
+        android:layout_alignBottom="@+id/re_img_cinnamon"
+        android:layout_alignLeft="@+id/re_shot"
         android:text="시나몬 파우더" />
-    
-    <CheckBox
+
+    <ImageView
+        android:id="@+id/re_img_caramel"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignLeft="@+id/re_img_choco"
+        android:layout_below="@+id/re_img_choco"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
         android:id="@+id/re_caramel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/re_choco"
-        android:layout_below="@+id/re_choco"
+        android:layout_alignBottom="@+id/re_img_caramel"
+        android:layout_alignLeft="@+id/re_shot"
         android:text="카라멜 드리즐" />
+
 </RelativeLayout>
