@@ -22,22 +22,31 @@
         android:background="@drawable/img_memo" />
 
     <ImageView
+        android:id="@+id/re_img_shot"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignLeft="@+id/memo"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="35dp"
+        android:src="@drawable/ic_launcher" />
+
+    <ImageView
         android:id="@+id/grinder_1"
         android:layout_width="130dp"
         android:layout_height="327dp"
-        android:layout_centerInParent="true"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/img_grinder_1"
-        android:layout_marginBottom="30dp" />
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/img_grinder_1" />
 
     <ImageView
         android:id="@+id/grinder_2"
         android:layout_width="130dp"
         android:layout_height="327dp"
-        android:layout_centerInParent="true"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/img_grinder_2"
-        android:layout_marginBottom="30dp" />
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/img_grinder_2" />
 
     <ImageView
         android:id="@+id/handler"
@@ -49,14 +58,189 @@
         android:layout_toLeftOf="@+id/grinder_1"
         android:background="@drawable/img_handler" />
 
-    <ImageView 
+    <ImageView
+        android:id="@+id/handler1"
+        android:layout_width="130dp"
+        android:layout_height="83dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp"
+        android:layout_marginRight="40dp"
+        android:layout_toLeftOf="@+id/grinder_1"
+        android:background="@drawable/img_handlercoffee1" />
+
+    <ImageView
+        android:id="@+id/handler2"
+        android:layout_width="130dp"
+        android:layout_height="83dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp"
+        android:layout_marginRight="40dp"
+        android:layout_toLeftOf="@+id/grinder_1"
+        android:background="@drawable/img_handlercoffee2" />
+
+    <ImageView
+        android:id="@+id/handler3"
+        android:layout_width="130dp"
+        android:layout_height="83dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp"
+        android:layout_marginRight="40dp"
+        android:layout_toLeftOf="@+id/grinder_1"
+        android:background="@drawable/img_handlercoffee3" />
+
+    <ImageView
         android:id="@+id/next_but"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:src="@drawable/ic_launcher"
         android:layout_marginBottom="15dp"
         android:layout_marginRight="15dp"
-        android:onClick="mOnClick"/>
+        android:onClick="mOnClick"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/re_shot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_img_shot"
+        android:layout_toRightOf="@+id/re_img_shot"
+        android:text="샷" />
+
+    <ImageView
+        android:id="@+id/re_img_hots"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignLeft="@+id/re_img_shot"
+        android:layout_below="@+id/re_img_shot"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/re_hotw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_img_hots"
+        android:layout_alignLeft="@+id/re_shot"
+        android:text="뜨거운 물" />
+
+    <ImageView
+        android:id="@+id/re_img_mlik"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignLeft="@+id/re_img_shot"
+        android:layout_below="@+id/re_img_shot"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/re_mlik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_img_mlik"
+        android:layout_alignLeft="@+id/re_shot"
+        android:text="스팀우유" />
+
+    <ImageView
+        android:id="@+id/re_img_choco"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignLeft="@+id/re_img_mlik"
+        android:layout_below="@+id/re_img_mlik"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/re_choco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_img_choco"
+        android:layout_alignLeft="@+id/re_shot"
+        android:text="초코시럽" />
+
+    <ImageView
+        android:id="@+id/re_img_mlikbubble"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignLeft="@+id/re_img_mlik"
+        android:layout_below="@+id/re_img_mlik"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/re_mlikbubble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_img_mlikbubble"
+        android:layout_alignLeft="@+id/re_shot"
+        android:text="우유거품" />
+
+    <ImageView
+        android:id="@+id/re_img_vanilla"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignLeft="@+id/re_img_mlik"
+        android:layout_below="@+id/re_img_mlik"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/re_vanilla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_img_vanilla"
+        android:layout_alignLeft="@+id/re_shot"
+        android:text="바닐라시럽" />
+
+    <ImageView
+        android:id="@+id/re_img_whipping"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignLeft="@+id/re_img_choco"
+        android:layout_below="@+id/re_img_choco"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/re_whipping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_img_whipping"
+        android:layout_alignLeft="@+id/re_shot"
+        android:text="휘핑크림" />
+
+    <ImageView
+        android:id="@+id/re_img_cinnamon"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignLeft="@+id/re_img_choco"
+        android:layout_below="@+id/re_img_choco"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/re_cinnamon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_img_cinnamon"
+        android:layout_alignLeft="@+id/re_shot"
+        android:text="시나몬 파우더" />
+
+    <ImageView
+        android:id="@+id/re_img_caramel"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignLeft="@+id/re_img_choco"
+        android:layout_below="@+id/re_img_choco"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/re_caramel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_img_caramel"
+        android:layout_alignLeft="@+id/re_shot"
+        android:text="카라멜 드리즐" />
+
 </RelativeLayout>

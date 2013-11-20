@@ -28,6 +28,9 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	Button mRefrigerator;
 	Button mOpenRefrigerator;
 	ImageView mHandler;
+	ImageView mHandler1;
+	ImageView mHandler2;
+	ImageView mHandler3;
 	Button mA;
 	Button mB;
 	ImageView mCup;
@@ -38,6 +41,9 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	ImageView mMachine2;
 	ImageView mMBut;
 	ImageView mMHandler;
+	ImageView mShotcup;
+	ImageView mShotMachine1;
+	ImageView mShotMachine2;
 	TextView mShot;
 	TextView mHotW;
 	TextView mMlik;
@@ -48,9 +54,11 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	TextView mCinnamon;
 	TextView mCaramel;
 
+	String choice;
 	Display mDisplay;
 	int width;
 	int i=2;
+	int ok;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +84,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		mCup.setVisibility(View.INVISIBLE);
 		mTCup=(ImageView)findViewById(R.id.table_cup);
 		mTCup.setVisibility(View.INVISIBLE);
-		
+
 		mShot=(TextView)findViewById(R.id.re_shot);
 		mHotW=(TextView)findViewById(R.id.re_hotw);
 		mMlik=(TextView)findViewById(R.id.re_mlik);
@@ -94,10 +102,10 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		mWhipping.setVisibility(View.INVISIBLE);
 		mCinnamon.setVisibility(View.INVISIBLE);
 		mCaramel.setVisibility(View.INVISIBLE);
-		
+
 		intent = getIntent();
-		String choice = intent.getStringExtra("choice");
-		
+		choice = intent.getStringExtra("choice");
+
 		intent=new Intent(MakeActivity.this, StartActivity.class);
 		if(choice.equals("아메리카노")){
 			mHotW.setVisibility(View.VISIBLE);
@@ -117,7 +125,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mCaramel.setVisibility(View.VISIBLE);
 		}
 		else{}
-		
+
 		mDisplay=getWindowManager().getDefaultDisplay();
 		width=mDisplay.getWidth();
 	}
@@ -145,23 +153,112 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mGrinder1=(ImageView)findViewById(R.id.grinder_1);
 			mGrinder2=(ImageView)findViewById(R.id.grinder_2);
 			mHandler=(ImageView)findViewById(R.id.handler);
+			mHandler1=(ImageView)findViewById(R.id.handler1);
+			mHandler2=(ImageView)findViewById(R.id.handler2);
+			mHandler3=(ImageView)findViewById(R.id.handler3);
+			mHandler1.setVisibility(View.INVISIBLE);
+			mHandler2.setVisibility(View.INVISIBLE);
+			mHandler3.setVisibility(View.INVISIBLE);
 			mHandler.setOnTouchListener(this);
 			mGrinder1.setOnTouchListener(this);
 			mGrinder2.setOnTouchListener(this);
 			mGrinder2.setVisibility(View.INVISIBLE);
 			mNextBut=(ImageView)findViewById(R.id.next_but);
 			mNextBut.setVisibility(View.INVISIBLE);
+
+			mShot=(TextView)findViewById(R.id.re_shot);
+			mHotW=(TextView)findViewById(R.id.re_hotw);
+			mMlik=(TextView)findViewById(R.id.re_mlik);
+			mChoco=(TextView)findViewById(R.id.re_choco);
+			mMlikB=(TextView)findViewById(R.id.re_mlikbubble);
+			mVanilla=(TextView)findViewById(R.id.re_vanilla);
+			mWhipping=(TextView)findViewById(R.id.re_whipping);
+			mCinnamon=(TextView)findViewById(R.id.re_cinnamon);
+			mCaramel=(TextView)findViewById(R.id.re_caramel);
+			mHotW.setVisibility(View.INVISIBLE);
+			mMlik.setVisibility(View.INVISIBLE);
+			mChoco.setVisibility(View.INVISIBLE);
+			mMlikB.setVisibility(View.INVISIBLE);
+			mVanilla.setVisibility(View.INVISIBLE);
+			mWhipping.setVisibility(View.INVISIBLE);
+			mCinnamon.setVisibility(View.INVISIBLE);
+			mCaramel.setVisibility(View.INVISIBLE);
+			
+			intent = getIntent();
+			choice = intent.getStringExtra("choice");
+
+			intent=new Intent(MakeActivity.this, StartActivity.class);
+			if(choice.equals("아메리카노")){
+				mHotW.setVisibility(View.VISIBLE);
+			}else if(choice.equals("카페라떼")){
+				mMlik.setVisibility(View.VISIBLE);
+			}else if(choice.equals("카페모카")){
+				mMlik.setVisibility(View.VISIBLE);
+				mChoco.setVisibility(View.VISIBLE);
+				mWhipping.setVisibility(View.VISIBLE);
+			}else if(choice.equals("카푸치노")){
+				mMlik.setVisibility(View.VISIBLE);
+				mMlikB.setVisibility(View.VISIBLE);
+				mCinnamon.setVisibility(View.VISIBLE);
+			}else if(choice.equals("카라멜마끼아또")){
+				mMlik.setVisibility(View.VISIBLE);
+				mVanilla.setVisibility(View.VISIBLE);
+				mCaramel.setVisibility(View.VISIBLE);
+			}
+			else{}
 			break;
 		case R.id.bBean :
 			setContentView(R.layout.grinder);
 			mGrinder1=(ImageView)findViewById(R.id.grinder_1);
 			mGrinder2=(ImageView)findViewById(R.id.grinder_2);
+			mHandler=(ImageView)findViewById(R.id.handler);
 			mHandler.setOnTouchListener(this);
 			mGrinder1.setOnTouchListener(this);
 			mGrinder2.setOnTouchListener(this);
 			mGrinder2.setVisibility(View.INVISIBLE);
 			mNextBut=(ImageView)findViewById(R.id.next_but);
 			mNextBut.setVisibility(View.INVISIBLE);
+
+			mShot=(TextView)findViewById(R.id.re_shot);
+			mHotW=(TextView)findViewById(R.id.re_hotw);
+			mMlik=(TextView)findViewById(R.id.re_mlik);
+			mChoco=(TextView)findViewById(R.id.re_choco);
+			mMlikB=(TextView)findViewById(R.id.re_mlikbubble);
+			mVanilla=(TextView)findViewById(R.id.re_vanilla);
+			mWhipping=(TextView)findViewById(R.id.re_whipping);
+			mCinnamon=(TextView)findViewById(R.id.re_cinnamon);
+			mCaramel=(TextView)findViewById(R.id.re_caramel);
+			mHotW.setVisibility(View.INVISIBLE);
+			mMlik.setVisibility(View.INVISIBLE);
+			mChoco.setVisibility(View.INVISIBLE);
+			mMlikB.setVisibility(View.INVISIBLE);
+			mVanilla.setVisibility(View.INVISIBLE);
+			mWhipping.setVisibility(View.INVISIBLE);
+			mCinnamon.setVisibility(View.INVISIBLE);
+			mCaramel.setVisibility(View.INVISIBLE);
+			
+			intent = getIntent();
+			choice = intent.getStringExtra("choice");
+
+			intent=new Intent(MakeActivity.this, StartActivity.class);
+			if(choice.equals("아메리카노")){
+				mHotW.setVisibility(View.VISIBLE);
+			}else if(choice.equals("카페라떼")){
+				mMlik.setVisibility(View.VISIBLE);
+			}else if(choice.equals("카페모카")){
+				mMlik.setVisibility(View.VISIBLE);
+				mChoco.setVisibility(View.VISIBLE);
+				mWhipping.setVisibility(View.VISIBLE);
+			}else if(choice.equals("카푸치노")){
+				mMlik.setVisibility(View.VISIBLE);
+				mMlikB.setVisibility(View.VISIBLE);
+				mCinnamon.setVisibility(View.VISIBLE);
+			}else if(choice.equals("카라멜마끼아또")){
+				mMlik.setVisibility(View.VISIBLE);
+				mVanilla.setVisibility(View.VISIBLE);
+				mCaramel.setVisibility(View.VISIBLE);
+			}
+			else{}
 			break;
 		case R.id.refrigerator :
 			mRefrigerator.setVisibility(View.INVISIBLE);
@@ -181,9 +278,58 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mMBut=(ImageView)findViewById(R.id.machine_but);
 			mMachine2.setVisibility(View.INVISIBLE);
 			mMHandler=(ImageView)findViewById(R.id.machine_handler);
+			mShotcup=(ImageView)findViewById(R.id.shotcup);
+			mShotMachine1=(ImageView)findViewById(R.id.machineshot1);
+			mShotMachine2=(ImageView)findViewById(R.id.machineshot2);
+			mShotMachine1.setVisibility(View.INVISIBLE);
+			mShotMachine2.setVisibility(View.INVISIBLE);
 			mMHandler.setOnTouchListener(this);
+			mShotcup.setOnTouchListener(this);
+
+			mShot=(TextView)findViewById(R.id.re_shot);
+			mHotW=(TextView)findViewById(R.id.re_hotw);
+			mMlik=(TextView)findViewById(R.id.re_mlik);
+			mChoco=(TextView)findViewById(R.id.re_choco);
+			mMlikB=(TextView)findViewById(R.id.re_mlikbubble);
+			mVanilla=(TextView)findViewById(R.id.re_vanilla);
+			mWhipping=(TextView)findViewById(R.id.re_whipping);
+			mCinnamon=(TextView)findViewById(R.id.re_cinnamon);
+			mCaramel=(TextView)findViewById(R.id.re_caramel);
+			mHotW.setVisibility(View.INVISIBLE);
+			mMlik.setVisibility(View.INVISIBLE);
+			mChoco.setVisibility(View.INVISIBLE);
+			mMlikB.setVisibility(View.INVISIBLE);
+			mVanilla.setVisibility(View.INVISIBLE);
+			mWhipping.setVisibility(View.INVISIBLE);
+			mCinnamon.setVisibility(View.INVISIBLE);
+			mCaramel.setVisibility(View.INVISIBLE);
+			
+			intent = getIntent();
+			choice = intent.getStringExtra("choice");
+
+			intent=new Intent(MakeActivity.this, StartActivity.class);
+			if(choice.equals("아메리카노")){
+				mHotW.setVisibility(View.VISIBLE);
+			}else if(choice.equals("카페라떼")){
+				mMlik.setVisibility(View.VISIBLE);
+			}else if(choice.equals("카페모카")){
+				mMlik.setVisibility(View.VISIBLE);
+				mChoco.setVisibility(View.VISIBLE);
+				mWhipping.setVisibility(View.VISIBLE);
+			}else if(choice.equals("카푸치노")){
+				mMlik.setVisibility(View.VISIBLE);
+				mMlikB.setVisibility(View.VISIBLE);
+				mCinnamon.setVisibility(View.VISIBLE);
+			}else if(choice.equals("카라멜마끼아또")){
+				mMlik.setVisibility(View.VISIBLE);
+				mVanilla.setVisibility(View.VISIBLE);
+				mCaramel.setVisibility(View.VISIBLE);
+			}
+			else{}
 			break;
 		case R.id.machine_but :
+			mMachine2.setVisibility(View.INVISIBLE);
+			mShotMachine1.setVisibility(View.VISIBLE);
 			break;
 		}
 	}
@@ -206,13 +352,32 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				mGrinder1.setVisibility(View.VISIBLE);
 			}
 		}
-		if(i>=6){
+		switch (i) {
+		case 4 :
+			mHandler.setVisibility(View.INVISIBLE);
+			mHandler1.setX((float)(width *0.33));
+			mHandler1.setVisibility(View.VISIBLE);
+			break;
+		case 7 :
+			mHandler2.setX((float)(width *0.33));
+			mHandler2.setVisibility(View.VISIBLE);
+			break;
+		case 11 :
+			mHandler3.setX((float)(width *0.33));
+			mHandler3.setVisibility(View.VISIBLE);
 			mNextBut.setVisibility(View.VISIBLE);
+			break;
 		}
 		if(v==mMHandler){
 			if(event.getAction()==MotionEvent.ACTION_MOVE){
 				mMHandler.setVisibility(View.INVISIBLE);
 				mMachine2.setVisibility(View.VISIBLE);
+				ok=1;
+			}
+		}
+		if(ok==1 && v==mShotcup){
+			if(event.getAction()==MotionEvent.ACTION_MOVE){
+				mShotcup.setVisibility(View.INVISIBLE);
 			}
 		}
 		return true;
