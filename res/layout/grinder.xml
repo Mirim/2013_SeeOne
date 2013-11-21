@@ -32,22 +32,76 @@
 
     <ImageView
         android:id="@+id/grinder_1"
-        android:layout_width="130dp"
-        android:layout_height="327dp"
+        android:layout_width="160dp"
+        android:layout_height="305dp"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:layout_marginBottom="30dp"
-        android:background="@drawable/img_grinder_1" />
+        android:background="@drawable/img_grinder1" />
 
     <ImageView
         android:id="@+id/grinder_2"
-        android:layout_width="130dp"
-        android:layout_height="327dp"
+        android:layout_width="160dp"
+        android:layout_height="305dp"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:layout_marginBottom="30dp"
-        android:background="@drawable/img_grinder_2" />
+        android:background="@drawable/img_grinder2" />
 
+    <ImageView
+        android:id="@+id/grinder_3"
+        android:layout_width="160dp"
+        android:layout_height="305dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/img_grinder3" />
+    
+    <ImageView
+        android:id="@+id/grinder_4"
+        android:layout_width="160dp"
+        android:layout_height="305dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/img_grinder4" />
+    
+    <ImageView
+        android:id="@+id/grinder_5"
+        android:layout_width="160dp"
+        android:layout_height="305dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/img_grinder5" />
+    
+    <ImageView
+        android:id="@+id/grinder_6"
+        android:layout_width="160dp"
+        android:layout_height="305dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/img_grinder6" />
+    
+    <ImageView
+        android:id="@+id/grinder_7"
+        android:layout_width="160dp"
+        android:layout_height="305dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/img_grinder7" />
+    
+    <ImageView
+        android:id="@+id/grinder_8"
+        android:layout_width="160dp"
+        android:layout_height="305dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/img_grinder8" />
+    
     <ImageView
         android:id="@+id/handler"
         android:layout_width="130dp"
@@ -57,36 +111,6 @@
         android:layout_marginRight="40dp"
         android:layout_toLeftOf="@+id/grinder_1"
         android:background="@drawable/img_handler" />
-
-    <ImageView
-        android:id="@+id/handler1"
-        android:layout_width="130dp"
-        android:layout_height="83dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="35dp"
-        android:layout_marginRight="40dp"
-        android:layout_toLeftOf="@+id/grinder_1"
-        android:background="@drawable/img_handlercoffee1" />
-
-    <ImageView
-        android:id="@+id/handler2"
-        android:layout_width="130dp"
-        android:layout_height="83dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="35dp"
-        android:layout_marginRight="40dp"
-        android:layout_toLeftOf="@+id/grinder_1"
-        android:background="@drawable/img_handlercoffee2" />
-
-    <ImageView
-        android:id="@+id/handler3"
-        android:layout_width="130dp"
-        android:layout_height="83dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="35dp"
-        android:layout_marginRight="40dp"
-        android:layout_toLeftOf="@+id/grinder_1"
-        android:background="@drawable/img_handlercoffee3" />
 
     <ImageView
         android:id="@+id/next_but"

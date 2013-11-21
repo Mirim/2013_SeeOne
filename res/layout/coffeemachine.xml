@@ -60,6 +60,15 @@
         android:src="@drawable/img_coffeemachine2" />
 
     <ImageView
+        android:id="@+id/machine3"
+        android:layout_width="350dp"
+        android:layout_height="224dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/img_coffeemachine3" />
+    
+    <ImageView
         android:id="@+id/machineshot1"
         android:layout_width="350dp"
         android:layout_height="224dp"
