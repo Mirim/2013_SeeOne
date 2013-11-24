@@ -18,6 +18,7 @@ import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MakeActivity extends Activity implements OnTouchListener{
 	Intent intent;
@@ -173,6 +174,13 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mHandler.setOnTouchListener(this);
 			mGrinder1.setOnTouchListener(this);
 			mGrinder2.setOnTouchListener(this);
+			mGrinder3.setOnTouchListener(this);
+			mGrinder4.setOnTouchListener(this);
+			mGrinder5.setOnTouchListener(this);
+			mGrinder6.setOnTouchListener(this);
+			mGrinder7.setOnTouchListener(this);
+			mGrinder8.setOnTouchListener(this);
+			mGrinder2.setVisibility(View.INVISIBLE);
 			mNextBut=(ImageView)findViewById(R.id.next_but);
 			mNextBut.setVisibility(View.INVISIBLE);
 
@@ -221,10 +229,29 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			setContentView(R.layout.grinder);
 			mGrinder1=(ImageView)findViewById(R.id.grinder_1);
 			mGrinder2=(ImageView)findViewById(R.id.grinder_2);
+			mGrinder3=(ImageView)findViewById(R.id.grinder_3);
+			mGrinder4=(ImageView)findViewById(R.id.grinder_4);
+			mGrinder5=(ImageView)findViewById(R.id.grinder_5);
+			mGrinder6=(ImageView)findViewById(R.id.grinder_6);
+			mGrinder7=(ImageView)findViewById(R.id.grinder_7);
+			mGrinder8=(ImageView)findViewById(R.id.grinder_8);
 			mHandler=(ImageView)findViewById(R.id.handler);
+			mGrinder2.setVisibility(View.INVISIBLE);
+			mGrinder3.setVisibility(View.INVISIBLE);
+			mGrinder4.setVisibility(View.INVISIBLE);
+			mGrinder5.setVisibility(View.INVISIBLE);
+			mGrinder6.setVisibility(View.INVISIBLE);
+			mGrinder7.setVisibility(View.INVISIBLE);
+			mGrinder8.setVisibility(View.INVISIBLE);
 			mHandler.setOnTouchListener(this);
 			mGrinder1.setOnTouchListener(this);
 			mGrinder2.setOnTouchListener(this);
+			mGrinder3.setOnTouchListener(this);
+			mGrinder4.setOnTouchListener(this);
+			mGrinder5.setOnTouchListener(this);
+			mGrinder6.setOnTouchListener(this);
+			mGrinder7.setOnTouchListener(this);
+			mGrinder8.setOnTouchListener(this);
 			mGrinder2.setVisibility(View.INVISIBLE);
 			mNextBut=(ImageView)findViewById(R.id.next_but);
 			mNextBut.setVisibility(View.INVISIBLE);
@@ -290,6 +317,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mMHandler=(ImageView)findViewById(R.id.machine_handler);
 			mShotcup=(ImageView)findViewById(R.id.shotcup);
 			mMachine3=(ImageView)findViewById(R.id.machine3);
+			mMachine3.setVisibility(View.INVISIBLE);
 			mShotMachine1=(ImageView)findViewById(R.id.machineshot1);
 			mShotMachine2=(ImageView)findViewById(R.id.machineshot2);
 			mShotMachine1.setVisibility(View.INVISIBLE);
@@ -350,94 +378,78 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		if(v==mHandler){
 			if(event.getAction()==MotionEvent.ACTION_MOVE){
 				mHandler.setVisibility(View.INVISIBLE);
+				mGrinder1.setVisibility(View.INVISIBLE);
+				mGrinder2.setVisibility(View.VISIBLE);
 			}
 		}
-		if(v==mGrinder1){
-			if(event.getAction()==MotionEvent.ACTION_DOWN){
-				switch (i) {
-				case 0 : case 2 :
-					mGrinder1.setVisibility(View.INVISIBLE);
-					mGrinder2.setVisibility(View.VISIBLE);
-					i++;
-					break;
-				case 4 : case 6 :
-					mGrinder1.setVisibility(View.INVISIBLE);
-					mGrinder2.setVisibility(View.INVISIBLE);
-					mGrinder3.setVisibility(View.INVISIBLE);
-					mGrinder4.setVisibility(View.VISIBLE);
-					i++;
-					break;
-				case 8 : case 10 :
-					mGrinder1.setVisibility(View.INVISIBLE);
-					mGrinder2.setVisibility(View.INVISIBLE);
-					mGrinder3.setVisibility(View.INVISIBLE);
-					mGrinder4.setVisibility(View.INVISIBLE);
-					mGrinder5.setVisibility(View.INVISIBLE);
-					mGrinder6.setVisibility(View.VISIBLE);
-					i++;
-					break;
-				case 12 : case 14 : 
-					mGrinder1.setVisibility(View.INVISIBLE);
-					mGrinder2.setVisibility(View.INVISIBLE);
-					mGrinder3.setVisibility(View.INVISIBLE);
-					mGrinder4.setVisibility(View.INVISIBLE);
-					mGrinder5.setVisibility(View.INVISIBLE);
-					mGrinder6.setVisibility(View.INVISIBLE);
-					mGrinder7.setVisibility(View.INVISIBLE);
-					mGrinder8.setVisibility(View.VISIBLE);
-					i++;
-					break;
-				}	
+		if(event.getAction()==MotionEvent.ACTION_DOWN){
+			switch (i) {
+			case 2 : case 3 : case 4 :
+				mGrinder2.setVisibility(View.INVISIBLE);
+				mGrinder3.setVisibility(View.VISIBLE);
+				break;
+			case 5 :  case 6 : case 7 :
+				mGrinder2.setVisibility(View.INVISIBLE);
+				mGrinder3.setVisibility(View.INVISIBLE);
+				mGrinder4.setVisibility(View.INVISIBLE);
+				mGrinder5.setVisibility(View.VISIBLE);
+				break;
+			case 8 :  case 9 : case 10 :
+				mGrinder2.setVisibility(View.INVISIBLE);
+				mGrinder3.setVisibility(View.INVISIBLE);
+				mGrinder4.setVisibility(View.INVISIBLE);
+				mGrinder5.setVisibility(View.INVISIBLE);
+				mGrinder6.setVisibility(View.INVISIBLE);
+				mGrinder7.setVisibility(View.VISIBLE);
+				mGrinder8.setVisibility(View.INVISIBLE);
+				break;
+			}	
+		}
+		else if(event.getAction()==MotionEvent.ACTION_UP){
+			switch (i) {
+			case 2 :  case 3 : case 4 :
+				mGrinder2.setVisibility(View.VISIBLE);
+				mGrinder3.setVisibility(View.INVISIBLE);
+				break;
+			case 5 :  case 6 : case 7 :
+				mGrinder2.setVisibility(View.INVISIBLE);
+				mGrinder3.setVisibility(View.INVISIBLE);
+				mGrinder4.setVisibility(View.VISIBLE);
+				mGrinder5.setVisibility(View.INVISIBLE);
+				break;
+			case 8 :  case 9 : case 10 :
+				mGrinder2.setVisibility(View.INVISIBLE);
+				mGrinder3.setVisibility(View.INVISIBLE);
+				mGrinder4.setVisibility(View.INVISIBLE);
+				mGrinder5.setVisibility(View.INVISIBLE);
+				mGrinder6.setVisibility(View.VISIBLE);
+				mGrinder7.setVisibility(View.INVISIBLE);
+				break;
+			case 11 : case 12 : 
+				mGrinder2.setVisibility(View.INVISIBLE);
+				mGrinder3.setVisibility(View.INVISIBLE);
+				mGrinder4.setVisibility(View.INVISIBLE);
+				mGrinder5.setVisibility(View.INVISIBLE);
+				mGrinder6.setVisibility(View.INVISIBLE);
+				mGrinder7.setVisibility(View.INVISIBLE);
+				mGrinder8.setVisibility(View.VISIBLE);
+			case 13 : 
+				mNextBut.setVisibility(View.VISIBLE);
+				break;
 			}
-			else if(event.getAction()==MotionEvent.ACTION_UP){
-				switch (i) {
-				case 1 : case 3 :
-					mGrinder1.setVisibility(View.VISIBLE);
-					mGrinder2.setVisibility(View.INVISIBLE);
-					i++;
-					break;
-				case 5 : case 7 :
-					mGrinder1.setVisibility(View.INVISIBLE);
-					mGrinder2.setVisibility(View.INVISIBLE);
-					mGrinder3.setVisibility(View.VISIBLE);
-					i++;
-					break;
-				case 9 : case 11 :
-					mGrinder1.setVisibility(View.INVISIBLE);
-					mGrinder2.setVisibility(View.INVISIBLE);
-					mGrinder3.setVisibility(View.INVISIBLE);
-					mGrinder4.setVisibility(View.INVISIBLE);
-					mGrinder5.setVisibility(View.VISIBLE);
-					mGrinder6.setVisibility(View.INVISIBLE);
-					i++;
-					break;
-				case 13 : case 15 : 
-					mGrinder1.setVisibility(View.INVISIBLE);
-					mGrinder2.setVisibility(View.INVISIBLE);
-					mGrinder3.setVisibility(View.INVISIBLE);
-					mGrinder4.setVisibility(View.INVISIBLE);
-					mGrinder5.setVisibility(View.INVISIBLE);
-					mGrinder6.setVisibility(View.INVISIBLE);
-					mGrinder7.setVisibility(View.VISIBLE);
-					mGrinder8.setVisibility(View.INVISIBLE);
-					i++;
-				case 16 : 
-					mNextBut.setVisibility(View.VISIBLE);
-					break;
-				}
+			i++;
+		}
+		if(v==mMHandler){
+			if(event.getAction()==MotionEvent.ACTION_MOVE){
+				mMHandler.setVisibility(View.INVISIBLE);
+				mMachine2.setVisibility(View.VISIBLE);
+				ok=1;
 			}
-			if(v==mMHandler){
-				if(event.getAction()==MotionEvent.ACTION_MOVE){
-					mMHandler.setVisibility(View.INVISIBLE);
-					mMachine2.setVisibility(View.VISIBLE);
-					ok=1;
-				}
-			}
-			if(ok==1 && v==mShotcup){
-				if(event.getAction()==MotionEvent.ACTION_MOVE){
-					mShotcup.setVisibility(View.INVISIBLE);
-					mMachine3.setVisibility(View.VISIBLE);
-				}
+		}
+		if(ok==1 && v==mShotcup){
+			if(event.getAction()==MotionEvent.ACTION_MOVE){
+				mShotcup.setVisibility(View.INVISIBLE);
+				mMachine3.setVisibility(View.VISIBLE);
 			}
 		}
 		return true;

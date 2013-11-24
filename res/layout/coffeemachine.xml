@@ -16,11 +16,11 @@
         android:id="@+id/shotcup"
         android:layout_width="60dp"
         android:layout_height="47dp"
-        android:src="@drawable/img_shotcup"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="35dp"
         android:layout_alignRight="@+id/grindcounter"
-        android:layout_marginRight="10dp"/>
+        android:layout_marginBottom="35dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/img_shotcup" />
 
     <ImageView
         android:id="@+id/memo"
@@ -39,7 +39,7 @@
         android:layout_alignLeft="@+id/memo"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="35dp"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/img_checkbox1" />
 
     <ImageView
         android:id="@+id/machine"
@@ -67,7 +67,7 @@
         android:layout_centerInParent="true"
         android:layout_marginBottom="35dp"
         android:src="@drawable/img_coffeemachine3" />
-    
+
     <ImageView
         android:id="@+id/machineshot1"
         android:layout_width="350dp"
@@ -76,7 +76,7 @@
         android:layout_centerInParent="true"
         android:layout_marginBottom="35dp"
         android:src="@drawable/img_coffeemachineshot1" />
-    
+
     <ImageView
         android:id="@+id/machineshot2"
         android:layout_width="350dp"
@@ -85,7 +85,7 @@
         android:layout_centerInParent="true"
         android:layout_marginBottom="35dp"
         android:src="@drawable/img_coffeemachineshot2" />
-    
+
     <ImageView
         android:id="@+id/machine_but"
         android:layout_width="80dp"
@@ -121,7 +121,7 @@
         android:layout_alignLeft="@+id/re_img_shot"
         android:layout_below="@+id/re_img_shot"
         android:layout_marginTop="10dp"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/img_checkbox1" />
 
     <TextView
         android:id="@+id/re_hotw"
@@ -138,7 +138,7 @@
         android:layout_alignLeft="@+id/re_img_shot"
         android:layout_below="@+id/re_img_shot"
         android:layout_marginTop="10dp"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/img_checkbox1" />
 
     <TextView
         android:id="@+id/re_mlik"
@@ -155,7 +155,7 @@
         android:layout_alignLeft="@+id/re_img_mlik"
         android:layout_below="@+id/re_img_mlik"
         android:layout_marginTop="10dp"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/img_checkbox1" />
 
     <TextView
         android:id="@+id/re_choco"
@@ -172,7 +172,7 @@
         android:layout_alignLeft="@+id/re_img_mlik"
         android:layout_below="@+id/re_img_mlik"
         android:layout_marginTop="10dp"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/img_checkbox1" />
 
     <TextView
         android:id="@+id/re_mlikbubble"
@@ -189,7 +189,7 @@
         android:layout_alignLeft="@+id/re_img_mlik"
         android:layout_below="@+id/re_img_mlik"
         android:layout_marginTop="10dp"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/img_checkbox1" />
 
     <TextView
         android:id="@+id/re_vanilla"
@@ -206,7 +206,7 @@
         android:layout_alignLeft="@+id/re_img_choco"
         android:layout_below="@+id/re_img_choco"
         android:layout_marginTop="10dp"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/img_checkbox1" />
 
     <TextView
         android:id="@+id/re_whipping"
@@ -223,7 +223,7 @@
         android:layout_alignLeft="@+id/re_img_choco"
         android:layout_below="@+id/re_img_choco"
         android:layout_marginTop="10dp"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/img_checkbox1" />
 
     <TextView
         android:id="@+id/re_cinnamon"
@@ -240,7 +240,7 @@
         android:layout_alignLeft="@+id/re_img_choco"
         android:layout_below="@+id/re_img_choco"
         android:layout_marginTop="10dp"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/img_checkbox1" />
 
     <TextView
         android:id="@+id/re_caramel"
