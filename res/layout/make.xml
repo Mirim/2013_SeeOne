@@ -63,11 +63,11 @@
 
     <ImageView
         android:id="@+id/re_img_shot"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_alignLeft="@+id/memo"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
         android:src="@drawable/img_checkbox1"/>
 
     <RelativeLayout
@@ -141,139 +141,93 @@
         android:text="샷" />
 
     <ImageView
-        android:id="@+id/re_img_hots"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
+        android:id="@+id/re_two"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_alignLeft="@+id/re_img_shot"
         android:layout_below="@+id/re_img_shot"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="2dp"
         android:src="@drawable/img_checkbox1" />
 
     <TextView
         android:id="@+id/re_hotw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/re_img_hots"
+        android:layout_alignBottom="@+id/re_two"
         android:layout_alignLeft="@+id/re_shot"
         android:text="뜨거운 물" />
-
-    <ImageView
-        android:id="@+id/re_img_mlik"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:layout_alignLeft="@+id/re_img_shot"
-        android:layout_below="@+id/re_img_shot"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/img_checkbox1" />
 
     <TextView
         android:id="@+id/re_mlik"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/re_img_mlik"
+        android:layout_alignBottom="@+id/re_two"
         android:layout_alignLeft="@+id/re_shot"
         android:text="스팀우유" />
 
     <ImageView
-        android:id="@+id/re_img_choco"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:layout_alignLeft="@+id/re_img_mlik"
-        android:layout_below="@+id/re_img_mlik"
-        android:layout_marginTop="10dp"
+        android:id="@+id/re_three"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignLeft="@+id/re_two"
+        android:layout_below="@+id/re_two"
+        android:layout_marginTop="2dp"
         android:src="@drawable/img_checkbox1" />
 
     <TextView
         android:id="@+id/re_choco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/re_img_choco"
+        android:layout_alignBottom="@+id/re_three"
         android:layout_alignLeft="@+id/re_shot"
         android:text="초코시럽" />
-
-    <ImageView
-        android:id="@+id/re_img_mlikbubble"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:layout_alignLeft="@+id/re_img_mlik"
-        android:layout_below="@+id/re_img_mlik"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/img_checkbox1" />
 
     <TextView
         android:id="@+id/re_mlikbubble"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/re_img_mlikbubble"
+        android:layout_alignBottom="@+id/re_three"
         android:layout_alignLeft="@+id/re_shot"
         android:text="우유거품" />
-
-    <ImageView
-        android:id="@+id/re_img_vanilla"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:layout_alignLeft="@+id/re_img_mlik"
-        android:layout_below="@+id/re_img_mlik"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/img_checkbox1" />
 
     <TextView
         android:id="@+id/re_vanilla"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/re_img_vanilla"
+        android:layout_alignBottom="@+id/re_three"
         android:layout_alignLeft="@+id/re_shot"
         android:text="바닐라시럽" />
 
     <ImageView
-        android:id="@+id/re_img_whipping"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:layout_alignLeft="@+id/re_img_choco"
-        android:layout_below="@+id/re_img_choco"
-        android:layout_marginTop="10dp"
+        android:id="@+id/re_four"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignLeft="@+id/re_three"
+        android:layout_below="@+id/re_three"
+        android:layout_marginTop="2dp"
         android:src="@drawable/img_checkbox1" />
 
     <TextView
         android:id="@+id/re_whipping"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/re_img_whipping"
+        android:layout_alignBottom="@+id/re_four"
         android:layout_alignLeft="@+id/re_shot"
         android:text="휘핑크림" />
-
-    <ImageView
-        android:id="@+id/re_img_cinnamon"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:layout_alignLeft="@+id/re_img_choco"
-        android:layout_below="@+id/re_img_choco"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/img_checkbox1" />
-
+    
     <TextView
         android:id="@+id/re_cinnamon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/re_img_cinnamon"
+        android:layout_alignBottom="@+id/re_four"
         android:layout_alignLeft="@+id/re_shot"
-        android:text="시나몬 파우더" />
-
-    <ImageView
-        android:id="@+id/re_img_caramel"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:layout_alignLeft="@+id/re_img_choco"
-        android:layout_below="@+id/re_img_choco"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/img_checkbox1" />
+        android:text="시나몬파우더" />
 
     <TextView
         android:id="@+id/re_caramel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/re_img_caramel"
+        android:layout_alignBottom="@+id/re_four"
         android:layout_alignLeft="@+id/re_shot"
-        android:text="카라멜 드리즐" />
-
+        android:text="카라멜드리즐" />
 </RelativeLayout>
