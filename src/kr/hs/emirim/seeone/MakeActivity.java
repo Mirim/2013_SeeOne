@@ -2,8 +2,11 @@ package kr.hs.emirim.seeone;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.EventLog.Event;
 import android.util.Log;
