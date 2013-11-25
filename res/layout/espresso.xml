@@ -14,23 +14,26 @@
 
         <Button
             android:id="@+id/but_start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="83dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:layout_marginBottom="50dp"
-            android:layout_marginRight="50dp"
-            android:onClick="mOnClick"
-            android:text="만들기" />
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="65dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/img_butmake"
+            android:onClick="mOnClick" />
 
         <Button
             android:id="@+id/but_reorder"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="83dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:layout_toLeftOf="@id/but_start"
-            android:onClick="mOnClick"
-            android:text="재주문"/>
+            android:background="@drawable/img_butreorder"
+            android:onClick="mOnClick" />
     </RelativeLayout>
 </merge>

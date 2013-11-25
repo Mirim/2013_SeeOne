@@ -75,7 +75,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		win.requestFeature(Window.FEATURE_NO_TITLE);
 		win.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.make);
-
+		
 		mSideboard=(Button)findViewById(R.id.sideboard);
 		mOpenSideboard=(Button)findViewById(R.id.opensideboard);
 		mRefrigerator=(Button)findViewById(R.id.refrigerator);
