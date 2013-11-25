@@ -1,9 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/back" >
-    
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/back_setting"
+    android:orientation="vertical" >
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/setBgm"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/img_setbgm" />
+
+    <ImageView
+        android:id="@+id/setOn"
+        android:layout_width="29dp"
+        android:layout_height="15dp"
+        android:layout_alignBottom="@+id/setBgm"
+        android:layout_toRightOf="@+id/setBgm"
+        android:src="@drawable/img_seton"
+        android:layout_margin="10dp" />
+
+    <ImageView
+        android:id="@+id/setSound"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/setBgm"
+        android:layout_below="@+id/setOn"
+        android:src="@drawable/img_setsound" 
+        android:layout_marginTop="5dp"/>
+
+    <ImageView
+        android:id="@+id/setOn2"
+        android:layout_width="29dp"
+        android:layout_height="15dp"
+        android:layout_alignBottom="@+id/setSound"
+        android:layout_toRightOf="@+id/setSound"
+        android:src="@drawable/img_seton" 
+        android:layout_margin="10dp" />
+
+    <ImageView
+        android:id="@+id/setViv"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/setBgm"
+        android:layout_below="@+id/setOn2"
+        android:src="@drawable/img_setviv"
+        android:layout_marginTop="5dp" />
+
+    <ImageView
+        android:id="@+id/setOn3"
+        android:layout_width="29dp"
+        android:layout_height="15dp"
+        android:layout_alignBottom="@+id/setViv"
+        android:layout_toRightOf="@+id/setViv"
+        android:src="@drawable/img_seton"
+        android:layout_margin="10dp"  />
+
+</RelativeLayout>
