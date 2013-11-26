@@ -55,6 +55,16 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	ImageView mReTwo;
 	ImageView mReThree;
 	ImageView mReFour;
+	ImageView mWhippingC;
+	ImageView mMWhippingC;
+	ImageView mWhippingMachine;
+	ImageView mWhippingMachine2;
+	ImageView mWhipping1;
+	ImageView mWhipping2;
+	ImageView mWhipping3;
+	ImageView mWhipping4;
+	ImageView mWhipping5;
+	ImageView mWhipping6;
 	TextView mShot;
 	TextView mHotW;
 	TextView mMlik;
@@ -78,7 +88,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		win.requestFeature(Window.FEATURE_NO_TITLE);
 		win.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.make);
-		
+
 		mSideboard=(Button)findViewById(R.id.sideboard);
 		mOpenSideboard=(Button)findViewById(R.id.opensideboard);
 		mRefrigerator=(Button)findViewById(R.id.refrigerator);
@@ -95,6 +105,8 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		mCup.setVisibility(View.INVISIBLE);
 		mTCup=(ImageView)findViewById(R.id.table_cup);
 		mTCup.setVisibility(View.INVISIBLE);
+		mWhippingC=(ImageView)findViewById(R.id.whippingCream);
+		mWhippingC.setVisibility(View.INVISIBLE);
 
 		mShot=(TextView)findViewById(R.id.re_shot);
 		mHotW=(TextView)findViewById(R.id.re_hotw);
@@ -357,10 +369,12 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		case R.id.refrigerator :
 			mRefrigerator.setVisibility(View.INVISIBLE);
 			mOpenRefrigerator.setVisibility(View.VISIBLE);
+			mWhippingC.setVisibility(View.VISIBLE);
 			break;
 		case R.id.openrefrigerator :
 			mOpenRefrigerator.setVisibility(View.INVISIBLE);
 			mRefrigerator.setVisibility(View.VISIBLE);
+			mWhippingC.setVisibility(View.INVISIBLE);
 			break;
 		case R.id.cup :
 			mTCup.setVisibility(View.VISIBLE);
@@ -444,6 +458,17 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mMachine2.setVisibility(View.INVISIBLE);
 			mShotMachine1.setVisibility(View.VISIBLE);
 			break;
+		case R.id.whippingCream :
+			setContentView(R.layout.whippingcream);
+			mMWhippingC=(ImageView)findViewById(R.id.machine_whipping);
+			mWhippingMachine=(ImageView)findViewById(R.id.whippingmachine);
+			mWhippingMachine2=(ImageView)findViewById(R.id.whippingmachine2);
+			mWhipping1=(ImageView)findViewById(R.id.whipping_1);
+			mWhipping2=(ImageView)findViewById(R.id.whipping_2);
+			mWhipping3=(ImageView)findViewById(R.id.whipping_3);
+			mWhipping4=(ImageView)findViewById(R.id.whipping_4);
+			mWhipping5=(ImageView)findViewById(R.id.whipping_5);
+			mWhipping6=(ImageView)findViewById(R.id.whipping_6);
 		}
 	}
 

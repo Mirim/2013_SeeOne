@@ -1,55 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@drawable/back"
-    android:orientation="vertical" >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back" >
 
     <ImageView
-        android:layout_width="400dp"
+        android:id="@+id/grindcounter"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:adjustViewBounds="true"
-        android:src="@drawable/img_maincounter" />
+        android:src="@drawable/img_grindcounter" />
 
-    <Button
-        android:id="@+id/aBean"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:onClick="mOnClick"
-        android:text="A원두" />
-
-    <Button
-        android:id="@+id/bBean"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_toRightOf="@id/aBean"
-        android:onClick="mOnClick"
-        android:text="B원두" />
-
-    <Button
-        android:id="@+id/refrigerator"
-        android:layout_width="150dp"
-        android:layout_height="226dp"
+    <ImageView
+        android:id="@+id/whippingmachine"
+        android:layout_width="220dp"
+        android:layout_height="350dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="5dp"
-        android:layout_marginRight="5dp"
-        android:background="@drawable/img_refrigerator"
-        android:onClick="mOnClick" />
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/img_whippingmachine" />
 
-    <Button
-        android:id="@+id/openrefrigerator"
-        android:layout_width="150dp"
-        android:layout_height="226dp"
+    <ImageView
+        android:id="@+id/machine_whipping"
+        android:layout_width="64dp"
+        android:layout_height="110dp"
+        android:layout_alignLeft="@+id/grindcounter"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="5dp"
-        android:layout_marginRight="5dp"
-        android:background="@drawable/img_openrefrigerator"
-        android:onClick="mOnClick" />
+        android:layout_marginBottom="35dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/img_whippingcream2" />
+
+    <ImageView
+        android:id="@+id/whippingmachine2"
+        android:layout_width="150dp"
+        android:layout_height="112dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/grindcounter"
+        android:layout_marginBottom="35dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/img_whippingmachine2" />
+
+    <ImageView
+        android:id="@+id/whipping_1"
+        android:layout_width="220dp"
+        android:layout_height="350dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/img_whipping1" />
+
+    <ImageView
+        android:id="@+id/whipping_2"
+        android:layout_width="220dp"
+        android:layout_height="350dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/img_whipping2" />
+
+    <ImageView
+        android:id="@+id/whipping_3"
+        android:layout_width="220dp"
+        android:layout_height="350dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/img_whipping3" />
+
+    <ImageView
+        android:id="@+id/whipping_4"
+        android:layout_width="220dp"
+        android:layout_height="350dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/img_whipping4" />
+
+    <ImageView
+        android:id="@+id/whipping_5"
+        android:layout_width="220dp"
+        android:layout_height="350dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/img_whipping5" />
+
+    <ImageView
+        android:id="@+id/whipping_6"
+        android:layout_width="220dp"
+        android:layout_height="350dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/img_whipping6" />
 
     <ImageView
         android:id="@+id/memo"
@@ -68,69 +112,7 @@
         android:layout_alignLeft="@+id/memo"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="30dp"
-        android:src="@drawable/img_checkbox1"/>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-
-        <Button
-            android:id="@+id/sideboard"
-            android:layout_width="280dp"
-            android:layout_height="130dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/img_sideboard"
-            android:onClick="mOnClick" />
-
-        <Button
-            android:id="@+id/opensideboard"
-            android:layout_width="320dp"
-            android:layout_height="158dp"
-            android:layout_alignTop="@id/sideboard"
-            android:layout_marginLeft="5dp"
-            android:background="@drawable/img_opensideboard"
-            android:onClick="mOnClick" />
-
-        <ImageView
-            android:id="@+id/caps"
-            android:layout_width="35dp"
-            android:layout_height="31dp"
-            android:layout_alignBottom="@+id/sideboard"
-            android:layout_marginBottom="5dp"
-            android:layout_marginRight="10dp"
-            android:layout_toLeftOf="@+id/cup"
-            android:background="@drawable/img_caps" />
-
-        <ImageView
-            android:id="@+id/cup"
-            android:layout_width="35dp"
-            android:layout_height="48dp"
-            android:layout_alignBottom="@+id/sideboard"
-            android:layout_alignRight="@+id/sideboard"
-            android:layout_marginBottom="5dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/img_cup"
-            android:onClick="mOnClick" />
-
-        <ImageView
-            android:id="@+id/coffeemachine"
-            android:layout_width="160dp"
-            android:layout_height="102dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginBottom="30dp"
-            android:layout_marginLeft="5dp"
-            android:background="@drawable/img_coffeemachine" />
-
-        <ImageView
-            android:id="@+id/table_cup"
-            android:layout_width="35dp"
-            android:layout_height="48dp"
-            android:layout_alignBottom="@+id/coffeemachine"
-            android:layout_alignLeft="@+id/cup"
-            android:background="@drawable/img_cup" />
-    </RelativeLayout>
+        android:src="@drawable/img_checkbox1" />
 
     <TextView
         android:id="@+id/re_shot"
@@ -214,7 +196,7 @@
         android:layout_alignBottom="@+id/re_four"
         android:layout_alignLeft="@+id/re_shot"
         android:text="휘핑크림" />
-    
+
     <TextView
         android:id="@+id/re_cinnamon"
         android:layout_width="wrap_content"
@@ -230,14 +212,5 @@
         android:layout_alignBottom="@+id/re_four"
         android:layout_alignLeft="@+id/re_shot"
         android:text="카라멜드리즐" />
-    
-    <ImageView 
-        android:id="@+id/whippingCream"
-        android:layout_width="23dp"
-        android:layout_height="40dp"
-        android:src="@drawable/img_whippingcream1"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="140dp"/>
+
 </RelativeLayout>
