@@ -16,6 +16,8 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
@@ -75,11 +77,14 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	TextView mCinnamon;
 	TextView mCaramel;
 
+	Animation alphaAnim;
+	
 	String choice;
 	Display mDisplay;
 	int width;
 	int i=2;
 	int ok;
+	int ok2;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +94,8 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		win.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.make);
 
+		alphaAnim=AnimationUtils.loadAnimation(MakeActivity.this, R.anim.alpha);
+		
 		mSideboard=(Button)findViewById(R.id.sideboard);
 		mOpenSideboard=(Button)findViewById(R.id.opensideboard);
 		mRefrigerator=(Button)findViewById(R.id.refrigerator);
@@ -457,6 +464,8 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		case R.id.machine_but :
 			mMachine2.setVisibility(View.INVISIBLE);
 			mShotMachine1.setVisibility(View.VISIBLE);
+			mShotMachine2.startAnimation(alphaAnim);			
+			mShotMachine2.setVisibility(View.VISIBLE);
 			break;
 		case R.id.whippingCream :
 			setContentView(R.layout.whippingcream);
@@ -469,6 +478,81 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mWhipping4=(ImageView)findViewById(R.id.whipping_4);
 			mWhipping5=(ImageView)findViewById(R.id.whipping_5);
 			mWhipping6=(ImageView)findViewById(R.id.whipping_6);
+			mWhippingMachine2.setVisibility(View.INVISIBLE);
+			mWhipping1.setVisibility(View.INVISIBLE);
+			mWhipping2.setVisibility(View.INVISIBLE);
+			mWhipping3.setVisibility(View.INVISIBLE);
+			mWhipping4.setVisibility(View.INVISIBLE);
+			mWhipping5.setVisibility(View.INVISIBLE);
+			mWhipping6.setVisibility(View.INVISIBLE);
+			mWhippingMachine.setOnTouchListener(this);
+			mMWhippingC.setOnTouchListener(this);
+			
+			mWhipping2.startAnimation(alphaAnim);
+			mWhipping3.startAnimation(alphaAnim);
+			mWhipping4.startAnimation(alphaAnim);
+			mWhipping5.startAnimation(alphaAnim);
+			mWhipping6.startAnimation(alphaAnim);
+			mWhipping1.setVisibility(View.VISIBLE);
+
+			mShot=(TextView)findViewById(R.id.re_shot);
+			mHotW=(TextView)findViewById(R.id.re_hotw);
+			mMlik=(TextView)findViewById(R.id.re_mlik);
+			mChoco=(TextView)findViewById(R.id.re_choco);
+			mMlikB=(TextView)findViewById(R.id.re_mlikbubble);
+			mVanilla=(TextView)findViewById(R.id.re_vanilla);
+			mWhipping=(TextView)findViewById(R.id.re_whipping);
+			mCinnamon=(TextView)findViewById(R.id.re_cinnamon);
+			mCaramel=(TextView)findViewById(R.id.re_caramel);
+			mReTwo=(ImageView)findViewById(R.id.re_two);
+			mReThree=(ImageView)findViewById(R.id.re_three);
+			mReFour=(ImageView)findViewById(R.id.re_four);
+			mHotW.setVisibility(View.INVISIBLE);
+			mMlik.setVisibility(View.INVISIBLE);
+			mChoco.setVisibility(View.INVISIBLE);
+			mMlikB.setVisibility(View.INVISIBLE);
+			mVanilla.setVisibility(View.INVISIBLE);
+			mWhipping.setVisibility(View.INVISIBLE);
+			mCinnamon.setVisibility(View.INVISIBLE);
+			mCaramel.setVisibility(View.INVISIBLE);
+			mReTwo.setVisibility(View.INVISIBLE);
+			mReThree.setVisibility(View.INVISIBLE);
+			mReFour.setVisibility(View.INVISIBLE);
+
+			intent = getIntent();
+			choice = intent.getStringExtra("choice");
+
+			intent=new Intent(MakeActivity.this, StartActivity.class);
+			if(choice.equals("아메리카노")){
+				mHotW.setVisibility(View.VISIBLE);
+				mReTwo.setVisibility(View.VISIBLE);
+			}else if(choice.equals("카페라떼")){
+				mMlik.setVisibility(View.VISIBLE);
+				mReTwo.setVisibility(View.VISIBLE);
+			}else if(choice.equals("카페모카")){
+				mMlik.setVisibility(View.VISIBLE);
+				mChoco.setVisibility(View.VISIBLE);
+				mWhipping.setVisibility(View.VISIBLE);
+				mReTwo.setVisibility(View.VISIBLE);
+				mReThree.setVisibility(View.VISIBLE);
+				mReFour.setVisibility(View.VISIBLE);
+			}else if(choice.equals("카푸치노")){
+				mMlik.setVisibility(View.VISIBLE);
+				mMlikB.setVisibility(View.VISIBLE);
+				mCinnamon.setVisibility(View.VISIBLE);
+				mReTwo.setVisibility(View.VISIBLE);
+				mReThree.setVisibility(View.VISIBLE);
+				mReFour.setVisibility(View.VISIBLE);
+			}else if(choice.equals("카라멜마끼아또")){
+				mMlik.setVisibility(View.VISIBLE);
+				mVanilla.setVisibility(View.VISIBLE);
+				mCaramel.setVisibility(View.VISIBLE);
+				mReTwo.setVisibility(View.VISIBLE);
+				mReThree.setVisibility(View.VISIBLE);
+				mReFour.setVisibility(View.VISIBLE);
+			}
+			else{}
+			break;
 		}
 	}
 
@@ -481,62 +565,64 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				mGrinder2.setVisibility(View.VISIBLE);
 			}
 		}
-		if(event.getAction()==MotionEvent.ACTION_DOWN){
-			switch (i) {
-			case 2 : case 3 : case 4 :
-				mGrinder2.setVisibility(View.INVISIBLE);
-				mGrinder3.setVisibility(View.VISIBLE);
-				break;
-			case 5 :  case 6 : case 7 :
-				mGrinder2.setVisibility(View.INVISIBLE);
-				mGrinder3.setVisibility(View.INVISIBLE);
-				mGrinder4.setVisibility(View.INVISIBLE);
-				mGrinder5.setVisibility(View.VISIBLE);
-				break;
-			case 8 :  case 9 : case 10 :
-				mGrinder2.setVisibility(View.INVISIBLE);
-				mGrinder3.setVisibility(View.INVISIBLE);
-				mGrinder4.setVisibility(View.INVISIBLE);
-				mGrinder5.setVisibility(View.INVISIBLE);
-				mGrinder6.setVisibility(View.INVISIBLE);
-				mGrinder7.setVisibility(View.VISIBLE);
-				mGrinder8.setVisibility(View.INVISIBLE);
-				break;
-			}	
-		}
-		else if(event.getAction()==MotionEvent.ACTION_UP){
-			switch (i) {
-			case 2 :  case 3 : case 4 :
-				mGrinder2.setVisibility(View.VISIBLE);
-				mGrinder3.setVisibility(View.INVISIBLE);
-				break;
-			case 5 :  case 6 : case 7 :
-				mGrinder2.setVisibility(View.INVISIBLE);
-				mGrinder3.setVisibility(View.INVISIBLE);
-				mGrinder4.setVisibility(View.VISIBLE);
-				mGrinder5.setVisibility(View.INVISIBLE);
-				break;
-			case 8 :  case 9 : case 10 :
-				mGrinder2.setVisibility(View.INVISIBLE);
-				mGrinder3.setVisibility(View.INVISIBLE);
-				mGrinder4.setVisibility(View.INVISIBLE);
-				mGrinder5.setVisibility(View.INVISIBLE);
-				mGrinder6.setVisibility(View.VISIBLE);
-				mGrinder7.setVisibility(View.INVISIBLE);
-				break;
-			case 11 : case 12 : 
-				mGrinder2.setVisibility(View.INVISIBLE);
-				mGrinder3.setVisibility(View.INVISIBLE);
-				mGrinder4.setVisibility(View.INVISIBLE);
-				mGrinder5.setVisibility(View.INVISIBLE);
-				mGrinder6.setVisibility(View.INVISIBLE);
-				mGrinder7.setVisibility(View.INVISIBLE);
-				mGrinder8.setVisibility(View.VISIBLE);
-			case 13 : 
-				mNextBut.setVisibility(View.VISIBLE);
-				break;
+		if(v==mGrinder2 || v==mGrinder4 || v==mGrinder6 || v==mGrinder8){
+			if(event.getAction()==MotionEvent.ACTION_DOWN){
+				switch (i) {
+				case 2 : case 3 : case 4 :
+					mGrinder2.setVisibility(View.INVISIBLE);
+					mGrinder3.setVisibility(View.VISIBLE);
+					break;
+				case 5 :  case 6 : case 7 :
+					mGrinder2.setVisibility(View.INVISIBLE);
+					mGrinder3.setVisibility(View.INVISIBLE);
+					mGrinder4.setVisibility(View.INVISIBLE);
+					mGrinder5.setVisibility(View.VISIBLE);
+					break;
+				case 8 :  case 9 : case 10 :
+					mGrinder2.setVisibility(View.INVISIBLE);
+					mGrinder3.setVisibility(View.INVISIBLE);
+					mGrinder4.setVisibility(View.INVISIBLE);
+					mGrinder5.setVisibility(View.INVISIBLE);
+					mGrinder6.setVisibility(View.INVISIBLE);
+					mGrinder7.setVisibility(View.VISIBLE);
+					mGrinder8.setVisibility(View.INVISIBLE);
+					break;
+				}	
 			}
-			i++;
+			else if(event.getAction()==MotionEvent.ACTION_UP){
+				switch (i) {
+				case 2 :  case 3 : case 4 :
+					mGrinder2.setVisibility(View.VISIBLE);
+					mGrinder3.setVisibility(View.INVISIBLE);
+					break;
+				case 5 :  case 6 : case 7 :
+					mGrinder2.setVisibility(View.INVISIBLE);
+					mGrinder3.setVisibility(View.INVISIBLE);
+					mGrinder4.setVisibility(View.VISIBLE);
+					mGrinder5.setVisibility(View.INVISIBLE);
+					break;
+				case 8 :  case 9 : case 10 :
+					mGrinder2.setVisibility(View.INVISIBLE);
+					mGrinder3.setVisibility(View.INVISIBLE);
+					mGrinder4.setVisibility(View.INVISIBLE);
+					mGrinder5.setVisibility(View.INVISIBLE);
+					mGrinder6.setVisibility(View.VISIBLE);
+					mGrinder7.setVisibility(View.INVISIBLE);
+					break;
+				case 11 : case 12 : 
+					mGrinder2.setVisibility(View.INVISIBLE);
+					mGrinder3.setVisibility(View.INVISIBLE);
+					mGrinder4.setVisibility(View.INVISIBLE);
+					mGrinder5.setVisibility(View.INVISIBLE);
+					mGrinder6.setVisibility(View.INVISIBLE);
+					mGrinder7.setVisibility(View.INVISIBLE);
+					mGrinder8.setVisibility(View.VISIBLE);
+				case 13 : 
+					mNextBut.setVisibility(View.VISIBLE);
+					break;
+				}
+				i++;
+			}
 		}
 		if(v==mMHandler){
 			if(event.getAction()==MotionEvent.ACTION_MOVE){
@@ -549,6 +635,20 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			if(event.getAction()==MotionEvent.ACTION_MOVE){
 				mShotcup.setVisibility(View.INVISIBLE);
 				mMachine3.setVisibility(View.VISIBLE);
+			}
+		}
+		if(v==mWhippingMachine){
+			if(event.getAction()==MotionEvent.ACTION_MOVE){
+				mWhippingMachine.setVisibility(View.INVISIBLE);
+				mWhippingMachine2.setVisibility(View.VISIBLE);
+				mWhipping1.setVisibility(View.VISIBLE);
+				ok2=1;
+			}
+		}
+		if(ok2==1 && v==mMWhippingC){
+			if(event.getAction()==MotionEvent.ACTION_MOVE){
+				mMWhippingC.setVisibility(View.INVISIBLE);
+				mWhipping2.setVisibility(View.VISIBLE);
 			}
 		}
 		return true;

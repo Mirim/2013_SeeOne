@@ -239,5 +239,6 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="40dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="140dp"/>
+        android:layout_marginBottom="140dp"
+        android:onClick="mOnClick"/>
 </RelativeLayout>
