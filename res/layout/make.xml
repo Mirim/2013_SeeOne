@@ -68,7 +68,7 @@
         android:layout_alignLeft="@+id/memo"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="30dp"
-        android:src="@drawable/img_checkbox1"/>
+        android:src="@drawable/img_checkbox1" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -214,7 +214,7 @@
         android:layout_alignBottom="@+id/re_four"
         android:layout_alignLeft="@+id/re_shot"
         android:text="휘핑크림" />
-    
+
     <TextView
         android:id="@+id/re_cinnamon"
         android:layout_width="wrap_content"
@@ -230,15 +230,27 @@
         android:layout_alignBottom="@+id/re_four"
         android:layout_alignLeft="@+id/re_shot"
         android:text="카라멜드리즐" />
-    
-    <ImageView 
-        android:id="@+id/whippingCream"
-        android:layout_width="23dp"
-        android:layout_height="40dp"
-        android:src="@drawable/img_whippingcream1"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="40dp"
+
+    <ImageView
+        android:id="@+id/mlik"
+        android:layout_width="31dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="140dp"
-        android:onClick="mOnClick"/>
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:onClick="mOnClick"
+        android:src="@drawable/img_milk" 
+        android:layout_marginBottom="95dp"/>
+
+    <ImageView
+        android:id="@+id/whippingCream"
+        android:layout_width="35dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="160dp"
+        android:layout_marginRight="30dp"
+        android:onClick="mOnClick"
+        android:src="@drawable/img_whippingcream1" />
+
 </RelativeLayout>

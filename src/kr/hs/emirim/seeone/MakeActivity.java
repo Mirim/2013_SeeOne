@@ -70,6 +70,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	ImageView mShakeWhipping1;
 	ImageView mShakeWhipping2;
 	ImageView mNextBut2;
+	ImageView mFoodMlik;
 	TextView mShot;
 	TextView mHotW;
 	TextView mMlik;
@@ -119,6 +120,8 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		mTCup.setVisibility(View.INVISIBLE);
 		mWhippingC=(ImageView)findViewById(R.id.whippingCream);
 		mWhippingC.setVisibility(View.INVISIBLE);
+		mFoodMlik=(ImageView)findViewById(R.id.mlik);
+		mFoodMlik.setVisibility(View.INVISIBLE);
 
 		mShot=(TextView)findViewById(R.id.re_shot);
 		mHotW=(TextView)findViewById(R.id.re_hotw);
@@ -379,11 +382,13 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mRefrigerator.setVisibility(View.INVISIBLE);
 			mOpenRefrigerator.setVisibility(View.VISIBLE);
 			mWhippingC.setVisibility(View.VISIBLE);
+			mFoodMlik.setVisibility(View.VISIBLE);
 			break;
 		case R.id.openrefrigerator :
 			mOpenRefrigerator.setVisibility(View.INVISIBLE);
 			mRefrigerator.setVisibility(View.VISIBLE);
 			mWhippingC.setVisibility(View.INVISIBLE);
+			mFoodMlik.setVisibility(View.INVISIBLE);
 			break;
 		case R.id.cup :
 			mTCup.setVisibility(View.VISIBLE);
@@ -552,7 +557,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			else{}
 			break;
 		case R.id.next_but2 :
-			setContentView(R.layout.make);
+			setContentView(R.layout.whippingcream2);
 			break;
 		}
 	}

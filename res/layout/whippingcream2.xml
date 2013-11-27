@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back" >
+
+    <ImageView
+        android:id="@+id/grindcounter"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:adjustViewBounds="true"
+        android:src="@drawable/img_grindcounter" />
+
+    <ImageView
+        android:id="@+id/push_whipping1"
+        android:layout_width="220dp"
+        android:layout_height="350dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/img_wippingpush"/>
+    
+    <ImageView
+        android:id="@+id/push_whipping2"
+        android:layout_width="220dp"
+        android:layout_height="350dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/img_wippingpush2"/>
+
+    <ImageView
+        android:id="@+id/memo"
+        android:layout_width="120dp"
+        android:layout_height="117dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/img_memo" />
+
+    <ImageView
+        android:id="@+id/re_img_shot"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignLeft="@+id/memo"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/img_checkbox1" />
+
+    <TextView
+        android:id="@+id/re_shot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_img_shot"
+        android:layout_toRightOf="@+id/re_img_shot"
+        android:text="샷" />
+
+    <ImageView
+        android:id="@+id/re_two"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignLeft="@+id/re_img_shot"
+        android:layout_below="@+id/re_img_shot"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/img_checkbox1" />
+
+    <TextView
+        android:id="@+id/re_hotw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_two"
+        android:layout_alignLeft="@+id/re_shot"
+        android:text="뜨거운 물" />
+
+    <TextView
+        android:id="@+id/re_mlik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_two"
+        android:layout_alignLeft="@+id/re_shot"
+        android:text="스팀우유" />
+
+    <ImageView
+        android:id="@+id/re_three"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignLeft="@+id/re_two"
+        android:layout_below="@+id/re_two"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/img_checkbox1" />
+
+    <TextView
+        android:id="@+id/re_choco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_three"
+        android:layout_alignLeft="@+id/re_shot"
+        android:text="초코시럽" />
+
+    <TextView
+        android:id="@+id/re_mlikbubble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_three"
+        android:layout_alignLeft="@+id/re_shot"
+        android:text="우유거품" />
+
+    <TextView
+        android:id="@+id/re_vanilla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_three"
+        android:layout_alignLeft="@+id/re_shot"
+        android:text="바닐라시럽" />
+
+    <ImageView
+        android:id="@+id/re_four"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignLeft="@+id/re_three"
+        android:layout_below="@+id/re_three"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/img_checkbox1" />
+
+    <TextView
+        android:id="@+id/re_whipping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_four"
+        android:layout_alignLeft="@+id/re_shot"
+        android:text="휘핑크림" />
+
+    <TextView
+        android:id="@+id/re_cinnamon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_four"
+        android:layout_alignLeft="@+id/re_shot"
+        android:text="시나몬파우더" />
+
+    <TextView
+        android:id="@+id/re_caramel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_four"
+        android:layout_alignLeft="@+id/re_shot"
+        android:text="카라멜드리즐" />
+
+</RelativeLayout>
