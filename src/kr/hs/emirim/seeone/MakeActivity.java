@@ -79,6 +79,9 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	ImageView mMilkCup2;
 	ImageView mMilkView;
 	ImageView mNextBut3;
+	ImageView mMilkMachine1;
+	ImageView mMilkMachine2;
+	ImageView mStreamCup2;
 	TextView mShot;
 	TextView mHotW;
 	TextView mMlik;
@@ -637,11 +640,79 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mMilkCup1=(ImageView)findViewById(R.id.milkcup1);
 			mMilkCup2=(ImageView)findViewById(R.id.milkcup2);
 			mMilkView=(ImageView)findViewById(R.id.milkcup_view);
+			mNextBut3=(ImageView)findViewById(R.id.next_but3);
 			mMilkCup1.setVisibility(View.INVISIBLE);
 			mMilkCup2.setVisibility(View.INVISIBLE);
-			mMilkView.setVisibility(View.INVISIBLE);
+			mNextBut3.setVisibility(View.INVISIBLE);
 			mOpenMilk.setOnTouchListener(this);
+			mMilkCup2.setOnTouchListener(this);
 
+			mShot=(TextView)findViewById(R.id.re_shot);
+			mHotW=(TextView)findViewById(R.id.re_hotw);
+			mMlik=(TextView)findViewById(R.id.re_mlik);
+			mChoco=(TextView)findViewById(R.id.re_choco);
+			mMlikB=(TextView)findViewById(R.id.re_mlikbubble);
+			mVanilla=(TextView)findViewById(R.id.re_vanilla);
+			mWhipping=(TextView)findViewById(R.id.re_whipping);
+			mCinnamon=(TextView)findViewById(R.id.re_cinnamon);
+			mCaramel=(TextView)findViewById(R.id.re_caramel);
+			mReTwo=(ImageView)findViewById(R.id.re_two);
+			mReThree=(ImageView)findViewById(R.id.re_three);
+			mReFour=(ImageView)findViewById(R.id.re_four);
+			mHotW.setVisibility(View.INVISIBLE);
+			mMlik.setVisibility(View.INVISIBLE);
+			mChoco.setVisibility(View.INVISIBLE);
+			mMlikB.setVisibility(View.INVISIBLE);
+			mVanilla.setVisibility(View.INVISIBLE);
+			mWhipping.setVisibility(View.INVISIBLE);
+			mCinnamon.setVisibility(View.INVISIBLE);
+			mCaramel.setVisibility(View.INVISIBLE);
+			mReTwo.setVisibility(View.INVISIBLE);
+			mReThree.setVisibility(View.INVISIBLE);
+			mReFour.setVisibility(View.INVISIBLE);
+
+			intent = getIntent();
+			choice = intent.getStringExtra("choice");
+
+			intent=new Intent(MakeActivity.this, StartActivity.class);
+			if(choice.equals("아메리카노")){
+				mHotW.setVisibility(View.VISIBLE);
+				mReTwo.setVisibility(View.VISIBLE);
+			}else if(choice.equals("카페라떼")){
+				mMlik.setVisibility(View.VISIBLE);
+				mReTwo.setVisibility(View.VISIBLE);
+			}else if(choice.equals("카페모카")){
+				mMlik.setVisibility(View.VISIBLE);
+				mChoco.setVisibility(View.VISIBLE);
+				mWhipping.setVisibility(View.VISIBLE);
+				mReTwo.setVisibility(View.VISIBLE);
+				mReThree.setVisibility(View.VISIBLE);
+				mReFour.setVisibility(View.VISIBLE);
+			}else if(choice.equals("카푸치노")){
+				mMlik.setVisibility(View.VISIBLE);
+				mMlikB.setVisibility(View.VISIBLE);
+				mCinnamon.setVisibility(View.VISIBLE);
+				mReTwo.setVisibility(View.VISIBLE);
+				mReThree.setVisibility(View.VISIBLE);
+				mReFour.setVisibility(View.VISIBLE);
+			}else if(choice.equals("카라멜마끼아또")){
+				mMlik.setVisibility(View.VISIBLE);
+				mVanilla.setVisibility(View.VISIBLE);
+				mCaramel.setVisibility(View.VISIBLE);
+				mReTwo.setVisibility(View.VISIBLE);
+				mReThree.setVisibility(View.VISIBLE);
+				mReFour.setVisibility(View.VISIBLE);
+			}
+			else{}
+			break;
+		case R.id.next_but3 :
+			setContentView(R.layout.milkmachine);
+			mMilkMachine1=(ImageView)findViewById(R.id.milk_machine1);
+			mMilkMachine2=(ImageView)findViewById(R.id.milk_machine2);
+			mStreamCup2=(ImageView)findViewById(R.id.steamcup2);
+			mMilkMachine2.setVisibility(View.INVISIBLE);
+			mStreamCup2.setOnTouchListener(this);
+			
 			mShot=(TextView)findViewById(R.id.re_shot);
 			mHotW=(TextView)findViewById(R.id.re_hotw);
 			mMlik=(TextView)findViewById(R.id.re_mlik);
@@ -847,12 +918,26 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		if(v==mOpenMilk){
 			if(event.getAction()==MotionEvent.ACTION_MOVE){
 				mOpenMilk.setVisibility(View.INVISIBLE);
+				mStreamCup.setVisibility(View.INVISIBLE);
 				mMilkCup1.setVisibility(View.VISIBLE);
 				mMilkCup2.setVisibility(View.VISIBLE);
+			}
+		}
+		if(v==mMilkCup2){
+			if(event.getAction()==MotionEvent.ACTION_DOWN){
+				mMilkCup1.setVisibility(View.INVISIBLE);
+				mMilkCup2.setVisibility(View.INVISIBLE);
 				mMilkView.setBackgroundResource(R.drawable.milkanim);
 				milkAnim=(AnimationDrawable)mMilkView.getBackground();
 				milkAnim.start();
-				mAnimHandler2.sendEmptyMessageDelayed(0, 1200);
+				mAnimHandler2.sendEmptyMessageDelayed(0, 1600);
+			}
+		}
+		if(v==mStreamCup2){
+			if(event.getAction()==MotionEvent.ACTION_MOVE){
+				mStreamCup2.setVisibility(View.INVISIBLE);
+				mMilkMachine1.setVisibility(View.INVISIBLE);
+				mMilkMachine2.setVisibility(View.VISIBLE);
 			}
 		}
 		return true;
@@ -870,6 +955,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			milkAnim.stop();
 			mMilkView.setVisibility(View.INVISIBLE);
 			mStreamCup.setVisibility(View.VISIBLE);
+			mNextBut3.setVisibility(View.VISIBLE);
 		}
 	};
 }

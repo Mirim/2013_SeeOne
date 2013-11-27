@@ -32,7 +32,7 @@ public class IntroActivity extends Activity{
 		view.setBackgroundResource(R.drawable.introimg);
 		frameAnimation = (AnimationDrawable) view.getBackground();
 		frameAnimation.start();
-		mHandler.sendEmptyMessageDelayed(0, 1700);
+		mHandler.sendEmptyMessageDelayed(0, 3000);
 	}
 
 	Handler mHandler=new Handler(){

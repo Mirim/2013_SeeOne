@@ -4,15 +4,15 @@
 
     <item
         android:drawable="@drawable/img_milkintocup3"
-        android:duration="250"/>
+        android:duration="350"/>
     <item
         android:drawable="@drawable/img_milkintocup4"
-        android:duration="250"/>
+        android:duration="350"/>
     <item
         android:drawable="@drawable/img_milkintocup5"
-        android:duration="250"/>
+        android:duration="350"/>
     <item
         android:drawable="@drawable/img_milkintocup6"
-        android:duration="250"/>
+        android:duration="350"/>
 
 </animation-list>
