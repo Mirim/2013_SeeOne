@@ -86,6 +86,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	String choice;
 	int width;
 	int i=2;
+	int j=0;
 	int ok;
 	int ok2;
 	int ok3;
@@ -489,6 +490,8 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mMWhippingC.setOnTouchListener(this);
 			mWhipping2.setOnTouchListener(this);
 			mWhippingMachine2.setOnTouchListener(this);
+			mShakeWhipping1.setOnTouchListener(this);
+			mShakeWhipping2.setOnTouchListener(this);
 
 			mShot=(TextView)findViewById(R.id.re_shot);
 			mHotW=(TextView)findViewById(R.id.re_hotw);
@@ -635,7 +638,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				mMachine3.setVisibility(View.VISIBLE);
 			}
 		}
-		if(v==mWhippingMachine){
+		if(ok3!=2 && v==mWhippingMachine){
 			if(event.getAction()==MotionEvent.ACTION_MOVE){
 				mWhippingMachine.setVisibility(View.INVISIBLE);
 				mWhippingMachine2.setVisibility(View.VISIBLE);
@@ -660,6 +663,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		}
 		if(ok3==1 && v==mWhippingMachine2){
 			if(event.getAction()==MotionEvent.ACTION_MOVE){
+				mWhipping1.setVisibility(View.INVISIBLE);
 				mWhippingMachine2.setVisibility(View.INVISIBLE);
 				mWhippingMachine.setVisibility(View.VISIBLE);
 				ok3=2;
@@ -668,14 +672,23 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		if(ok3==2 && v==mWhippingMachine){
 			if(event.getAction()==MotionEvent.ACTION_DOWN){
 				mWhippingMachine.setVisibility(View.INVISIBLE);
+				mWhippingMachine2.setVisibility(View.INVISIBLE);
 				mShakeWhipping1.setVisibility(View.VISIBLE);
 			}
-			else if(event.getAction()==MotionEvent.ACTION_UP){
+		}
+		if(v==mShakeWhipping2){
+			if(event.getAction()==MotionEvent.ACTION_DOWN){
+				mShakeWhipping1.setVisibility(View.VISIBLE);
+				mShakeWhipping2.setVisibility(View.INVISIBLE);
+			}
+		}
+		if(v==mShakeWhipping1){
+			if(event.getAction()==MotionEvent.ACTION_UP){
 				mShakeWhipping1.setVisibility(View.INVISIBLE);
 				mShakeWhipping2.setVisibility(View.VISIBLE);
-				i++;
+				j++;
 			}
-			if(i<=6){
+			if(j>=10){
 				mNextBut2.setVisibility(View.VISIBLE);
 			}
 		}
