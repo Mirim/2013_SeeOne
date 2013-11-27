@@ -2,19 +2,10 @@ package kr.hs.emirim.seeone;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.graphics.Rect;
-import android.graphics.Typeface;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.provider.ContactsContract.CommonDataKinds.Im;
-import android.util.EventLog.Event;
-import android.util.Log;
-import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
@@ -23,11 +14,8 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MakeActivity extends Activity implements OnTouchListener{
 	Intent intent;
@@ -98,6 +86,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	ImageView mFinishBut3;
 	ImageView mFinishBut4;
 	ImageView mReOne;
+	ImageView mReOne1;
 	ImageView mReTwo2;
 	ImageView mReThree3;
 	ImageView mReFour4;
@@ -128,13 +117,15 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	AnimationDrawable carameldrizAnim;
 	AnimationDrawable cinnamonpowAnim;
 
-	String choice;
 	int width;
 	int i=2;
 	int j=0;
 	int ok;
 	int ok2;
 	int ok3;
+	int k=0;
+
+	private Coffee coffee;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -205,7 +196,8 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		mReTwo=(ImageView)findViewById(R.id.re_two);
 		mReThree=(ImageView)findViewById(R.id.re_three);
 		mReFour=(ImageView)findViewById(R.id.re_four);
-		mReOne=(ImageView)findViewById(R.id.re_one);
+		mReOne=(ImageView)findViewById(R.id.re_img_shot);
+		mReOne1=(ImageView)findViewById(R.id.re_one);
 		mReTwo2=(ImageView)findViewById(R.id.re_two2);
 		mReThree3=(ImageView)findViewById(R.id.re_three3);
 		mReFour4=(ImageView)findViewById(R.id.re_four4);
@@ -221,43 +213,147 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		mReThree.setVisibility(View.INVISIBLE);
 		mReFour.setVisibility(View.INVISIBLE);
 		mReOne.setVisibility(View.INVISIBLE);
+		mReOne1.setVisibility(View.INVISIBLE);
 		mReTwo2.setVisibility(View.INVISIBLE);
 		mReThree3.setVisibility(View.INVISIBLE);
 		mReFour4.setVisibility(View.INVISIBLE);
 
 		intent = getIntent();
-		choice = intent.getStringExtra("choice");
-
-		intent=new Intent(MakeActivity.this, StartActivity.class);
-		if(choice.equals("아메리카노")){
+		coffee = new Coffee(
+				intent.getIntExtra("choice", Coffee.AMERICANO),
+				intent.getBooleanExtra("shot",false),
+				intent.getBooleanExtra("milk",false),
+				intent.getBooleanExtra("whipping",false),
+				intent.getBooleanExtra("hotwater",false),
+				intent.getBooleanExtra("chocoSyrup",false),
+				intent.getBooleanExtra("vanilla",false),
+				intent.getBooleanExtra("cinnamonpowder",false),
+				intent.getBooleanExtra("carameldrizzle",false)
+				);
+		showMemo(coffee);
+		switch(coffee.mChoice){
+		case Coffee.AMERICANO:
 			mHotW.setVisibility(View.VISIBLE);
 			mReTwo.setVisibility(View.VISIBLE);
-		}else if(choice.equals("카페라떼")){
+			break;
+		case Coffee.ESPRESSO:
+			// 에소프레소 차별
+			break;
+		case Coffee.CAFFELATTE:
 			mMlik.setVisibility(View.VISIBLE);
 			mReTwo.setVisibility(View.VISIBLE);
-		}else if(choice.equals("카페모카")){
-			mMlik.setVisibility(View.VISIBLE);
-			mChoco.setVisibility(View.VISIBLE);
-			mWhipping.setVisibility(View.VISIBLE);
-			mReTwo.setVisibility(View.VISIBLE);
-			mReThree.setVisibility(View.VISIBLE);
-			mReFour.setVisibility(View.VISIBLE);
-		}else if(choice.equals("카푸치노")){
+			break;
+		case Coffee.CAPPUCCINO:
 			mMlik.setVisibility(View.VISIBLE);
 			mMlikB.setVisibility(View.VISIBLE);
 			mCinnamon.setVisibility(View.VISIBLE);
 			mReTwo.setVisibility(View.VISIBLE);
 			mReThree.setVisibility(View.VISIBLE);
 			mReFour.setVisibility(View.VISIBLE);
-		}else if(choice.equals("카라멜마끼아또")){
+			break;
+		case Coffee.CAFFEMOCHA:
+			mMlik.setVisibility(View.VISIBLE);
+			mChoco.setVisibility(View.VISIBLE);
+			mWhipping.setVisibility(View.VISIBLE);
+			mReTwo.setVisibility(View.VISIBLE);
+			mReThree.setVisibility(View.VISIBLE);
+			mReFour.setVisibility(View.VISIBLE);
+			break;
+		case Coffee.CARAMELMACHIATTO:
 			mMlik.setVisibility(View.VISIBLE);
 			mVanilla.setVisibility(View.VISIBLE);
 			mCaramel.setVisibility(View.VISIBLE);
 			mReTwo.setVisibility(View.VISIBLE);
 			mReThree.setVisibility(View.VISIBLE);
 			mReFour.setVisibility(View.VISIBLE);
+			break;
 		}
-		else{}
+	}
+	private void showMemo(Coffee coffee) {
+		// 첫행
+		if(coffee.mShot){
+			mReOne.setVisibility(View.INVISIBLE);
+			mReOne1.setVisibility(View.VISIBLE);
+		}else{
+			mReOne.setVisibility(View.VISIBLE);
+			mReOne1.setVisibility(View.INVISIBLE);
+		}
+		//둘째행
+		if(coffee.mHotWater || coffee.mMilk ){
+			mReTwo2.setVisibility(View.VISIBLE);
+			mReTwo.setVisibility(View.INVISIBLE);
+		}else{
+			mReTwo2.setVisibility(View.INVISIBLE);
+			mReTwo.setVisibility(View.VISIBLE);
+		}
+
+		//세째행
+		if(coffee.mChoice == Coffee.CAPPUCCINO && coffee.mMilk){
+			mReThree3.setVisibility(View.VISIBLE);
+			mReThree.setVisibility(View.INVISIBLE);
+		}else{
+			mReThree3.setVisibility(View.INVISIBLE);
+			mReThree.setVisibility(View.VISIBLE);
+		}
+
+		if(coffee.mChocoSyrup || coffee.mVanillaSyrup){
+			mReThree3.setVisibility(View.VISIBLE);
+			mReThree.setVisibility(View.INVISIBLE);
+		}else{
+			mReThree3.setVisibility(View.INVISIBLE);
+			mReThree.setVisibility(View.VISIBLE);
+		}
+
+		//네번째행
+		if(coffee.mCinnamonPowder || coffee.mWhipping || coffee.mCaramelDrizzle){
+			mReFour4.setVisibility(View.VISIBLE);
+			mReFour.setVisibility(View.INVISIBLE);
+		}
+		else{
+			mReFour4.setVisibility(View.INVISIBLE);
+			mReFour.setVisibility(View.VISIBLE);
+		}       
+	}
+	private void showRecipe(int mChoice) {
+		switch(coffee.mChoice){
+		case Coffee.AMERICANO:
+			mReOne.setVisibility(View.VISIBLE);
+			mHotW.setVisibility(View.VISIBLE);
+			mReTwo.setVisibility(View.VISIBLE);
+			break;
+		case Coffee.CAFFELATTE:
+			mReOne.setVisibility(View.VISIBLE);
+			mMlik.setVisibility(View.VISIBLE);
+			mReTwo.setVisibility(View.VISIBLE);
+			break;
+		case Coffee.CAFFEMOCHA:
+			mReOne.setVisibility(View.VISIBLE);
+			mMlik.setVisibility(View.VISIBLE);
+			mChoco.setVisibility(View.VISIBLE);
+			mWhipping.setVisibility(View.VISIBLE);
+			mReTwo.setVisibility(View.VISIBLE);
+			mReThree.setVisibility(View.VISIBLE);
+			mReFour.setVisibility(View.VISIBLE);
+			break;
+		case Coffee.CAPPUCCINO:
+			mReOne.setVisibility(View.VISIBLE);
+			mMlik.setVisibility(View.VISIBLE);
+			mMlikB.setVisibility(View.VISIBLE);
+			mCinnamon.setVisibility(View.VISIBLE);
+			mReTwo.setVisibility(View.VISIBLE);
+			mReThree.setVisibility(View.VISIBLE);
+			mReFour.setVisibility(View.VISIBLE);
+			break;
+		case Coffee.CARAMELMACHIATTO:
+			mReOne.setVisibility(View.VISIBLE);
+			mMlik.setVisibility(View.VISIBLE);
+			mVanilla.setVisibility(View.VISIBLE);
+			mCaramel.setVisibility(View.VISIBLE);
+			mReTwo.setVisibility(View.VISIBLE);
+			mReThree.setVisibility(View.VISIBLE);
+			mReFour.setVisibility(View.VISIBLE);
+			break;
+		}	
 	}
 
 	public void mOnClick(View v) {
@@ -329,6 +425,11 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo=(ImageView)findViewById(R.id.re_two);
 			mReThree=(ImageView)findViewById(R.id.re_three);
 			mReFour=(ImageView)findViewById(R.id.re_four);
+			mReOne=(ImageView)findViewById(R.id.re_img_shot);
+			mReOne1=(ImageView)findViewById(R.id.re_one);
+			mReTwo2=(ImageView)findViewById(R.id.re_two2);
+			mReThree3=(ImageView)findViewById(R.id.re_three3);
+			mReFour4=(ImageView)findViewById(R.id.re_four4);
 			mHotW.setVisibility(View.INVISIBLE);
 			mMlik.setVisibility(View.INVISIBLE);
 			mChoco.setVisibility(View.INVISIBLE);
@@ -340,49 +441,14 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo.setVisibility(View.INVISIBLE);
 			mReThree.setVisibility(View.INVISIBLE);
 			mReFour.setVisibility(View.INVISIBLE);
-			mReOne=(ImageView)findViewById(R.id.re_one);
-			mReTwo2=(ImageView)findViewById(R.id.re_two2);
-			mReThree3=(ImageView)findViewById(R.id.re_three3);
-			mReFour4=(ImageView)findViewById(R.id.re_four4);
 			mReOne.setVisibility(View.INVISIBLE);
+			mReOne1.setVisibility(View.INVISIBLE);
 			mReTwo2.setVisibility(View.INVISIBLE);
 			mReThree3.setVisibility(View.INVISIBLE);
 			mReFour4.setVisibility(View.INVISIBLE);
 
-
-			intent = getIntent();
-			choice = intent.getStringExtra("choice");
-
-			intent=new Intent(MakeActivity.this, StartActivity.class);
-			if(choice.equals("아메리카노")){
-				mHotW.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카페라떼")){
-				mMlik.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카페모카")){
-				mMlik.setVisibility(View.VISIBLE);
-				mChoco.setVisibility(View.VISIBLE);
-				mWhipping.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-				mReFour.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카푸치노")){
-				mMlik.setVisibility(View.VISIBLE);
-				mMlikB.setVisibility(View.VISIBLE);
-				mCinnamon.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-				mReFour.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카라멜마끼아또")){
-				mMlik.setVisibility(View.VISIBLE);
-				mVanilla.setVisibility(View.VISIBLE);
-				mCaramel.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-				mReFour.setVisibility(View.VISIBLE);
-			}
-			else{}
+			showMemo(coffee);
+			showRecipe(coffee.mChoice);
 			break;
 		case R.id.bBean :
 			setContentView(R.layout.grinder);
@@ -427,6 +493,11 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo=(ImageView)findViewById(R.id.re_two);
 			mReThree=(ImageView)findViewById(R.id.re_three);
 			mReFour=(ImageView)findViewById(R.id.re_four);
+			mReOne=(ImageView)findViewById(R.id.re_img_shot);
+			mReOne1=(ImageView)findViewById(R.id.re_one);
+			mReTwo2=(ImageView)findViewById(R.id.re_two2);
+			mReThree3=(ImageView)findViewById(R.id.re_three3);
+			mReFour4=(ImageView)findViewById(R.id.re_four4);
 			mHotW.setVisibility(View.INVISIBLE);
 			mMlik.setVisibility(View.INVISIBLE);
 			mChoco.setVisibility(View.INVISIBLE);
@@ -438,49 +509,14 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo.setVisibility(View.INVISIBLE);
 			mReThree.setVisibility(View.INVISIBLE);
 			mReFour.setVisibility(View.INVISIBLE);
-			mReOne=(ImageView)findViewById(R.id.re_one);
-			mReTwo2=(ImageView)findViewById(R.id.re_two2);
-			mReThree3=(ImageView)findViewById(R.id.re_three3);
-			mReFour4=(ImageView)findViewById(R.id.re_four4);
 			mReOne.setVisibility(View.INVISIBLE);
+			mReOne1.setVisibility(View.INVISIBLE);
 			mReTwo2.setVisibility(View.INVISIBLE);
 			mReThree3.setVisibility(View.INVISIBLE);
 			mReFour4.setVisibility(View.INVISIBLE);
-
-
-			intent = getIntent();
-			choice = intent.getStringExtra("choice");
-
-			intent=new Intent(MakeActivity.this, StartActivity.class);
-			if(choice.equals("아메리카노")){
-				mHotW.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카페라떼")){
-				mMlik.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카페모카")){
-				mMlik.setVisibility(View.VISIBLE);
-				mChoco.setVisibility(View.VISIBLE);
-				mWhipping.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-				mReFour.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카푸치노")){
-				mMlik.setVisibility(View.VISIBLE);
-				mMlikB.setVisibility(View.VISIBLE);
-				mCinnamon.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-				mReFour.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카라멜마끼아또")){
-				mMlik.setVisibility(View.VISIBLE);
-				mVanilla.setVisibility(View.VISIBLE);
-				mCaramel.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-				mReFour.setVisibility(View.VISIBLE);
-			}
-			else{}
+			
+			showMemo(coffee);
+			showRecipe(coffee.mChoice);
 			break;
 		case R.id.refrigerator :
 			mRefrigerator.setVisibility(View.INVISIBLE);
@@ -528,6 +564,11 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo=(ImageView)findViewById(R.id.re_two);
 			mReThree=(ImageView)findViewById(R.id.re_three);
 			mReFour=(ImageView)findViewById(R.id.re_four);
+			mReOne=(ImageView)findViewById(R.id.re_img_shot);
+			mReOne1=(ImageView)findViewById(R.id.re_one);
+			mReTwo2=(ImageView)findViewById(R.id.re_two2);
+			mReThree3=(ImageView)findViewById(R.id.re_three3);
+			mReFour4=(ImageView)findViewById(R.id.re_four4);
 			mHotW.setVisibility(View.INVISIBLE);
 			mMlik.setVisibility(View.INVISIBLE);
 			mChoco.setVisibility(View.INVISIBLE);
@@ -539,49 +580,14 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo.setVisibility(View.INVISIBLE);
 			mReThree.setVisibility(View.INVISIBLE);
 			mReFour.setVisibility(View.INVISIBLE);
-			mReOne=(ImageView)findViewById(R.id.re_one);
-			mReTwo2=(ImageView)findViewById(R.id.re_two2);
-			mReThree3=(ImageView)findViewById(R.id.re_three3);
-			mReFour4=(ImageView)findViewById(R.id.re_four4);
 			mReOne.setVisibility(View.INVISIBLE);
+			mReOne1.setVisibility(View.INVISIBLE);
 			mReTwo2.setVisibility(View.INVISIBLE);
 			mReThree3.setVisibility(View.INVISIBLE);
 			mReFour4.setVisibility(View.INVISIBLE);
-
-
-			intent = getIntent();
-			choice = intent.getStringExtra("choice");
-
-			intent=new Intent(MakeActivity.this, StartActivity.class);
-			if(choice.equals("아메리카노")){
-				mHotW.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카페라떼")){
-				mMlik.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카페모카")){
-				mMlik.setVisibility(View.VISIBLE);
-				mChoco.setVisibility(View.VISIBLE);
-				mWhipping.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-				mReFour.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카푸치노")){
-				mMlik.setVisibility(View.VISIBLE);
-				mMlikB.setVisibility(View.VISIBLE);
-				mCinnamon.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-				mReFour.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카라멜마끼아또")){
-				mMlik.setVisibility(View.VISIBLE);
-				mVanilla.setVisibility(View.VISIBLE);
-				mCaramel.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-				mReFour.setVisibility(View.VISIBLE);
-			}
-			else{}
+			
+			showMemo(coffee);
+			showRecipe(coffee.mChoice);
 			break;
 		case R.id.machine_but :
 			mMachine2.setVisibility(View.INVISIBLE);
@@ -626,6 +632,11 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo=(ImageView)findViewById(R.id.re_two);
 			mReThree=(ImageView)findViewById(R.id.re_three);
 			mReFour=(ImageView)findViewById(R.id.re_four);
+			mReOne=(ImageView)findViewById(R.id.re_img_shot);
+			mReOne1=(ImageView)findViewById(R.id.re_one);
+			mReTwo2=(ImageView)findViewById(R.id.re_two2);
+			mReThree3=(ImageView)findViewById(R.id.re_three3);
+			mReFour4=(ImageView)findViewById(R.id.re_four4);
 			mHotW.setVisibility(View.INVISIBLE);
 			mMlik.setVisibility(View.INVISIBLE);
 			mChoco.setVisibility(View.INVISIBLE);
@@ -637,49 +648,14 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo.setVisibility(View.INVISIBLE);
 			mReThree.setVisibility(View.INVISIBLE);
 			mReFour.setVisibility(View.INVISIBLE);
-			mReOne=(ImageView)findViewById(R.id.re_one);
-			mReTwo2=(ImageView)findViewById(R.id.re_two2);
-			mReThree3=(ImageView)findViewById(R.id.re_three3);
-			mReFour4=(ImageView)findViewById(R.id.re_four4);
 			mReOne.setVisibility(View.INVISIBLE);
+			mReOne1.setVisibility(View.INVISIBLE);
 			mReTwo2.setVisibility(View.INVISIBLE);
 			mReThree3.setVisibility(View.INVISIBLE);
 			mReFour4.setVisibility(View.INVISIBLE);
-
-
-			intent = getIntent();
-			choice = intent.getStringExtra("choice");
-
-			intent=new Intent(MakeActivity.this, StartActivity.class);
-			if(choice.equals("아메리카노")){
-				mHotW.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카페라떼")){
-				mMlik.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카페모카")){
-				mMlik.setVisibility(View.VISIBLE);
-				mChoco.setVisibility(View.VISIBLE);
-				mWhipping.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-				mReFour.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카푸치노")){
-				mMlik.setVisibility(View.VISIBLE);
-				mMlikB.setVisibility(View.VISIBLE);
-				mCinnamon.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-				mReFour.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카라멜마끼아또")){
-				mMlik.setVisibility(View.VISIBLE);
-				mVanilla.setVisibility(View.VISIBLE);
-				mCaramel.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-				mReFour.setVisibility(View.VISIBLE);
-			}
-			else{}
+			
+			showMemo(coffee);
+			showRecipe(coffee.mChoice);
 			break;
 		case R.id.next_but2 :
 			setContentView(R.layout.whippingcream2);
@@ -702,6 +678,11 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo=(ImageView)findViewById(R.id.re_two);
 			mReThree=(ImageView)findViewById(R.id.re_three);
 			mReFour=(ImageView)findViewById(R.id.re_four);
+			mReOne=(ImageView)findViewById(R.id.re_img_shot);
+			mReOne1=(ImageView)findViewById(R.id.re_one);
+			mReTwo2=(ImageView)findViewById(R.id.re_two2);
+			mReThree3=(ImageView)findViewById(R.id.re_three3);
+			mReFour4=(ImageView)findViewById(R.id.re_four4);
 			mHotW.setVisibility(View.INVISIBLE);
 			mMlik.setVisibility(View.INVISIBLE);
 			mChoco.setVisibility(View.INVISIBLE);
@@ -713,49 +694,14 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo.setVisibility(View.INVISIBLE);
 			mReThree.setVisibility(View.INVISIBLE);
 			mReFour.setVisibility(View.INVISIBLE);
-			mReOne=(ImageView)findViewById(R.id.re_one);
-			mReTwo2=(ImageView)findViewById(R.id.re_two2);
-			mReThree3=(ImageView)findViewById(R.id.re_three3);
-			mReFour4=(ImageView)findViewById(R.id.re_four4);
 			mReOne.setVisibility(View.INVISIBLE);
+			mReOne1.setVisibility(View.INVISIBLE);
 			mReTwo2.setVisibility(View.INVISIBLE);
 			mReThree3.setVisibility(View.INVISIBLE);
 			mReFour4.setVisibility(View.INVISIBLE);
-
-
-			intent = getIntent();
-			choice = intent.getStringExtra("choice");
-
-			intent=new Intent(MakeActivity.this, StartActivity.class);
-			if(choice.equals("아메리카노")){
-				mHotW.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카페라떼")){
-				mMlik.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카페모카")){
-				mMlik.setVisibility(View.VISIBLE);
-				mChoco.setVisibility(View.VISIBLE);
-				mWhipping.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-				mReFour.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카푸치노")){
-				mMlik.setVisibility(View.VISIBLE);
-				mMlikB.setVisibility(View.VISIBLE);
-				mCinnamon.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-				mReFour.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카라멜마끼아또")){
-				mMlik.setVisibility(View.VISIBLE);
-				mVanilla.setVisibility(View.VISIBLE);
-				mCaramel.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-				mReFour.setVisibility(View.VISIBLE);
-			}
-			else{}
+			
+			showMemo(coffee);
+			showRecipe(coffee.mChoice);
 			break;
 		case R.id.mlik :
 			setContentView(R.layout.mlikmake);
@@ -783,6 +729,11 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo=(ImageView)findViewById(R.id.re_two);
 			mReThree=(ImageView)findViewById(R.id.re_three);
 			mReFour=(ImageView)findViewById(R.id.re_four);
+			mReOne=(ImageView)findViewById(R.id.re_img_shot);
+			mReOne1=(ImageView)findViewById(R.id.re_one);
+			mReTwo2=(ImageView)findViewById(R.id.re_two2);
+			mReThree3=(ImageView)findViewById(R.id.re_three3);
+			mReFour4=(ImageView)findViewById(R.id.re_four4);
 			mHotW.setVisibility(View.INVISIBLE);
 			mMlik.setVisibility(View.INVISIBLE);
 			mChoco.setVisibility(View.INVISIBLE);
@@ -794,49 +745,14 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo.setVisibility(View.INVISIBLE);
 			mReThree.setVisibility(View.INVISIBLE);
 			mReFour.setVisibility(View.INVISIBLE);
-			mReOne=(ImageView)findViewById(R.id.re_one);
-			mReTwo2=(ImageView)findViewById(R.id.re_two2);
-			mReThree3=(ImageView)findViewById(R.id.re_three3);
-			mReFour4=(ImageView)findViewById(R.id.re_four4);
 			mReOne.setVisibility(View.INVISIBLE);
+			mReOne1.setVisibility(View.INVISIBLE);
 			mReTwo2.setVisibility(View.INVISIBLE);
 			mReThree3.setVisibility(View.INVISIBLE);
 			mReFour4.setVisibility(View.INVISIBLE);
-
-
-			intent = getIntent();
-			choice = intent.getStringExtra("choice");
-
-			intent=new Intent(MakeActivity.this, StartActivity.class);
-			if(choice.equals("아메리카노")){
-				mHotW.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카페라떼")){
-				mMlik.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카페모카")){
-				mMlik.setVisibility(View.VISIBLE);
-				mChoco.setVisibility(View.VISIBLE);
-				mWhipping.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-				mReFour.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카푸치노")){
-				mMlik.setVisibility(View.VISIBLE);
-				mMlikB.setVisibility(View.VISIBLE);
-				mCinnamon.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-				mReFour.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카라멜마끼아또")){
-				mMlik.setVisibility(View.VISIBLE);
-				mVanilla.setVisibility(View.VISIBLE);
-				mCaramel.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-				mReFour.setVisibility(View.VISIBLE);
-			}
-			else{}
+			
+			showMemo(coffee);
+			showRecipe(coffee.mChoice);
 			break;
 		case R.id.next_but3 :
 			setContentView(R.layout.milkmachine);
@@ -860,6 +776,11 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo=(ImageView)findViewById(R.id.re_two);
 			mReThree=(ImageView)findViewById(R.id.re_three);
 			mReFour=(ImageView)findViewById(R.id.re_four);
+			mReOne=(ImageView)findViewById(R.id.re_img_shot);
+			mReOne1=(ImageView)findViewById(R.id.re_one);
+			mReTwo2=(ImageView)findViewById(R.id.re_two2);
+			mReThree3=(ImageView)findViewById(R.id.re_three3);
+			mReFour4=(ImageView)findViewById(R.id.re_four4);
 			mHotW.setVisibility(View.INVISIBLE);
 			mMlik.setVisibility(View.INVISIBLE);
 			mChoco.setVisibility(View.INVISIBLE);
@@ -871,49 +792,14 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo.setVisibility(View.INVISIBLE);
 			mReThree.setVisibility(View.INVISIBLE);
 			mReFour.setVisibility(View.INVISIBLE);
-			mReOne=(ImageView)findViewById(R.id.re_one);
-			mReTwo2=(ImageView)findViewById(R.id.re_two2);
-			mReThree3=(ImageView)findViewById(R.id.re_three3);
-			mReFour4=(ImageView)findViewById(R.id.re_four4);
 			mReOne.setVisibility(View.INVISIBLE);
+			mReOne1.setVisibility(View.INVISIBLE);
 			mReTwo2.setVisibility(View.INVISIBLE);
 			mReThree3.setVisibility(View.INVISIBLE);
 			mReFour4.setVisibility(View.INVISIBLE);
-
-
-			intent = getIntent();
-			choice = intent.getStringExtra("choice");
-
-			intent=new Intent(MakeActivity.this, StartActivity.class);
-			if(choice.equals("아메리카노")){
-				mHotW.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카페라떼")){
-				mMlik.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카페모카")){
-				mMlik.setVisibility(View.VISIBLE);
-				mChoco.setVisibility(View.VISIBLE);
-				mWhipping.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-				mReFour.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카푸치노")){
-				mMlik.setVisibility(View.VISIBLE);
-				mMlikB.setVisibility(View.VISIBLE);
-				mCinnamon.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-				mReFour.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카라멜마끼아또")){
-				mMlik.setVisibility(View.VISIBLE);
-				mVanilla.setVisibility(View.VISIBLE);
-				mCaramel.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-				mReFour.setVisibility(View.VISIBLE);
-			}
-			else{}
+			
+			showMemo(coffee);
+			showRecipe(coffee.mChoice);
 			break;
 		case R.id.coffeemachine :
 			setContentView(R.layout.watermachine);
@@ -940,6 +826,11 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo=(ImageView)findViewById(R.id.re_two);
 			mReThree=(ImageView)findViewById(R.id.re_three);
 			mReFour=(ImageView)findViewById(R.id.re_four);
+			mReOne=(ImageView)findViewById(R.id.re_img_shot);
+			mReOne1=(ImageView)findViewById(R.id.re_one);
+			mReTwo2=(ImageView)findViewById(R.id.re_two2);
+			mReThree3=(ImageView)findViewById(R.id.re_three3);
+			mReFour4=(ImageView)findViewById(R.id.re_four4);
 			mHotW.setVisibility(View.INVISIBLE);
 			mMlik.setVisibility(View.INVISIBLE);
 			mChoco.setVisibility(View.INVISIBLE);
@@ -951,49 +842,14 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo.setVisibility(View.INVISIBLE);
 			mReThree.setVisibility(View.INVISIBLE);
 			mReFour.setVisibility(View.INVISIBLE);
-			mReOne=(ImageView)findViewById(R.id.re_one);
-			mReTwo2=(ImageView)findViewById(R.id.re_two2);
-			mReThree3=(ImageView)findViewById(R.id.re_three3);
-			mReFour4=(ImageView)findViewById(R.id.re_four4);
 			mReOne.setVisibility(View.INVISIBLE);
+			mReOne1.setVisibility(View.INVISIBLE);
 			mReTwo2.setVisibility(View.INVISIBLE);
 			mReThree3.setVisibility(View.INVISIBLE);
 			mReFour4.setVisibility(View.INVISIBLE);
-
-
-			intent = getIntent();
-			choice = intent.getStringExtra("choice");
-
-			intent=new Intent(MakeActivity.this, StartActivity.class);
-			if(choice.equals("아메리카노")){
-				mHotW.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카페라떼")){
-				mMlik.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카페모카")){
-				mMlik.setVisibility(View.VISIBLE);
-				mChoco.setVisibility(View.VISIBLE);
-				mWhipping.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-				mReFour.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카푸치노")){
-				mMlik.setVisibility(View.VISIBLE);
-				mMlikB.setVisibility(View.VISIBLE);
-				mCinnamon.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-				mReFour.setVisibility(View.VISIBLE);
-			}else if(choice.equals("카라멜마끼아또")){
-				mMlik.setVisibility(View.VISIBLE);
-				mVanilla.setVisibility(View.VISIBLE);
-				mCaramel.setVisibility(View.VISIBLE);
-				mReTwo.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-				mReFour.setVisibility(View.VISIBLE);
-			}
-			else{}
+			
+			showMemo(coffee);
+			showRecipe(coffee.mChoice);
 			break;
 		case R.id.watermachine_but :
 			mWaterMachine2.setVisibility(View.INVISIBLE);
@@ -1001,27 +857,62 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mFinishBut4.setVisibility(View.VISIBLE);
 			break;
 		case R.id.finish_but1 : //샷
-			setContentView(R.layout.make);
-			mReOne.setVisibility(View.VISIBLE);
+			intent = new Intent(this, MakeActivity.class );
+			intent.putExtra("choice", coffee.mChoice);
+			intent.putExtra("shot", true);
+			intent.putExtra("milk", coffee.mMilk);
+			intent.putExtra("whipping", coffee.mWhipping);
+			intent.putExtra("hotwater", coffee.mHotWater);
+			intent.putExtra("chocoSyrup", coffee.mChocoSyrup);
+			intent.putExtra("vanilla", coffee.mVanillaSyrup);
+			intent.putExtra("cinnamonpowder", coffee.mCinnamonPowder);
+			intent.putExtra("carameldrizzle", coffee.mCaramelDrizzle);
+			startActivity(intent);
+			finish();
 			break;
 		case R.id.finish_but2 : //휘핑
-			setContentView(R.layout.make);
-			mReThree.setVisibility(View.INVISIBLE);
-			mReThree3.setVisibility(View.VISIBLE);
+			showRecipe(coffee.mChoice);
+			intent = new Intent(this, MakeActivity.class );
+			intent.putExtra("choice", coffee.mChoice);
+			intent.putExtra("shot", coffee.mShot);
+			intent.putExtra("milk", coffee.mMilk);
+			intent.putExtra("whipping", true);
+			intent.putExtra("hotwater", coffee.mHotWater);
+			intent.putExtra("chocoSyrup", coffee.mChocoSyrup);
+			intent.putExtra("vanilla", coffee.mVanillaSyrup);
+			intent.putExtra("cinnamonpowder", coffee.mCinnamonPowder);
+			intent.putExtra("carameldrizzle", coffee.mCaramelDrizzle);
+			startActivity(intent);
+			finish();
 			break;
 		case R.id.finish_but3 : //스팀우유
-			setContentView(R.layout.make);
-			mReTwo.setVisibility(View.INVISIBLE);
-			mReTwo2.setVisibility(View.VISIBLE);
-			if(choice.equals("카푸치노")){
-				mReThree.setVisibility(View.INVISIBLE);
-				mReThree3.setVisibility(View.VISIBLE);
-			}
+			intent = new Intent(this, MakeActivity.class );
+			intent.putExtra("choice", coffee.mChoice);
+			intent.putExtra("shot", coffee.mShot);
+			intent.putExtra("milk", true);
+			intent.putExtra("whipping", coffee.mWhipping);
+			intent.putExtra("hotwater", coffee.mHotWater);
+			intent.putExtra("chocoSyrup", coffee.mChocoSyrup);
+			intent.putExtra("vanilla", coffee.mVanillaSyrup);
+			intent.putExtra("cinnamonpowder", coffee.mCinnamonPowder);
+			intent.putExtra("carameldrizzle", coffee.mCaramelDrizzle);
+			startActivity(intent);
+			finish();	
 			break;
 		case R.id.finish_but4 : //뜨거운물
-			setContentView(R.layout.make);
-			mReTwo.setVisibility(View.INVISIBLE);
-			mReTwo2.setVisibility(View.VISIBLE);
+			showRecipe(coffee.mChoice);
+			intent = new Intent(this, MakeActivity.class );
+			intent.putExtra("choice", coffee.mChoice);
+			intent.putExtra("shot", coffee.mShot);
+			intent.putExtra("milk", coffee.mMilk);
+			intent.putExtra("whipping", coffee.mWhipping);
+			intent.putExtra("hotwater", true);
+			intent.putExtra("chocoSyrup", coffee.mChocoSyrup);
+			intent.putExtra("vanilla", coffee.mVanillaSyrup);
+			intent.putExtra("cinnamonpowder", coffee.mCinnamonPowder);
+			intent.putExtra("carameldrizzle", coffee.mCaramelDrizzle);
+			startActivity(intent);
+			finish();	
 			break;
 		case R.id.bean :
 			mTableBean1.setVisibility(View.VISIBLE);
@@ -1032,17 +923,21 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mA.setVisibility(View.VISIBLE);
 			mB.setVisibility(View.VISIBLE);
 			break;
-		case R.id.chocosyrup :
+		case R.id.chocosyrup : 
 			mTableChocosy.setVisibility(View.VISIBLE);
 			mTableChocosy.setBackgroundResource(R.drawable.chocosy);
 			chocosyAnim=(AnimationDrawable)mTableChocosy.getBackground();
 			chocosyAnim.start();
+			k=1;
+			mTableHandler.sendEmptyMessageDelayed(0, 1500);
 			break;
-		case R.id.valillasyrup :
+		case R.id.valillasyrup : 
 			mTableValillasy.setVisibility(View.VISIBLE);
 			mTableValillasy.setBackgroundResource(R.drawable.valillasy);
 			valillasyAnim=(AnimationDrawable)mTableValillasy.getBackground();
 			valillasyAnim.start();
+			k=2;
+			mTableHandler.sendEmptyMessageDelayed(0, 1500);
 			break;
 		case R.id.chocodrizzle :
 			mTableChocodriz.setVisibility(View.VISIBLE);
@@ -1055,12 +950,16 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mTableCarameldriz.setBackgroundResource(R.drawable.carameldriz);
 			carameldrizAnim=(AnimationDrawable)mTableCarameldriz.getBackground();
 			carameldrizAnim.start();
+			k=3;
+			mTableHandler.sendEmptyMessageDelayed(0, 1100);
 			break;
-		case R.id.cinnamonpowder :
+		case R.id.cinnamonpowder : 
 			mTableCinnamonpow.setVisibility(View.VISIBLE);
 			mTableCinnamonpow.setBackgroundResource(R.drawable.cinnamonpow);
 			cinnamonpowAnim=(AnimationDrawable)mTableCinnamonpow.getBackground();
 			cinnamonpowAnim.start();
+			k=4;
+			mTableHandler.sendEmptyMessageDelayed(0, 1500);
 			break;
 		}
 	}
@@ -1256,6 +1155,40 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mMilkView.setVisibility(View.INVISIBLE);
 			mStreamCup.setVisibility(View.VISIBLE);
 			mNextBut3.setVisibility(View.VISIBLE);
+		}
+	};
+	Handler mTableHandler=new Handler(){
+		public void handleMessage(Message msg){
+			switch (k) {
+			case 1 :
+				chocosyAnim.stop();
+				mTableChocosy.setVisibility(View.INVISIBLE);
+				intent.putExtra("chocoSyrup", true);
+				startActivity(intent);
+				finish();	
+				break;
+			case 2 :
+				valillasyAnim.stop();
+				mTableValillasy.setVisibility(View.INVISIBLE);
+				intent.putExtra("vanilla", true);
+				startActivity(intent);
+				finish();
+				break;
+			case 3 : 
+				carameldrizAnim.stop();
+				mTableCarameldriz.setVisibility(View.INVISIBLE);
+				intent.putExtra("carameldrizzle", true);
+				startActivity(intent);
+				finish();
+				break;
+			case 4 :
+				cinnamonpowAnim.stop();
+				mTableCinnamonpow.setVisibility(View.INVISIBLE);
+				intent.putExtra("cinnamonpowder", true);
+				startActivity(intent);
+				finish();
+				break;
+			}
 		}
 	};
 }
