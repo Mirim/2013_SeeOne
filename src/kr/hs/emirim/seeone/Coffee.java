@@ -17,10 +17,11 @@ public class Coffee {
 	boolean mVanillaSyrup;
 	boolean mCinnamonPowder;
 	boolean mCaramelDrizzle;
+	boolean mCup;
 
 	public Coffee( int choice, boolean shot, boolean milk, boolean whipping, 
 			boolean hotwater, boolean chocoSyrup, boolean vanilla,
-			boolean cinnamonpowder, boolean carameldrizzle ) {
+			boolean cinnamonpowder, boolean carameldrizzle, boolean cup) {
 		mChoice = choice;
 		mShot = shot;
 		mMilk = milk;
@@ -30,5 +31,6 @@ public class Coffee {
 		mVanillaSyrup = vanilla;
 		mCinnamonPowder = cinnamonpowder;
 		mCaramelDrizzle = carameldrizzle;
+		mCup = cup;
 	}
 }

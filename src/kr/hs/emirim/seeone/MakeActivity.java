@@ -32,8 +32,6 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	Button mRefrigerator;
 	Button mOpenRefrigerator;
 	ImageView mHandler;
-	Button mA;
-	Button mB;
 	ImageView mCup;
 	ImageView mCaps;
 	ImageView mTCup;
@@ -126,6 +124,8 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	int ok2;
 	int ok3;
 	int k=0;
+	
+	boolean cup;
 
 	private Coffee coffee;
 
@@ -146,10 +146,6 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		mOpenSideboard.setVisibility(View.INVISIBLE);
 		mOpenRefrigerator.setVisibility(View.INVISIBLE);
 		mCoffeeMachine=(ImageView)findViewById(R.id.coffeemachine);
-		mA=(Button)findViewById(R.id.aBean);
-		mB=(Button)findViewById(R.id.bBean);
-		mA.setVisibility(View.INVISIBLE);
-		mB.setVisibility(View.INVISIBLE);
 		mCaps=(ImageView)findViewById(R.id.caps);
 		mCup=(ImageView)findViewById(R.id.cup);
 		mCaps.setVisibility(View.INVISIBLE);
@@ -227,7 +223,8 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				intent.getBooleanExtra("chocoSyrup",false),
 				intent.getBooleanExtra("vanilla",false),
 				intent.getBooleanExtra("cinnamonpowder",false),
-				intent.getBooleanExtra("carameldrizzle",false)
+				intent.getBooleanExtra("carameldrizzle",false),
+				intent.getBooleanExtra("cup", false)
 				);
 		showMemo(coffee);
 		makeClick(coffee.mChoice);
@@ -276,6 +273,10 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		}
 	}
 	private void showMemo(Coffee coffee) {
+		//TODO 돌아와도 다시 컵을 보여줘!
+		if(coffee.mCup){
+			mTCup.setVisibility(View.VISIBLE);
+		}
 		// 첫행
 		if(coffee.mShot){
 			mReOne.setVisibility(View.INVISIBLE);
@@ -292,7 +293,6 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo2.setVisibility(View.INVISIBLE);
 			mReTwo.setVisibility(View.VISIBLE);
 		}
-
 		//세번째행
 		if(coffee.mChoice == Coffee.CAPPUCCINO && coffee.mMilk){
 			mReThree3.setVisibility(View.VISIBLE);
@@ -301,7 +301,6 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReThree3.setVisibility(View.INVISIBLE);
 			mReThree.setVisibility(View.VISIBLE);
 		}
-
 		if(coffee.mChocoSyrup || coffee.mVanillaSyrup){
 			mReThree3.setVisibility(View.VISIBLE);
 			mReThree.setVisibility(View.INVISIBLE);
@@ -309,7 +308,6 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReThree3.setVisibility(View.INVISIBLE);
 			mReThree.setVisibility(View.VISIBLE);
 		}
-
 		//네번째행
 		if(coffee.mCinnamonPowder || coffee.mWhipping || coffee.mCaramelDrizzle){
 			mReFour4.setVisibility(View.VISIBLE);
@@ -449,142 +447,6 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mCinnamonpowder.setVisibility(View.INVISIBLE);
 			mBean.setVisibility(View.INVISIBLE);
 			break;
-		case R.id.aBean :
-			setContentView(R.layout.grinder);
-			mGrinder1=(ImageView)findViewById(R.id.grinder_1);
-			mGrinder2=(ImageView)findViewById(R.id.grinder_2);
-			mGrinder3=(ImageView)findViewById(R.id.grinder_3);
-			mGrinder4=(ImageView)findViewById(R.id.grinder_4);
-			mGrinder5=(ImageView)findViewById(R.id.grinder_5);
-			mGrinder6=(ImageView)findViewById(R.id.grinder_6);
-			mGrinder7=(ImageView)findViewById(R.id.grinder_7);
-			mGrinder8=(ImageView)findViewById(R.id.grinder_8);
-			mHandler=(ImageView)findViewById(R.id.handler);
-			mGrinder2.setVisibility(View.INVISIBLE);
-			mGrinder3.setVisibility(View.INVISIBLE);
-			mGrinder4.setVisibility(View.INVISIBLE);
-			mGrinder5.setVisibility(View.INVISIBLE);
-			mGrinder6.setVisibility(View.INVISIBLE);
-			mGrinder7.setVisibility(View.INVISIBLE);
-			mGrinder8.setVisibility(View.INVISIBLE);
-			mHandler.setOnTouchListener(this);
-			mGrinder1.setOnTouchListener(this);
-			mGrinder2.setOnTouchListener(this);
-			mGrinder3.setOnTouchListener(this);
-			mGrinder4.setOnTouchListener(this);
-			mGrinder5.setOnTouchListener(this);
-			mGrinder6.setOnTouchListener(this);
-			mGrinder7.setOnTouchListener(this);
-			mGrinder8.setOnTouchListener(this);
-			mGrinder2.setVisibility(View.INVISIBLE);
-			mNextBut=(ImageView)findViewById(R.id.next_but);
-			mNextBut.setVisibility(View.INVISIBLE);
-
-			mShot=(TextView)findViewById(R.id.re_shot);
-			mHotW=(TextView)findViewById(R.id.re_hotw);
-			mMlik=(TextView)findViewById(R.id.re_mlik);
-			mChoco=(TextView)findViewById(R.id.re_choco);
-			mMlikB=(TextView)findViewById(R.id.re_mlikbubble);
-			mVanilla=(TextView)findViewById(R.id.re_vanilla);
-			mWhipping=(TextView)findViewById(R.id.re_whipping);
-			mCinnamon=(TextView)findViewById(R.id.re_cinnamon);
-			mCaramel=(TextView)findViewById(R.id.re_caramel);
-			mReTwo=(ImageView)findViewById(R.id.re_two);
-			mReThree=(ImageView)findViewById(R.id.re_three);
-			mReFour=(ImageView)findViewById(R.id.re_four);
-			mReOne=(ImageView)findViewById(R.id.re_img_shot);
-			mReOne1=(ImageView)findViewById(R.id.re_one);
-			mReTwo2=(ImageView)findViewById(R.id.re_two2);
-			mReThree3=(ImageView)findViewById(R.id.re_three3);
-			mReFour4=(ImageView)findViewById(R.id.re_four4);
-			mHotW.setVisibility(View.INVISIBLE);
-			mMlik.setVisibility(View.INVISIBLE);
-			mChoco.setVisibility(View.INVISIBLE);
-			mMlikB.setVisibility(View.INVISIBLE);
-			mVanilla.setVisibility(View.INVISIBLE);
-			mWhipping.setVisibility(View.INVISIBLE);
-			mCinnamon.setVisibility(View.INVISIBLE);
-			mCaramel.setVisibility(View.INVISIBLE);
-			mReTwo.setVisibility(View.INVISIBLE);
-			mReThree.setVisibility(View.INVISIBLE);
-			mReFour.setVisibility(View.INVISIBLE);
-			mReOne.setVisibility(View.INVISIBLE);
-			mReOne1.setVisibility(View.INVISIBLE);
-			mReTwo2.setVisibility(View.INVISIBLE);
-			mReThree3.setVisibility(View.INVISIBLE);
-			mReFour4.setVisibility(View.INVISIBLE);
-
-			showMemo(coffee);
-			showRecipe(coffee.mChoice);
-			break;
-		case R.id.bBean :
-			setContentView(R.layout.grinder);
-			mGrinder1=(ImageView)findViewById(R.id.grinder_1);
-			mGrinder2=(ImageView)findViewById(R.id.grinder_2);
-			mGrinder3=(ImageView)findViewById(R.id.grinder_3);
-			mGrinder4=(ImageView)findViewById(R.id.grinder_4);
-			mGrinder5=(ImageView)findViewById(R.id.grinder_5);
-			mGrinder6=(ImageView)findViewById(R.id.grinder_6);
-			mGrinder7=(ImageView)findViewById(R.id.grinder_7);
-			mGrinder8=(ImageView)findViewById(R.id.grinder_8);
-			mHandler=(ImageView)findViewById(R.id.handler);
-			mGrinder2.setVisibility(View.INVISIBLE);
-			mGrinder3.setVisibility(View.INVISIBLE);
-			mGrinder4.setVisibility(View.INVISIBLE);
-			mGrinder5.setVisibility(View.INVISIBLE);
-			mGrinder6.setVisibility(View.INVISIBLE);
-			mGrinder7.setVisibility(View.INVISIBLE);
-			mGrinder8.setVisibility(View.INVISIBLE);
-			mHandler.setOnTouchListener(this);
-			mGrinder1.setOnTouchListener(this);
-			mGrinder2.setOnTouchListener(this);
-			mGrinder3.setOnTouchListener(this);
-			mGrinder4.setOnTouchListener(this);
-			mGrinder5.setOnTouchListener(this);
-			mGrinder6.setOnTouchListener(this);
-			mGrinder7.setOnTouchListener(this);
-			mGrinder8.setOnTouchListener(this);
-			mGrinder2.setVisibility(View.INVISIBLE);
-			mNextBut=(ImageView)findViewById(R.id.next_but);
-			mNextBut.setVisibility(View.INVISIBLE);
-
-			mShot=(TextView)findViewById(R.id.re_shot);
-			mHotW=(TextView)findViewById(R.id.re_hotw);
-			mMlik=(TextView)findViewById(R.id.re_mlik);
-			mChoco=(TextView)findViewById(R.id.re_choco);
-			mMlikB=(TextView)findViewById(R.id.re_mlikbubble);
-			mVanilla=(TextView)findViewById(R.id.re_vanilla);
-			mWhipping=(TextView)findViewById(R.id.re_whipping);
-			mCinnamon=(TextView)findViewById(R.id.re_cinnamon);
-			mCaramel=(TextView)findViewById(R.id.re_caramel);
-			mReTwo=(ImageView)findViewById(R.id.re_two);
-			mReThree=(ImageView)findViewById(R.id.re_three);
-			mReFour=(ImageView)findViewById(R.id.re_four);
-			mReOne=(ImageView)findViewById(R.id.re_img_shot);
-			mReOne1=(ImageView)findViewById(R.id.re_one);
-			mReTwo2=(ImageView)findViewById(R.id.re_two2);
-			mReThree3=(ImageView)findViewById(R.id.re_three3);
-			mReFour4=(ImageView)findViewById(R.id.re_four4);
-			mHotW.setVisibility(View.INVISIBLE);
-			mMlik.setVisibility(View.INVISIBLE);
-			mChoco.setVisibility(View.INVISIBLE);
-			mMlikB.setVisibility(View.INVISIBLE);
-			mVanilla.setVisibility(View.INVISIBLE);
-			mWhipping.setVisibility(View.INVISIBLE);
-			mCinnamon.setVisibility(View.INVISIBLE);
-			mCaramel.setVisibility(View.INVISIBLE);
-			mReTwo.setVisibility(View.INVISIBLE);
-			mReThree.setVisibility(View.INVISIBLE);
-			mReFour.setVisibility(View.INVISIBLE);
-			mReOne.setVisibility(View.INVISIBLE);
-			mReOne1.setVisibility(View.INVISIBLE);
-			mReTwo2.setVisibility(View.INVISIBLE);
-			mReThree3.setVisibility(View.INVISIBLE);
-			mReFour4.setVisibility(View.INVISIBLE);
-			
-			showMemo(coffee);
-			showRecipe(coffee.mChoice);
-			break;
 		case R.id.refrigerator :
 			mRefrigerator.setVisibility(View.INVISIBLE);
 			mOpenRefrigerator.setVisibility(View.VISIBLE);
@@ -599,6 +461,8 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			break;
 		case R.id.cup :
 			mTCup.setVisibility(View.VISIBLE);
+			coffee.mCup=true;
+			//TODO:
 			break;
 		case R.id.next_but :
 			setContentView(R.layout.coffeemachine);
@@ -934,9 +798,9 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			intent.putExtra("vanilla", coffee.mVanillaSyrup);
 			intent.putExtra("cinnamonpowder", coffee.mCinnamonPowder);
 			intent.putExtra("carameldrizzle", coffee.mCaramelDrizzle);
+			intent.putExtra("cup", coffee.mCup);
 			startActivity(intent);
 			finish();
-			mTCup.setVisibility(View.VISIBLE);
 			break;
 		case R.id.finish_but2 : //휘핑
 			showRecipe(coffee.mChoice);
@@ -950,9 +814,9 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			intent.putExtra("vanilla", coffee.mVanillaSyrup);
 			intent.putExtra("cinnamonpowder", coffee.mCinnamonPowder);
 			intent.putExtra("carameldrizzle", coffee.mCaramelDrizzle);
+			intent.putExtra("cup", coffee.mCup);
 			startActivity(intent);
 			finish();
-			mTCup.setVisibility(View.VISIBLE); //휘핑만 있는 이미지로 바꾸기
 			break;
 		case R.id.finish_but3 : //스팀우유
 			intent = new Intent(this, MakeActivity.class );
@@ -965,9 +829,9 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			intent.putExtra("vanilla", coffee.mVanillaSyrup);
 			intent.putExtra("cinnamonpowder", coffee.mCinnamonPowder);
 			intent.putExtra("carameldrizzle", coffee.mCaramelDrizzle);
+			intent.putExtra("cup", coffee.mCup);
 			startActivity(intent);
 			finish();	
-			mTCup.setVisibility(View.VISIBLE); //우유만 있는 이미지로 바꾸기
 			break;
 		case R.id.finish_but4 : //뜨거운물
 			showRecipe(coffee.mChoice);
@@ -981,18 +845,81 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			intent.putExtra("vanilla", coffee.mVanillaSyrup);
 			intent.putExtra("cinnamonpowder", coffee.mCinnamonPowder);
 			intent.putExtra("carameldrizzle", coffee.mCaramelDrizzle);
+			intent.putExtra("cup", coffee.mCup);
 			startActivity(intent);
 			finish();	
-			mTCup.setVisibility(View.VISIBLE); //물만 있는 이미지로 바꾸기
 			break;
 		case R.id.bean :
 			mTableBean1.setVisibility(View.VISIBLE);
 			break;
 		case R.id.table_bean1 :
 			mTableBean1.setVisibility(View.INVISIBLE);
-			mTableBean2.setVisibility(View.VISIBLE);
-			mA.setVisibility(View.VISIBLE);
-			mB.setVisibility(View.VISIBLE);
+			setContentView(R.layout.grinder);
+			mGrinder1=(ImageView)findViewById(R.id.grinder_1);
+			mGrinder2=(ImageView)findViewById(R.id.grinder_2);
+			mGrinder3=(ImageView)findViewById(R.id.grinder_3);
+			mGrinder4=(ImageView)findViewById(R.id.grinder_4);
+			mGrinder5=(ImageView)findViewById(R.id.grinder_5);
+			mGrinder6=(ImageView)findViewById(R.id.grinder_6);
+			mGrinder7=(ImageView)findViewById(R.id.grinder_7);
+			mGrinder8=(ImageView)findViewById(R.id.grinder_8);
+			mHandler=(ImageView)findViewById(R.id.handler);
+			mGrinder2.setVisibility(View.INVISIBLE);
+			mGrinder3.setVisibility(View.INVISIBLE);
+			mGrinder4.setVisibility(View.INVISIBLE);
+			mGrinder5.setVisibility(View.INVISIBLE);
+			mGrinder6.setVisibility(View.INVISIBLE);
+			mGrinder7.setVisibility(View.INVISIBLE);
+			mGrinder8.setVisibility(View.INVISIBLE);
+			mHandler.setOnTouchListener(this);
+			mGrinder1.setOnTouchListener(this);
+			mGrinder2.setOnTouchListener(this);
+			mGrinder3.setOnTouchListener(this);
+			mGrinder4.setOnTouchListener(this);
+			mGrinder5.setOnTouchListener(this);
+			mGrinder6.setOnTouchListener(this);
+			mGrinder7.setOnTouchListener(this);
+			mGrinder8.setOnTouchListener(this);
+			mGrinder2.setVisibility(View.INVISIBLE);
+			mNextBut=(ImageView)findViewById(R.id.next_but);
+			mNextBut.setVisibility(View.INVISIBLE);
+
+			mShot=(TextView)findViewById(R.id.re_shot);
+			mHotW=(TextView)findViewById(R.id.re_hotw);
+			mMlik=(TextView)findViewById(R.id.re_mlik);
+			mChoco=(TextView)findViewById(R.id.re_choco);
+			mMlikB=(TextView)findViewById(R.id.re_mlikbubble);
+			mVanilla=(TextView)findViewById(R.id.re_vanilla);
+			mWhipping=(TextView)findViewById(R.id.re_whipping);
+			mCinnamon=(TextView)findViewById(R.id.re_cinnamon);
+			mCaramel=(TextView)findViewById(R.id.re_caramel);
+			mReTwo=(ImageView)findViewById(R.id.re_two);
+			mReThree=(ImageView)findViewById(R.id.re_three);
+			mReFour=(ImageView)findViewById(R.id.re_four);
+			mReOne=(ImageView)findViewById(R.id.re_img_shot);
+			mReOne1=(ImageView)findViewById(R.id.re_one);
+			mReTwo2=(ImageView)findViewById(R.id.re_two2);
+			mReThree3=(ImageView)findViewById(R.id.re_three3);
+			mReFour4=(ImageView)findViewById(R.id.re_four4);
+			mHotW.setVisibility(View.INVISIBLE);
+			mMlik.setVisibility(View.INVISIBLE);
+			mChoco.setVisibility(View.INVISIBLE);
+			mMlikB.setVisibility(View.INVISIBLE);
+			mVanilla.setVisibility(View.INVISIBLE);
+			mWhipping.setVisibility(View.INVISIBLE);
+			mCinnamon.setVisibility(View.INVISIBLE);
+			mCaramel.setVisibility(View.INVISIBLE);
+			mReTwo.setVisibility(View.INVISIBLE);
+			mReThree.setVisibility(View.INVISIBLE);
+			mReFour.setVisibility(View.INVISIBLE);
+			mReOne.setVisibility(View.INVISIBLE);
+			mReOne1.setVisibility(View.INVISIBLE);
+			mReTwo2.setVisibility(View.INVISIBLE);
+			mReThree3.setVisibility(View.INVISIBLE);
+			mReFour4.setVisibility(View.INVISIBLE);
+
+			showMemo(coffee);
+			showRecipe(coffee.mChoice);
 			break;
 		case R.id.chocosyrup : 
 			mTableChocosy.setVisibility(View.VISIBLE);
@@ -1241,7 +1168,6 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				intent.putExtra("chocoSyrup", true);
 				startActivity(intent);
 				finish();	
-				mTCup.setVisibility(View.VISIBLE); //초코시럽만 있는 이미지로 바꾸기
 				break;
 			case 2 :
 				valillasyAnim.stop();
@@ -1249,7 +1175,6 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				intent.putExtra("vanilla", true);
 				startActivity(intent);
 				finish();
-				mTCup.setVisibility(View.VISIBLE); //바닐라시럽만 있는 이미지로 바꾸기
 				break;
 			case 3 : 
 				carameldrizAnim.stop();
@@ -1257,7 +1182,6 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				intent.putExtra("carameldrizzle", true);
 				startActivity(intent);
 				finish();
-				mTCup.setVisibility(View.VISIBLE); //카라멜드리즐만 있는 이미지로 바꾸기
 				break;
 			case 4 :
 				cinnamonpowAnim.stop();
@@ -1265,14 +1189,12 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				intent.putExtra("cinnamonpowder", true);
 				startActivity(intent);
 				finish();
-				mTCup.setVisibility(View.VISIBLE); //시나몬 파우더만 있는 이미지로 바꾸기
 				break;
 			case 5 :
 				chocodrizAnim.stop();
 				mTableChocodriz.setVisibility(View.INVISIBLE);
 				startActivity(intent);
 				finish();
-				mTCup.setVisibility(View.VISIBLE); //초코드리즐만 있는 이미지로 바꾸기
 			}
 		}
 	};

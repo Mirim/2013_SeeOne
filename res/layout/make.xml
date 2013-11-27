@@ -12,23 +12,7 @@
         android:adjustViewBounds="true"
         android:src="@drawable/img_maincounter" />
 
-    <Button
-        android:id="@+id/aBean"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:onClick="mOnClick"
-        android:text="A원두" />
-
-    <Button
-        android:id="@+id/bBean"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_toRightOf="@id/aBean"
-        android:onClick="mOnClick"
-        android:text="B원두" />
-
+	 
     <Button
         android:id="@+id/refrigerator"
         android:layout_width="150dp"
