@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" 
-    android:background="@drawable/back">
-    
+    android:layout_height="match_parent"
+    android:background="@drawable/back" >
+
     <ImageView
         android:id="@+id/counter"
         android:layout_width="fill_parent"
@@ -11,7 +11,7 @@
         android:layout_alignParentBottom="true"
         android:adjustViewBounds="true"
         android:src="@drawable/img_grindcounter" />
-    
+
     <ImageView
         android:id="@+id/milk_machine1"
         android:layout_width="350dp"
@@ -20,26 +20,37 @@
         android:layout_centerInParent="true"
         android:layout_marginBottom="35dp"
         android:src="@drawable/img_coffeemachine" />
-    
+
     <ImageView
         android:id="@+id/milk_machine2"
         android:layout_width="393dp"
         android:layout_height="224dp"
-        android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/milk_machine1"
+        android:layout_alignParentBottom="true"
         android:layout_marginBottom="35dp"
         android:src="@drawable/img_coffeemachinesteam" />
-    
+
     <ImageView
         android:id="@+id/steamcup2"
-        android:layout_width="46dp"
-        android:layout_height="47dp"
-        android:layout_alignParentBottom="true"
+        android:layout_width="80dp"
+        android:layout_height="82dp"
         android:layout_alignLeft="@+id/counter"
-        android:layout_marginLeft="50dp"
+        android:layout_alignParentBottom="true"
         android:layout_marginBottom="30dp"
+        android:layout_marginLeft="50dp"
         android:src="@drawable/img_milksteamcup" />
-    
+
+    <ImageView
+        android:id="@+id/milk_but"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignRight="@+id/milk_machine1"
+        android:layout_alignTop="@+id/milk_machine1"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="40dp"
+        android:background="#00000000"
+        android:onClick="mOnClick" />
+
     <ImageView
         android:id="@+id/finish_but3"
         android:layout_width="80dp"
@@ -50,7 +61,7 @@
         android:layout_marginRight="15dp"
         android:onClick="mOnClick"
         android:src="@drawable/img_butfinish" />
-    
+
     <ImageView
         android:id="@+id/memo"
         android:layout_width="120dp"
@@ -69,7 +80,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="30dp"
         android:src="@drawable/img_checkbox1" />
-    
+
     <ImageView
         android:id="@+id/re_one"
         android:layout_width="20dp"
@@ -79,7 +90,7 @@
         android:layout_marginTop="30dp"
         android:src="@drawable/img_checkbox2" />
 
-<TextView
+    <TextView
         android:id="@+id/re_shot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -104,7 +115,7 @@
         android:layout_below="@+id/re_img_shot"
         android:layout_marginTop="2dp"
         android:src="@drawable/img_checkbox2" />
-    
+
     <TextView
         android:id="@+id/re_hotw"
         android:layout_width="wrap_content"
@@ -138,7 +149,7 @@
         android:layout_below="@+id/re_two"
         android:layout_marginTop="2dp"
         android:src="@drawable/img_checkbox2" />
-    
+
     <TextView
         android:id="@+id/re_choco"
         android:layout_width="wrap_content"
@@ -180,7 +191,7 @@
         android:layout_below="@+id/re_three"
         android:layout_marginTop="2dp"
         android:src="@drawable/img_checkbox2" />
-    
+
     <TextView
         android:id="@+id/re_whipping"
         android:layout_width="wrap_content"
@@ -204,4 +215,5 @@
         android:layout_alignBottom="@+id/re_four"
         android:layout_alignLeft="@+id/re_shot"
         android:text="카라멜드리즐" />
+
 </RelativeLayout>

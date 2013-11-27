@@ -98,6 +98,8 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	ImageView mTableChocodriz;
 	ImageView mTableCarameldriz;
 	ImageView mTableCinnamonpow;
+	ImageView mMlikBut;
+	ImageView mCoffeeMachine;
 	TextView mShot;
 	TextView mHotW;
 	TextView mMlik;
@@ -143,6 +145,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		mOpenRefrigerator=(Button)findViewById(R.id.openrefrigerator);
 		mOpenSideboard.setVisibility(View.INVISIBLE);
 		mOpenRefrigerator.setVisibility(View.INVISIBLE);
+		mCoffeeMachine=(ImageView)findViewById(R.id.coffeemachine);
 		mA=(Button)findViewById(R.id.aBean);
 		mB=(Button)findViewById(R.id.bBean);
 		mA.setVisibility(View.INVISIBLE);
@@ -231,6 +234,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				intent.getBooleanExtra("carameldrizzle",false)
 				);
 		showMemo(coffee);
+		makeClick(coffee.mChoice);
 		switch(coffee.mChoice){
 		case Coffee.AMERICANO:
 			mHotW.setVisibility(View.VISIBLE);
@@ -355,7 +359,58 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			break;
 		}	
 	}
-
+	
+	private void makeClick(int mChoice) {
+		switch(coffee.mChoice){
+		case Coffee.ESPRESSO:
+			mCoffeeMachine.setEnabled(false);
+			mRefrigerator.setEnabled(false);
+			mChocoSy.setEnabled(false);
+			mValillaSy.setEnabled(false);
+			mChocodrizzle.setEnabled(false);
+			mCarameldrizzle.setEnabled(false);
+			mCinnamonpowder.setEnabled(false);
+			break;
+		case Coffee.AMERICANO:
+			mRefrigerator.setEnabled(false);
+			mChocoSy.setEnabled(false);
+			mValillaSy.setEnabled(false);
+			mChocodrizzle.setEnabled(false);
+			mCarameldrizzle.setEnabled(false);
+			mCinnamonpowder.setEnabled(false);
+			break;
+		case Coffee.CAFFELATTE:
+			mWhippingC.setEnabled(false);
+			mCoffeeMachine.setEnabled(false);
+			mChocoSy.setEnabled(false);
+			mValillaSy.setEnabled(false);
+			mChocodrizzle.setEnabled(false);
+			mCarameldrizzle.setEnabled(false);
+			mCinnamonpowder.setEnabled(false);
+			break;
+		case Coffee.CAFFEMOCHA:
+			mCoffeeMachine.setEnabled(false);
+			mValillaSy.setEnabled(false);
+			mCarameldrizzle.setEnabled(false);
+			mCinnamonpowder.setEnabled(false);
+			break;
+		case Coffee.CAPPUCCINO:
+			mCoffeeMachine.setEnabled(false);
+			mWhippingC.setEnabled(false);
+			mChocoSy.setEnabled(false);
+			mValillaSy.setEnabled(false);
+			mChocodrizzle.setEnabled(false);
+			mCarameldrizzle.setEnabled(false);
+			break;
+		case Coffee.CARAMELMACHIATTO:
+			mCoffeeMachine.setEnabled(false);
+			mWhippingC.setEnabled(false);
+			mChocoSy.setEnabled(false);
+			mCarameldrizzle.setEnabled(false);
+			break;
+		}	
+	}
+	
 	public void mOnClick(View v) {
 		switch (v.getId()) {
 		case R.id.sideboard : 
@@ -961,6 +1016,9 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			k=4;
 			mTableHandler.sendEmptyMessageDelayed(0, 1500);
 			break;
+		case R.id.milk_but :
+			mFinishBut3.setVisibility(View.VISIBLE);
+			break;
 		}
 	}
 
@@ -1129,7 +1187,6 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				mStreamCup2.setVisibility(View.INVISIBLE);
 				mMilkMachine1.setVisibility(View.INVISIBLE);
 				mMilkMachine2.setVisibility(View.VISIBLE);
-				mFinishBut3.setVisibility(View.VISIBLE);
 			}
 		}
 		if(v==mWaterCup){
