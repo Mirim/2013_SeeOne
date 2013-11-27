@@ -102,6 +102,13 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	ImageView mReThree3;
 	ImageView mReFour4;
 	ImageView mBean;
+	ImageView mTableBean1;
+	ImageView mTableBean2;
+	ImageView mTableChocosy;
+	ImageView mTableValillasy;
+	ImageView mTableChocodriz;
+	ImageView mTableCarameldriz;
+	ImageView mTableCinnamonpow;
 	TextView mShot;
 	TextView mHotW;
 	TextView mMlik;
@@ -115,6 +122,11 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	Animation alphaAnim;
 	AnimationDrawable frameAnim;
 	AnimationDrawable milkAnim;
+	AnimationDrawable chocosyAnim;
+	AnimationDrawable valillasyAnim;
+	AnimationDrawable chocodrizAnim;
+	AnimationDrawable carameldrizAnim;
+	AnimationDrawable cinnamonpowAnim;
 
 	String choice;
 	int width;
@@ -166,6 +178,20 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		mCinnamonpowder.setVisibility(View.INVISIBLE);
 		mBean=(ImageView)findViewById(R.id.bean);
 		mBean.setVisibility(View.INVISIBLE);
+		mTableBean1=(ImageView)findViewById(R.id.table_bean1);
+		mTableBean1.setVisibility(View.INVISIBLE);
+		mTableBean2=(ImageView)findViewById(R.id.table_bean2);
+		mTableBean2.setVisibility(View.INVISIBLE);
+		mTableChocosy=(ImageView)findViewById(R.id.table_chocosy);
+		mTableChocosy.setVisibility(View.INVISIBLE);
+		mTableValillasy=(ImageView)findViewById(R.id.table_valillasy);
+		mTableValillasy.setVisibility(View.INVISIBLE);
+		mTableChocodriz=(ImageView)findViewById(R.id.table_chochdri);
+		mTableChocodriz.setVisibility(View.INVISIBLE);
+		mTableCarameldriz=(ImageView)findViewById(R.id.table_carameldri);
+		mTableCarameldriz.setVisibility(View.INVISIBLE);
+		mTableCinnamonpow=(ImageView)findViewById(R.id.table_cinnamonpow);
+		mTableCinnamonpow.setVisibility(View.INVISIBLE);
 
 		mShot=(TextView)findViewById(R.id.re_shot);
 		mHotW=(TextView)findViewById(R.id.re_hotw);
@@ -998,10 +1024,18 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo2.setVisibility(View.VISIBLE);
 			break;
 		case R.id.bean :
+			mTableBean1.setVisibility(View.VISIBLE);
+			break;
+		case R.id.table_bean1 :
+			mTableBean1.setVisibility(View.INVISIBLE);
+			mTableBean2.setVisibility(View.VISIBLE);
 			mA.setVisibility(View.VISIBLE);
 			mB.setVisibility(View.VISIBLE);
 			break;
 		case R.id.chocosyrup :
+			mChocoSy.setBackgroundResource(R.drawable.chocosy);
+			chocosyAnim=(AnimationDrawable)mChocoSy.getBackground();
+			chocosyAnim.start();
 			break;
 		case R.id.valillasyrup :
 			break;

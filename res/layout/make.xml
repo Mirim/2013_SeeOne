@@ -161,7 +161,8 @@
             android:layout_alignBottom="@+id/coffeemachine"
             android:layout_toRightOf="@+id/table_cup"
             android:layout_marginLeft="25dp"
-            android:src="@drawable/img_bean1"/>
+            android:src="@drawable/img_bean1"
+            android:onClick="mOnClick"/>
         
 		<ImageView 
             android:id="@+id/table_bean2"
