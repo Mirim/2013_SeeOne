@@ -784,7 +784,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mWaterCup=(ImageView)findViewById(R.id.water_cup);
 			mWaterMachineBut=(ImageView)findViewById(R.id.watermachine_but);
 			mWaterMachine2.setVisibility(View.INVISIBLE);
-			mWaterMachine2.setVisibility(View.INVISIBLE);
+			mWaterMachine3.setVisibility(View.INVISIBLE);
 			mWaterCup.setOnTouchListener(this);
 			
 			mShot=(TextView)findViewById(R.id.re_shot);
