@@ -153,7 +153,62 @@
             android:layout_alignLeft="@+id/cup"
             android:background="@drawable/img_cup"
             android:onClick="mOnClick" />
-
+        
+        <ImageView 
+            android:id="@+id/table_bean1"
+            android:layout_width="58dp"
+            android:layout_height="80dp"
+            android:layout_alignBottom="@+id/coffeemachine"
+            android:layout_toRightOf="@+id/table_cup"
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/img_bean1"/>
+        
+		<ImageView 
+            android:id="@+id/table_bean2"
+            android:layout_width="58dp"
+            android:layout_height="80dp"
+            android:layout_alignBottom="@+id/coffeemachine"
+            android:layout_toRightOf="@+id/table_cup"
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/img_bean2"/>
+		
+		<ImageView 
+		    android:id="@+id/table_chocosy"
+		    android:layout_width="45dp"
+		    android:layout_height="115dp"
+		    android:layout_alignBottom="@+id/coffeemachine"
+		    android:layout_toRightOf="@+id/table_cup"/>
+		
+		<ImageView 
+		    android:id="@+id/table_valillasy"
+		    android:layout_width="45dp"
+		    android:layout_height="115dp"
+		    android:layout_alignBottom="@+id/coffeemachine"
+		    android:layout_toRightOf="@+id/table_cup"/>
+		
+		<ImageView 
+		    android:id="@+id/table_chochdri"
+		    android:layout_width="58dp"
+		    android:layout_height="120dp"
+		    android:layout_above="@+id/table_cup"
+		    android:layout_alignLeft="@+id/table_cup"/>
+		
+		<ImageView 
+		    android:id="@+id/table_carameldri"
+		    android:layout_width="58dp"
+		    android:layout_height="120dp"
+		    android:layout_above="@+id/table_cup"
+		    android:layout_alignLeft="@+id/table_cup"/>
+		
+		<ImageView 
+		    android:id="@+id/table_cinnamonpow"
+		    android:layout_width="26dp"
+		    android:layout_height="60dp"
+		    android:layout_above="@+id/table_cup"
+		    android:layout_alignLeft="@+id/table_cup"
+		    android:layout_marginLeft="15dp"
+		    android:layout_marginBottom="10dp"/>
+		
         <ImageView
             android:id="@+id/chocosyrup"
             android:layout_width="25dp"
