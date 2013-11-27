@@ -406,7 +406,8 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mCoffeeMachine.setEnabled(false);
 			mWhippingC.setEnabled(false);
 			mChocoSy.setEnabled(false);
-			mCarameldrizzle.setEnabled(false);
+			mChocodrizzle.setEnabled(false);
+			mCinnamonpowder.setEnabled(false);
 			break;
 		}	
 	}
@@ -999,6 +1000,8 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mTableChocodriz.setBackgroundResource(R.drawable.chocodriz);
 			chocodrizAnim=(AnimationDrawable)mTableChocodriz.getBackground();
 			chocodrizAnim.start();
+			k=5;
+			mTableHandler.sendEmptyMessageDelayed(0, 1100);
 			break;
 		case R.id.carameldrizzle :
 			mTableCarameldriz.setVisibility(View.VISIBLE);
@@ -1245,6 +1248,11 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				startActivity(intent);
 				finish();
 				break;
+			case 5 :
+				chocodrizAnim.stop();
+				mTableChocodriz.setVisibility(View.INVISIBLE);
+				startActivity(intent);
+				finish();
 			}
 		}
 	};
