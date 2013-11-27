@@ -126,20 +126,22 @@
 
         <ImageView
             android:id="@+id/table_cup"
-            android:layout_width="35dp"
-            android:layout_height="48dp"
+            android:layout_width="58dp"
+            android:layout_height="80dp"
             android:layout_alignBottom="@+id/coffeemachine"
             android:layout_alignLeft="@+id/cup"
-            android:background="@drawable/img_cup" />
+            android:background="@drawable/img_cup"
+            android:onClick="mOnClick" />
 
         <ImageView
-            android:id="@+id/chochsyrup"
+            android:id="@+id/chocosyrup"
             android:layout_width="25dp"
             android:layout_height="65dp"
             android:layout_alignTop="@+id/opensideboard"
             android:layout_marginTop="5dp"
-            android:layout_alignLeft="@+id/cup"
-            android:src="@drawable/img_chococsyrup" />
+            android:layout_alignRight="@+id/cup"
+            android:src="@drawable/img_chococsyrup" 
+            android:onClick="mOnClick"/>
         
         <ImageView 
             android:id="@+id/valillasyrup"
@@ -147,10 +149,40 @@
             android:layout_height="65dp"
             android:layout_alignTop="@+id/opensideboard"
             android:layout_marginTop="5dp"
-            android:layout_toLeftOf="@+id/chochsyrup"
+            android:layout_toLeftOf="@+id/chocosyrup"
             android:layout_marginRight="10dp"
-            android:src="@drawable/img_valillasyrup"/>
+            android:src="@drawable/img_valillasyrup"
+            android:onClick="mOnClick"/>
 
+        <ImageView 
+            android:id="@+id/chocodrizzle"
+            android:layout_width="19dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/valillasyrup"
+            android:layout_toLeftOf="@+id/valillasyrup"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/img_chocodrizzleout"
+            android:onClick="mOnClick"/>
+        
+        <ImageView 
+            android:id="@+id/carameldrizzle"
+            android:layout_width="19dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/chocodrizzle"
+            android:layout_toLeftOf="@+id/chocodrizzle"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/img_carameldrizzleout"
+            android:onClick="mOnClick"/>
+        
+        <ImageView 
+            android:id="@+id/cinnamonpowder"
+            android:layout_width="15dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@+id/carameldrizzle"
+            android:layout_toLeftOf="@+id/carameldrizzle"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/img_cinnamonpowder"
+            android:onClick="mOnClick"/>
     </RelativeLayout>
 
     <TextView

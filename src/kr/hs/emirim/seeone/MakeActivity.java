@@ -11,6 +11,7 @@ import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.ContactsContract.CommonDataKinds.Im;
 import android.util.EventLog.Event;
 import android.util.Log;
 import android.view.Display;
@@ -87,6 +88,11 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	ImageView mWaterMachine3;
 	ImageView mWaterCup;
 	ImageView mWaterMachineBut;
+	ImageView mChocoSy;
+	ImageView mValillaSy;
+	ImageView mChocodrizzle;
+	ImageView mCarameldrizzle;
+	ImageView mCinnamonpowder;
 	TextView mShot;
 	TextView mHotW;
 	TextView mMlik;
@@ -139,6 +145,16 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		mWhippingC.setVisibility(View.INVISIBLE);
 		mFoodMlik=(ImageView)findViewById(R.id.mlik);
 		mFoodMlik.setVisibility(View.INVISIBLE);
+		mChocoSy=(ImageView)findViewById(R.id.chocosyrup);
+		mChoco.setVisibility(View.INVISIBLE);
+		mValillaSy=(ImageView)findViewById(R.id.valillasyrup);
+		mValillaSy.setVisibility(View.INVISIBLE);
+		mChocodrizzle=(ImageView)findViewById(R.id.chocodrizzle);
+		mChocodrizzle.setVisibility(View.INVISIBLE);
+		mCarameldrizzle=(ImageView)findViewById(R.id.carameldrizzle);
+		mCarameldrizzle.setVisibility(View.INVISIBLE);
+		mCinnamonpowder=(ImageView)findViewById(R.id.cinnamonpowder);
+		mCinnamonpowder.setVisibility(View.INVISIBLE);
 
 		mShot=(TextView)findViewById(R.id.re_shot);
 		mHotW=(TextView)findViewById(R.id.re_hotw);
@@ -208,6 +224,11 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mB.setVisibility(View.VISIBLE);
 			mCaps.setVisibility(View.VISIBLE);
 			mCup.setVisibility(View.VISIBLE);
+			mChocoSy.setVisibility(View.VISIBLE);
+			mValillaSy.setVisibility(View.VISIBLE);
+			mChocodrizzle.setVisibility(View.VISIBLE);
+			mCarameldrizzle.setVisibility(View.VISIBLE);
+			mCinnamonpowder.setVisibility(View.VISIBLE);
 			break;
 		case R.id.opensideboard :
 			mOpenSideboard.setVisibility(View.INVISIBLE);
@@ -216,6 +237,11 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mB.setVisibility(View.INVISIBLE);
 			mCaps.setVisibility(View.INVISIBLE);
 			mCup.setVisibility(View.INVISIBLE);
+			mChocoSy.setVisibility(View.INVISIBLE);
+			mValillaSy.setVisibility(View.INVISIBLE);
+			mChocodrizzle.setVisibility(View.INVISIBLE);
+			mCarameldrizzle.setVisibility(View.INVISIBLE);
+			mCinnamonpowder.setVisibility(View.INVISIBLE);
 			break;
 		case R.id.aBean :
 			setContentView(R.layout.grinder);

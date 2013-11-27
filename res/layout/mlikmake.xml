@@ -13,8 +13,8 @@
 
     <ImageView
         android:id="@+id/steamcup"
-        android:layout_width="46dp"
-        android:layout_height="47dp"
+        android:layout_width="99dp"
+        android:layout_height="102dp"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:layout_marginBottom="30dp"
@@ -22,8 +22,8 @@
 
     <ImageView
         android:id="@+id/openmilk"
-        android:layout_width="46dp"
-        android:layout_height="90dp"
+        android:layout_width="67dp"
+        android:layout_height="130dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="35dp"
         android:layout_marginRight="80dp"
@@ -32,8 +32,8 @@
 
     <ImageView
         android:id="@+id/milkcup1"
-        android:layout_width="142dp"
-        android:layout_height="162dp"
+        android:layout_width="307dp"
+        android:layout_height="350dp"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:layout_marginBottom="30dp"
@@ -41,8 +41,8 @@
 
     <ImageView
         android:id="@+id/milkcup2"
-        android:layout_width="142dp"
-        android:layout_height="162dp"
+        android:layout_width="307dp"
+        android:layout_height="350dp"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:layout_marginBottom="30dp"
@@ -50,8 +50,8 @@
 
     <ImageView
         android:id="@+id/milkcup_view"
-        android:layout_width="142dp"
-        android:layout_height="162dp"
+        android:layout_width="307dp"
+        android:layout_height="350dp"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:layout_marginBottom="30dp"/>
