@@ -93,6 +93,10 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	ImageView mChocodrizzle;
 	ImageView mCarameldrizzle;
 	ImageView mCinnamonpowder;
+	ImageView mFinishBut1;
+	ImageView mFinishBut2;
+	ImageView mFinishBut3;
+	ImageView mFinishBut4;
 	TextView mShot;
 	TextView mHotW;
 	TextView mMlik;
@@ -146,7 +150,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		mFoodMlik=(ImageView)findViewById(R.id.mlik);
 		mFoodMlik.setVisibility(View.INVISIBLE);
 		mChocoSy=(ImageView)findViewById(R.id.chocosyrup);
-		mChoco.setVisibility(View.INVISIBLE);
+		mChocoSy.setVisibility(View.INVISIBLE);
 		mValillaSy=(ImageView)findViewById(R.id.valillasyrup);
 		mValillaSy.setVisibility(View.INVISIBLE);
 		mChocodrizzle=(ImageView)findViewById(R.id.chocodrizzle);
@@ -450,6 +454,8 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mShotMachine2=(ImageView)findViewById(R.id.machineshot2);
 			mShotMachine1.setVisibility(View.INVISIBLE);
 			mShotMachine2.setVisibility(View.INVISIBLE);
+			mFinishBut1=(ImageView)findViewById(R.id.finish_but1);
+			mFinishBut1.setVisibility(View.INVISIBLE);
 			mMHandler.setOnTouchListener(this);
 			mShotcup.setOnTouchListener(this);
 
@@ -516,6 +522,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mShotMachine1.setVisibility(View.VISIBLE);
 			mShotMachine2.startAnimation(alphaAnim);			
 			mShotMachine2.setVisibility(View.VISIBLE);
+			mFinishBut1.setVisibility(View.VISIBLE);
 			break;
 		case R.id.whippingCream :
 			setContentView(R.layout.whippingcream);
@@ -604,6 +611,8 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mPushWhipping1=(ImageView)findViewById(R.id.push_whipping1);
 			mPushWhipping2=(ImageView)findViewById(R.id.push_whipping2);
 			mPushWhipping2.setVisibility(View.INVISIBLE);
+			mFinishBut2=(ImageView)findViewById(R.id.finish_but2);
+			mFinishBut2.setVisibility(View.INVISIBLE);
 			mPushWhipping1.setOnTouchListener(this);
 
 			mShot=(TextView)findViewById(R.id.re_shot);
@@ -742,6 +751,8 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mMilkMachine2=(ImageView)findViewById(R.id.milk_machine2);
 			mStreamCup2=(ImageView)findViewById(R.id.steamcup2);
 			mMilkMachine2.setVisibility(View.INVISIBLE);
+			mFinishBut3=(ImageView)findViewById(R.id.finish_but3);
+			mFinishBut3.setVisibility(View.INVISIBLE);
 			mStreamCup2.setOnTouchListener(this);
 			
 			mShot=(TextView)findViewById(R.id.re_shot);
@@ -811,6 +822,8 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mWaterMachineBut=(ImageView)findViewById(R.id.watermachine_but);
 			mWaterMachine2.setVisibility(View.INVISIBLE);
 			mWaterMachine3.setVisibility(View.INVISIBLE);
+			mFinishBut4=(ImageView)findViewById(R.id.finish_but4);
+			mFinishBut4.setVisibility(View.INVISIBLE);
 			mWaterCup.setOnTouchListener(this);
 			
 			mShot=(TextView)findViewById(R.id.re_shot);
@@ -874,6 +887,15 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		case R.id.watermachine_but :
 			mWaterMachine2.setVisibility(View.INVISIBLE);
 			mWaterMachine3.setVisibility(View.VISIBLE);
+			mFinishBut4.setVisibility(View.VISIBLE);
+			break;
+		case R.id.finish_but1 :
+			break;
+		case R.id.finish_but2 :
+			break;
+		case R.id.finish_but3 :
+			break;
+		case R.id.finish_but4 :
 			break;
 		}
 	}
@@ -1017,6 +1039,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			if(event.getAction()==MotionEvent.ACTION_DOWN){
 				mPushWhipping1.setVisibility(View.INVISIBLE);
 				mPushWhipping2.setVisibility(View.VISIBLE);
+				mFinishBut2.setVisibility(View.VISIBLE);
 			}
 		}
 		if(v==mOpenMilk){
@@ -1042,6 +1065,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				mStreamCup2.setVisibility(View.INVISIBLE);
 				mMilkMachine1.setVisibility(View.INVISIBLE);
 				mMilkMachine2.setVisibility(View.VISIBLE);
+				mFinishBut3.setVisibility(View.VISIBLE);
 			}
 		}
 		if(v==mWaterCup){

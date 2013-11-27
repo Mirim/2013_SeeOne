@@ -106,6 +106,17 @@
         android:layout_marginLeft="5dp"
         android:background="@drawable/img_handlercoffee3" />
 
+    <ImageView
+        android:id="@+id/finish_but1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="15dp"
+        android:onClick="mOnClick"
+        android:src="@drawable/img_butfinish" />
+    
     <TextView
         android:id="@+id/re_shot"
         android:layout_width="wrap_content"
