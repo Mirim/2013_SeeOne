@@ -67,6 +67,8 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	ImageView mWhipping1;
 	ImageView mWhipping2;
 	ImageView mWhippingView;
+	ImageView mShakeWhipping1;
+	ImageView mShakeWhipping2;
 	ImageView mNextBut2;
 	TextView mShot;
 	TextView mHotW;
@@ -82,7 +84,6 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	AnimationDrawable frameAnim;
 
 	String choice;
-	Display mDisplay;
 	int width;
 	int i=2;
 	int ok;
@@ -175,9 +176,6 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReFour.setVisibility(View.VISIBLE);
 		}
 		else{}
-
-		mDisplay=getWindowManager().getDefaultDisplay();
-		width=mDisplay.getWidth();
 	}
 
 	public void mOnClick(View v) {
@@ -478,10 +476,14 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mWhipping1=(ImageView)findViewById(R.id.whipping_1);
 			mWhipping2=(ImageView)findViewById(R.id.whipping_2);
 			mWhippingView=(ImageView)findViewById(R.id.whipping_view);
+			mShakeWhipping1=(ImageView)findViewById(R.id.shake_whipping1);
+			mShakeWhipping2=(ImageView)findViewById(R.id.shake_whipping2);
 			mNextBut2=(ImageView)findViewById(R.id.next_but2);
 			mWhippingMachine2.setVisibility(View.INVISIBLE);
 			mWhipping1.setVisibility(View.INVISIBLE);
 			mWhipping2.setVisibility(View.INVISIBLE);
+			mShakeWhipping1.setVisibility(View.INVISIBLE);
+			mShakeWhipping2.setVisibility(View.INVISIBLE);
 			mNextBut2.setVisibility(View.INVISIBLE);
 			mWhippingMachine.setOnTouchListener(this);
 			mMWhippingC.setOnTouchListener(this);
@@ -547,6 +549,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			else{}
 			break;
 		case R.id.next_but2 :
+			setContentView(R.layout.make);
 			break;
 		}
 	}
@@ -659,6 +662,20 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			if(event.getAction()==MotionEvent.ACTION_MOVE){
 				mWhippingMachine2.setVisibility(View.INVISIBLE);
 				mWhippingMachine.setVisibility(View.VISIBLE);
+				ok3=2;
+			}
+		}
+		if(ok3==2 && v==mWhippingMachine){
+			if(event.getAction()==MotionEvent.ACTION_DOWN){
+				mWhippingMachine.setVisibility(View.INVISIBLE);
+				mShakeWhipping1.setVisibility(View.VISIBLE);
+			}
+			else if(event.getAction()==MotionEvent.ACTION_UP){
+				mShakeWhipping1.setVisibility(View.INVISIBLE);
+				mShakeWhipping2.setVisibility(View.VISIBLE);
+				i++;
+			}
+			if(i<=6){
 				mNextBut2.setVisibility(View.VISIBLE);
 			}
 		}

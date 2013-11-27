@@ -68,6 +68,24 @@
         android:layout_marginBottom="35dp"/>
     
     <ImageView
+        android:id="@+id/shake_whipping1"
+        android:layout_width="220dp"
+        android:layout_height="350dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/img_wippingshake1"/>
+    
+    <ImageView
+        android:id="@+id/shake_whipping2"
+        android:layout_width="220dp"
+        android:layout_height="350dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/img_wippingshake2"/>
+    
+    <ImageView
         android:id="@+id/next_but2"
         android:layout_width="80dp"
         android:layout_height="80dp"
