@@ -936,6 +936,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			intent.putExtra("carameldrizzle", coffee.mCaramelDrizzle);
 			startActivity(intent);
 			finish();
+			mTCup.setVisibility(View.VISIBLE);
 			break;
 		case R.id.finish_but2 : //휘핑
 			showRecipe(coffee.mChoice);
@@ -951,6 +952,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			intent.putExtra("carameldrizzle", coffee.mCaramelDrizzle);
 			startActivity(intent);
 			finish();
+			mTCup.setVisibility(View.VISIBLE); //휘핑만 있는 이미지로 바꾸기
 			break;
 		case R.id.finish_but3 : //스팀우유
 			intent = new Intent(this, MakeActivity.class );
@@ -965,6 +967,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			intent.putExtra("carameldrizzle", coffee.mCaramelDrizzle);
 			startActivity(intent);
 			finish();	
+			mTCup.setVisibility(View.VISIBLE); //우유만 있는 이미지로 바꾸기
 			break;
 		case R.id.finish_but4 : //뜨거운물
 			showRecipe(coffee.mChoice);
@@ -980,6 +983,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			intent.putExtra("carameldrizzle", coffee.mCaramelDrizzle);
 			startActivity(intent);
 			finish();	
+			mTCup.setVisibility(View.VISIBLE); //물만 있는 이미지로 바꾸기
 			break;
 		case R.id.bean :
 			mTableBean1.setVisibility(View.VISIBLE);
@@ -1237,6 +1241,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				intent.putExtra("chocoSyrup", true);
 				startActivity(intent);
 				finish();	
+				mTCup.setVisibility(View.VISIBLE); //초코시럽만 있는 이미지로 바꾸기
 				break;
 			case 2 :
 				valillasyAnim.stop();
@@ -1244,6 +1249,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				intent.putExtra("vanilla", true);
 				startActivity(intent);
 				finish();
+				mTCup.setVisibility(View.VISIBLE); //바닐라시럽만 있는 이미지로 바꾸기
 				break;
 			case 3 : 
 				carameldrizAnim.stop();
@@ -1251,6 +1257,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				intent.putExtra("carameldrizzle", true);
 				startActivity(intent);
 				finish();
+				mTCup.setVisibility(View.VISIBLE); //카라멜드리즐만 있는 이미지로 바꾸기
 				break;
 			case 4 :
 				cinnamonpowAnim.stop();
@@ -1258,12 +1265,14 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				intent.putExtra("cinnamonpowder", true);
 				startActivity(intent);
 				finish();
+				mTCup.setVisibility(View.VISIBLE); //시나몬 파우더만 있는 이미지로 바꾸기
 				break;
 			case 5 :
 				chocodrizAnim.stop();
 				mTableChocodriz.setVisibility(View.INVISIBLE);
 				startActivity(intent);
 				finish();
+				mTCup.setVisibility(View.VISIBLE); //초코드리즐만 있는 이미지로 바꾸기
 			}
 		}
 	};
