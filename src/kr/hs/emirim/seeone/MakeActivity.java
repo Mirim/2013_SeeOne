@@ -77,10 +77,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	ImageView mOpenMilk;
 	ImageView mMilkCup1;
 	ImageView mMilkCup2;
-	ImageView mMilkCup3;
-	ImageView mMilkCup4;
-	ImageView mMilkCup5;
-	ImageView mMilkCup6;
+	ImageView mMilkView;
 	ImageView mNextBut3;
 	TextView mShot;
 	TextView mHotW;
@@ -94,6 +91,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 
 	Animation alphaAnim;
 	AnimationDrawable frameAnim;
+	AnimationDrawable milkAnim;
 
 	String choice;
 	int width;
@@ -573,7 +571,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mPushWhipping2=(ImageView)findViewById(R.id.push_whipping2);
 			mPushWhipping2.setVisibility(View.INVISIBLE);
 			mPushWhipping1.setOnTouchListener(this);
-			
+
 			mShot=(TextView)findViewById(R.id.re_shot);
 			mHotW=(TextView)findViewById(R.id.re_hotw);
 			mMlik=(TextView)findViewById(R.id.re_mlik);
@@ -638,17 +636,12 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mOpenMilk=(ImageView)findViewById(R.id.openmilk);
 			mMilkCup1=(ImageView)findViewById(R.id.milkcup1);
 			mMilkCup2=(ImageView)findViewById(R.id.milkcup2);
-			mMilkCup3=(ImageView)findViewById(R.id.milkcup3);
-			mMilkCup4=(ImageView)findViewById(R.id.milkcup4);
-			mMilkCup5=(ImageView)findViewById(R.id.milkcup5);
-			mMilkCup6=(ImageView)findViewById(R.id.milkcup6);
+			mMilkView=(ImageView)findViewById(R.id.milkcup_view);
 			mMilkCup1.setVisibility(View.INVISIBLE);
 			mMilkCup2.setVisibility(View.INVISIBLE);
-			mMilkCup3.setVisibility(View.INVISIBLE);
-			mMilkCup4.setVisibility(View.INVISIBLE);
-			mMilkCup5.setVisibility(View.INVISIBLE);
-			mMilkCup6.setVisibility(View.INVISIBLE);
-			
+			mMilkView.setVisibility(View.INVISIBLE);
+			mOpenMilk.setOnTouchListener(this);
+
 			mShot=(TextView)findViewById(R.id.re_shot);
 			mHotW=(TextView)findViewById(R.id.re_hotw);
 			mMlik=(TextView)findViewById(R.id.re_mlik);
@@ -851,6 +844,17 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				mPushWhipping2.setVisibility(View.VISIBLE);
 			}
 		}
+		if(v==mOpenMilk){
+			if(event.getAction()==MotionEvent.ACTION_MOVE){
+				mOpenMilk.setVisibility(View.INVISIBLE);
+				mMilkCup1.setVisibility(View.VISIBLE);
+				mMilkCup2.setVisibility(View.VISIBLE);
+				mMilkView.setBackgroundResource(R.drawable.milkanim);
+				milkAnim=(AnimationDrawable)mMilkView.getBackground();
+				milkAnim.start();
+				mAnimHandler2.sendEmptyMessageDelayed(0, 1200);
+			}
+		}
 		return true;
 	}
 	Handler mAnimHandler=new Handler(){
@@ -859,6 +863,13 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mWhippingView.setVisibility(View.INVISIBLE);
 			mWhipping1.setVisibility(View.VISIBLE);
 			ok3=1;
+		}
+	};
+	Handler mAnimHandler2=new Handler(){
+		public void handleMessage(Message msg){
+			milkAnim.stop();
+			mMilkView.setVisibility(View.INVISIBLE);
+			mStreamCup.setVisibility(View.VISIBLE);
 		}
 	};
 }

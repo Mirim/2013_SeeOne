@@ -49,41 +49,13 @@
         android:src="@drawable/img_milkintocup2" />
 
     <ImageView
-        android:id="@+id/milkcup3"
+        android:id="@+id/milkcup_view"
         android:layout_width="142dp"
         android:layout_height="162dp"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="30dp"
-        android:src="@drawable/img_milkintocup3" />
-
-    <ImageView
-        android:id="@+id/milkcup4"
-        android:layout_width="142dp"
-        android:layout_height="162dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="30dp"
-        android:src="@drawable/img_milkintocup4" />
-
-    <ImageView
-        android:id="@+id/milkcup5"
-        android:layout_width="142dp"
-        android:layout_height="162dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="30dp"
-        android:src="@drawable/img_milkintocup5" />
-
-    <ImageView
-        android:id="@+id/milkcup6"
-        android:layout_width="142dp"
-        android:layout_height="162dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="30dp"
-        android:src="@drawable/img_milkintocup6" />
-
+        android:layout_marginBottom="30dp"/>
+    
     <ImageView
         android:id="@+id/next_but3"
         android:layout_width="80dp"
