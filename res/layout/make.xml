@@ -131,6 +131,26 @@
             android:layout_alignBottom="@+id/coffeemachine"
             android:layout_alignLeft="@+id/cup"
             android:background="@drawable/img_cup" />
+
+        <ImageView
+            android:id="@+id/chochsyrup"
+            android:layout_width="25dp"
+            android:layout_height="65dp"
+            android:layout_alignTop="@+id/opensideboard"
+            android:layout_marginTop="5dp"
+            android:layout_alignLeft="@+id/cup"
+            android:src="@drawable/img_chococsyrup" />
+        
+        <ImageView 
+            android:id="@+id/valillasyrup"
+            android:layout_width="25dp"
+            android:layout_height="65dp"
+            android:layout_alignTop="@+id/opensideboard"
+            android:layout_marginTop="5dp"
+            android:layout_toLeftOf="@+id/chochsyrup"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/img_valillasyrup"/>
+
     </RelativeLayout>
 
     <TextView
