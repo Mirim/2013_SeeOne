@@ -97,6 +97,10 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	ImageView mFinishBut2;
 	ImageView mFinishBut3;
 	ImageView mFinishBut4;
+	ImageView mReOne;
+	ImageView mReTwo2;
+	ImageView mReThree3;
+	ImageView mReFour4;
 	TextView mShot;
 	TextView mHotW;
 	TextView mMlik;
@@ -172,6 +176,10 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		mReTwo=(ImageView)findViewById(R.id.re_two);
 		mReThree=(ImageView)findViewById(R.id.re_three);
 		mReFour=(ImageView)findViewById(R.id.re_four);
+		mReOne=(ImageView)findViewById(R.id.re_one);
+		mReTwo2=(ImageView)findViewById(R.id.re_two2);
+		mReThree3=(ImageView)findViewById(R.id.re_three3);
+		mReFour4=(ImageView)findViewById(R.id.re_four4);
 		mHotW.setVisibility(View.INVISIBLE);
 		mMlik.setVisibility(View.INVISIBLE);
 		mChoco.setVisibility(View.INVISIBLE);
@@ -183,6 +191,10 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		mReTwo.setVisibility(View.INVISIBLE);
 		mReThree.setVisibility(View.INVISIBLE);
 		mReFour.setVisibility(View.INVISIBLE);
+		mReOne.setVisibility(View.INVISIBLE);
+		mReTwo2.setVisibility(View.INVISIBLE);
+		mReThree3.setVisibility(View.INVISIBLE);
+		mReFour4.setVisibility(View.INVISIBLE);
 
 		intent = getIntent();
 		choice = intent.getStringExtra("choice");
@@ -889,13 +901,28 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mWaterMachine3.setVisibility(View.VISIBLE);
 			mFinishBut4.setVisibility(View.VISIBLE);
 			break;
-		case R.id.finish_but1 :
+		case R.id.finish_but1 : //¼¦
+			setContentView(R.layout.make);
+			mReOne.setVisibility(View.VISIBLE);
 			break;
-		case R.id.finish_but2 :
+		case R.id.finish_but2 : //ÈÖÇÎ
+			setContentView(R.layout.make);
+			mReThree.setVisibility(View.INVISIBLE);
+			mReThree3.setVisibility(View.VISIBLE);
 			break;
-		case R.id.finish_but3 :
+		case R.id.finish_but3 : //½ºÆÀ¿ìÀ¯
+			setContentView(R.layout.make);
+			mReTwo.setVisibility(View.INVISIBLE);
+			mReTwo2.setVisibility(View.VISIBLE);
+			if(choice.equals("Ä«ÇªÄ¡³ë")){
+				mReThree.setVisibility(View.INVISIBLE);
+				mReThree3.setVisibility(View.VISIBLE);
+			}
 			break;
-		case R.id.finish_but4 :
+		case R.id.finish_but4 : //¶ß°Å¿î¹°
+			setContentView(R.layout.make);
+			mReTwo.setVisibility(View.INVISIBLE);
+			mReTwo2.setVisibility(View.VISIBLE);
 			break;
 		}
 	}

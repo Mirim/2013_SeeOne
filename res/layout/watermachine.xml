@@ -89,8 +89,17 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="30dp"
         android:src="@drawable/img_checkbox1" />
+    
+    <ImageView
+        android:id="@+id/re_one"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignLeft="@+id/memo"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/img_checkbox2" />
 
-    <TextView
+<TextView
         android:id="@+id/re_shot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -107,6 +116,15 @@
         android:layout_marginTop="2dp"
         android:src="@drawable/img_checkbox1" />
 
+    <ImageView
+        android:id="@+id/re_two2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignLeft="@+id/re_img_shot"
+        android:layout_below="@+id/re_img_shot"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/img_checkbox2" />
+    
     <TextView
         android:id="@+id/re_hotw"
         android:layout_width="wrap_content"
@@ -132,6 +150,15 @@
         android:layout_marginTop="2dp"
         android:src="@drawable/img_checkbox1" />
 
+    <ImageView
+        android:id="@+id/re_three3"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignLeft="@+id/re_two"
+        android:layout_below="@+id/re_two"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/img_checkbox2" />
+    
     <TextView
         android:id="@+id/re_choco"
         android:layout_width="wrap_content"
@@ -165,6 +192,15 @@
         android:layout_marginTop="2dp"
         android:src="@drawable/img_checkbox1" />
 
+    <ImageView
+        android:id="@+id/re_four4"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignLeft="@+id/re_three"
+        android:layout_below="@+id/re_three"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/img_checkbox2" />
+    
     <TextView
         android:id="@+id/re_whipping"
         android:layout_width="wrap_content"
