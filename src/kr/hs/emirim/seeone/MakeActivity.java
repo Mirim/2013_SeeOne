@@ -239,13 +239,19 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		case Coffee.AMERICANO:
 			mHotW.setVisibility(View.VISIBLE);
 			mReTwo.setVisibility(View.VISIBLE);
+			mReThree.setVisibility(View.INVISIBLE);
+			mReFour.setVisibility(View.INVISIBLE);
 			break;
 		case Coffee.ESPRESSO:
-			// 에소프레소 차별
+			mReTwo.setVisibility(View.INVISIBLE);
+			mReThree.setVisibility(View.INVISIBLE);
+			mReFour.setVisibility(View.INVISIBLE);
 			break;
 		case Coffee.CAFFELATTE:
 			mMlik.setVisibility(View.VISIBLE);
 			mReTwo.setVisibility(View.VISIBLE);
+			mReThree.setVisibility(View.INVISIBLE);
+			mReFour.setVisibility(View.INVISIBLE);
 			break;
 		case Coffee.CAPPUCCINO:
 			mMlik.setVisibility(View.VISIBLE);
