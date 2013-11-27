@@ -86,6 +86,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	ImageView mWaterMachine2;
 	ImageView mWaterMachine3;
 	ImageView mWaterCup;
+	ImageView mWaterMachineBut;
 	TextView mShot;
 	TextView mHotW;
 	TextView mMlik;
@@ -781,6 +782,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mWaterMachine2=(ImageView)findViewById(R.id.water_machine2);
 			mWaterMachine3=(ImageView)findViewById(R.id.water_machine3);
 			mWaterCup=(ImageView)findViewById(R.id.water_cup);
+			mWaterMachineBut=(ImageView)findViewById(R.id.watermachine_but);
 			mWaterMachine2.setVisibility(View.INVISIBLE);
 			mWaterMachine2.setVisibility(View.INVISIBLE);
 			mWaterCup.setOnTouchListener(this);
@@ -842,6 +844,10 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				mReFour.setVisibility(View.VISIBLE);
 			}
 			else{}
+			break;
+		case R.id.watermachine_but :
+			mWaterMachine2.setVisibility(View.INVISIBLE);
+			mWaterMachine3.setVisibility(View.VISIBLE);
 			break;
 		}
 	}
@@ -1010,6 +1016,13 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				mStreamCup2.setVisibility(View.INVISIBLE);
 				mMilkMachine1.setVisibility(View.INVISIBLE);
 				mMilkMachine2.setVisibility(View.VISIBLE);
+			}
+		}
+		if(v==mWaterCup){
+			if(event.getAction()==MotionEvent.ACTION_MOVE){
+				mWaterCup.setVisibility(View.INVISIBLE);
+				mWaterMachine1.setVisibility(View.INVISIBLE);
+				mWaterMachine2.setVisibility(View.VISIBLE);
 			}
 		}
 		return true;
