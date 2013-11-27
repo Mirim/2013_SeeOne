@@ -67,6 +67,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	ImageView mWhipping1;
 	ImageView mWhipping2;
 	ImageView mWhippingView;
+	ImageView mNextBut2;
 	TextView mShot;
 	TextView mHotW;
 	TextView mMlik;
@@ -477,12 +478,15 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mWhipping1=(ImageView)findViewById(R.id.whipping_1);
 			mWhipping2=(ImageView)findViewById(R.id.whipping_2);
 			mWhippingView=(ImageView)findViewById(R.id.whipping_view);
+			mNextBut2=(ImageView)findViewById(R.id.next_but2);
 			mWhippingMachine2.setVisibility(View.INVISIBLE);
 			mWhipping1.setVisibility(View.INVISIBLE);
 			mWhipping2.setVisibility(View.INVISIBLE);
+			mNextBut2.setVisibility(View.INVISIBLE);
 			mWhippingMachine.setOnTouchListener(this);
 			mMWhippingC.setOnTouchListener(this);
 			mWhipping2.setOnTouchListener(this);
+			mWhippingMachine2.setOnTouchListener(this);
 
 			mShot=(TextView)findViewById(R.id.re_shot);
 			mHotW=(TextView)findViewById(R.id.re_hotw);
@@ -541,6 +545,8 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				mReFour.setVisibility(View.VISIBLE);
 			}
 			else{}
+			break;
+		case R.id.next_but2 :
 			break;
 		}
 	}
@@ -647,6 +653,13 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				frameAnim=(AnimationDrawable)mWhippingView.getBackground();
 				frameAnim.start();
 				mAnimHandler.sendEmptyMessageDelayed(0, 1200);
+			}
+		}
+		if(ok3==1 && v==mWhippingMachine2){
+			if(event.getAction()==MotionEvent.ACTION_MOVE){
+				mWhippingMachine2.setVisibility(View.INVISIBLE);
+				mWhippingMachine.setVisibility(View.VISIBLE);
+				mNextBut2.setVisibility(View.VISIBLE);
 			}
 		}
 		return true;
