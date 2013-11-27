@@ -121,7 +121,8 @@
             android:layout_alignParentLeft="true"
             android:layout_marginBottom="30dp"
             android:layout_marginLeft="5dp"
-            android:background="@drawable/img_coffeemachine" />
+            android:background="@drawable/img_coffeemachine"
+            android:onClick="mOnClick" />
 
         <ImageView
             android:id="@+id/table_cup"
@@ -237,10 +238,10 @@
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
+        android:layout_marginBottom="95dp"
         android:layout_marginRight="30dp"
         android:onClick="mOnClick"
-        android:src="@drawable/img_milk" 
-        android:layout_marginBottom="95dp"/>
+        android:src="@drawable/img_milk" />
 
     <ImageView
         android:id="@+id/whippingCream"
