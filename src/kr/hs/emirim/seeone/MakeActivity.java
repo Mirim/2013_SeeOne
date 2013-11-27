@@ -73,6 +73,15 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	ImageView mPushWhipping2;
 	ImageView mNextBut2;
 	ImageView mFoodMlik;
+	ImageView mStreamCup;
+	ImageView mOpenMilk;
+	ImageView mMilkCup1;
+	ImageView mMilkCup2;
+	ImageView mMilkCup3;
+	ImageView mMilkCup4;
+	ImageView mMilkCup5;
+	ImageView mMilkCup6;
+	ImageView mNextBut3;
 	TextView mShot;
 	TextView mHotW;
 	TextView mMlik;
@@ -564,6 +573,81 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mPushWhipping2=(ImageView)findViewById(R.id.push_whipping2);
 			mPushWhipping2.setVisibility(View.INVISIBLE);
 			mPushWhipping1.setOnTouchListener(this);
+			
+			mShot=(TextView)findViewById(R.id.re_shot);
+			mHotW=(TextView)findViewById(R.id.re_hotw);
+			mMlik=(TextView)findViewById(R.id.re_mlik);
+			mChoco=(TextView)findViewById(R.id.re_choco);
+			mMlikB=(TextView)findViewById(R.id.re_mlikbubble);
+			mVanilla=(TextView)findViewById(R.id.re_vanilla);
+			mWhipping=(TextView)findViewById(R.id.re_whipping);
+			mCinnamon=(TextView)findViewById(R.id.re_cinnamon);
+			mCaramel=(TextView)findViewById(R.id.re_caramel);
+			mReTwo=(ImageView)findViewById(R.id.re_two);
+			mReThree=(ImageView)findViewById(R.id.re_three);
+			mReFour=(ImageView)findViewById(R.id.re_four);
+			mHotW.setVisibility(View.INVISIBLE);
+			mMlik.setVisibility(View.INVISIBLE);
+			mChoco.setVisibility(View.INVISIBLE);
+			mMlikB.setVisibility(View.INVISIBLE);
+			mVanilla.setVisibility(View.INVISIBLE);
+			mWhipping.setVisibility(View.INVISIBLE);
+			mCinnamon.setVisibility(View.INVISIBLE);
+			mCaramel.setVisibility(View.INVISIBLE);
+			mReTwo.setVisibility(View.INVISIBLE);
+			mReThree.setVisibility(View.INVISIBLE);
+			mReFour.setVisibility(View.INVISIBLE);
+
+			intent = getIntent();
+			choice = intent.getStringExtra("choice");
+
+			intent=new Intent(MakeActivity.this, StartActivity.class);
+			if(choice.equals("아메리카노")){
+				mHotW.setVisibility(View.VISIBLE);
+				mReTwo.setVisibility(View.VISIBLE);
+			}else if(choice.equals("카페라떼")){
+				mMlik.setVisibility(View.VISIBLE);
+				mReTwo.setVisibility(View.VISIBLE);
+			}else if(choice.equals("카페모카")){
+				mMlik.setVisibility(View.VISIBLE);
+				mChoco.setVisibility(View.VISIBLE);
+				mWhipping.setVisibility(View.VISIBLE);
+				mReTwo.setVisibility(View.VISIBLE);
+				mReThree.setVisibility(View.VISIBLE);
+				mReFour.setVisibility(View.VISIBLE);
+			}else if(choice.equals("카푸치노")){
+				mMlik.setVisibility(View.VISIBLE);
+				mMlikB.setVisibility(View.VISIBLE);
+				mCinnamon.setVisibility(View.VISIBLE);
+				mReTwo.setVisibility(View.VISIBLE);
+				mReThree.setVisibility(View.VISIBLE);
+				mReFour.setVisibility(View.VISIBLE);
+			}else if(choice.equals("카라멜마끼아또")){
+				mMlik.setVisibility(View.VISIBLE);
+				mVanilla.setVisibility(View.VISIBLE);
+				mCaramel.setVisibility(View.VISIBLE);
+				mReTwo.setVisibility(View.VISIBLE);
+				mReThree.setVisibility(View.VISIBLE);
+				mReFour.setVisibility(View.VISIBLE);
+			}
+			else{}
+			break;
+		case R.id.mlik :
+			setContentView(R.layout.mlikmake);
+			mStreamCup=(ImageView)findViewById(R.id.steamcup);
+			mOpenMilk=(ImageView)findViewById(R.id.openmilk);
+			mMilkCup1=(ImageView)findViewById(R.id.milkcup1);
+			mMilkCup2=(ImageView)findViewById(R.id.milkcup2);
+			mMilkCup3=(ImageView)findViewById(R.id.milkcup3);
+			mMilkCup4=(ImageView)findViewById(R.id.milkcup4);
+			mMilkCup5=(ImageView)findViewById(R.id.milkcup5);
+			mMilkCup6=(ImageView)findViewById(R.id.milkcup6);
+			mMilkCup1.setVisibility(View.INVISIBLE);
+			mMilkCup2.setVisibility(View.INVISIBLE);
+			mMilkCup3.setVisibility(View.INVISIBLE);
+			mMilkCup4.setVisibility(View.INVISIBLE);
+			mMilkCup5.setVisibility(View.INVISIBLE);
+			mMilkCup6.setVisibility(View.INVISIBLE);
 			
 			mShot=(TextView)findViewById(R.id.re_shot);
 			mHotW=(TextView)findViewById(R.id.re_hotw);
