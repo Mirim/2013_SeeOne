@@ -16,12 +16,12 @@
         android:id="@+id/setBgm"
         android:layout_width="100dp"
         android:layout_height="30dp"
+        android:layout_alignLeft="@+id/setBoard"
         android:layout_alignTop="@+id/setBoard"
         android:layout_centerVertical="true"
-        android:layout_marginTop="62dp"
-        android:layout_alignLeft="@+id/setBoard"
         android:layout_marginLeft="150dp"
         android:layout_marginRight="30dp"
+        android:layout_marginTop="62dp"
         android:src="@drawable/img_setbgm" />
 
     <ImageView
@@ -31,7 +31,18 @@
         android:layout_alignBottom="@+id/setBgm"
         android:layout_margin="10dp"
         android:layout_toRightOf="@+id/setBgm"
+        android:onClick="mOnClick"
         android:src="@drawable/img_seton" />
+
+    <ImageView
+        android:id="@+id/setOff"
+        android:layout_width="33dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/setBgm"
+        android:layout_margin="10dp"
+        android:layout_toRightOf="@+id/setBgm"
+        android:onClick="mOnClick"
+        android:src="@drawable/img_setoff" />
 
     <ImageView
         android:id="@+id/setSound"
@@ -39,8 +50,8 @@
         android:layout_height="30dp"
         android:layout_alignLeft="@+id/setBgm"
         android:layout_below="@+id/setOn"
-        android:layout_marginTop="5dp"
         android:layout_marginRight="30dp"
+        android:layout_marginTop="5dp"
         android:src="@drawable/img_setsound" />
 
     <ImageView
@@ -50,7 +61,18 @@
         android:layout_alignBottom="@+id/setSound"
         android:layout_margin="10dp"
         android:layout_toRightOf="@+id/setSound"
+        android:onClick="mOnClick"
         android:src="@drawable/img_seton" />
+
+    <ImageView
+        android:id="@+id/setOff2"
+        android:layout_width="33dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/setSound"
+        android:layout_margin="10dp"
+        android:layout_toRightOf="@+id/setSound"
+        android:onClick="mOnClick"
+        android:src="@drawable/img_setoff" />
 
     <ImageView
         android:id="@+id/setViv"
@@ -58,8 +80,8 @@
         android:layout_height="30dp"
         android:layout_alignLeft="@+id/setBgm"
         android:layout_below="@+id/setOn2"
-        android:layout_marginTop="5dp"
         android:layout_marginRight="30dp"
+        android:layout_marginTop="5dp"
         android:src="@drawable/img_setviv" />
 
     <ImageView
@@ -69,6 +91,17 @@
         android:layout_alignBottom="@+id/setViv"
         android:layout_margin="10dp"
         android:layout_toRightOf="@+id/setViv"
+        android:onClick="mOnClick"
         android:src="@drawable/img_seton" />
+
+    <ImageView
+        android:id="@+id/setOff3"
+        android:layout_width="33dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/setViv"
+        android:layout_margin="10dp"
+        android:layout_toRightOf="@+id/setViv"
+        android:onClick="mOnClick"
+        android:src="@drawable/img_setoff" />
 
 </RelativeLayout>
