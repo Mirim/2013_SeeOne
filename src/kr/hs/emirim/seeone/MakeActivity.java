@@ -69,6 +69,8 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	ImageView mWhippingView;
 	ImageView mShakeWhipping1;
 	ImageView mShakeWhipping2;
+	ImageView mPushWhipping1;
+	ImageView mPushWhipping2;
 	ImageView mNextBut2;
 	ImageView mFoodMlik;
 	TextView mShot;
@@ -558,6 +560,10 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			break;
 		case R.id.next_but2 :
 			setContentView(R.layout.whippingcream2);
+			mPushWhipping1=(ImageView)findViewById(R.id.push_whipping1);
+			mPushWhipping2=(ImageView)findViewById(R.id.push_whipping2);
+			mPushWhipping2.setVisibility(View.INVISIBLE);
+			mPushWhipping1.setOnTouchListener(this);
 			
 			mShot=(TextView)findViewById(R.id.re_shot);
 			mHotW=(TextView)findViewById(R.id.re_hotw);
@@ -753,6 +759,12 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			}
 			if(j>=10){
 				mNextBut2.setVisibility(View.VISIBLE);
+			}
+		}
+		if(v==mPushWhipping1){
+			if(event.getAction()==MotionEvent.ACTION_DOWN){
+				mPushWhipping1.setVisibility(View.INVISIBLE);
+				mPushWhipping2.setVisibility(View.VISIBLE);
 			}
 		}
 		return true;
