@@ -7,9 +7,8 @@
 
     <ImageView
         android:id="@+id/setBoard"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:src="@drawable/img_settingboard" />
 
     <ImageView
@@ -18,10 +17,9 @@
         android:layout_height="30dp"
         android:layout_alignLeft="@+id/setBoard"
         android:layout_alignTop="@+id/setBoard"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="150dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="70dp"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="62dp"
         android:src="@drawable/img_setbgm" />
 
     <ImageView

@@ -1,6 +1,7 @@
 package kr.hs.emirim.seeone;
 
 import android.app.Activity;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -14,6 +15,7 @@ public class SetActivity extends Activity{
 	ImageView mOffBut1;
 	ImageView mOffBut2;
 	ImageView mOffBut3;
+	MediaPlayer mp;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

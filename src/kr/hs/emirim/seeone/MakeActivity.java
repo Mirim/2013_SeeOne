@@ -313,6 +313,15 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo.setVisibility(View.INVISIBLE);
 			mReThree.setVisibility(View.INVISIBLE);
 			mReFour.setVisibility(View.INVISIBLE);
+			mReOne=(ImageView)findViewById(R.id.re_one);
+			mReTwo2=(ImageView)findViewById(R.id.re_two2);
+			mReThree3=(ImageView)findViewById(R.id.re_three3);
+			mReFour4=(ImageView)findViewById(R.id.re_four4);
+			mReOne.setVisibility(View.INVISIBLE);
+			mReTwo2.setVisibility(View.INVISIBLE);
+			mReThree3.setVisibility(View.INVISIBLE);
+			mReFour4.setVisibility(View.INVISIBLE);
+
 
 			intent = getIntent();
 			choice = intent.getStringExtra("choice");
@@ -402,6 +411,15 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo.setVisibility(View.INVISIBLE);
 			mReThree.setVisibility(View.INVISIBLE);
 			mReFour.setVisibility(View.INVISIBLE);
+			mReOne=(ImageView)findViewById(R.id.re_one);
+			mReTwo2=(ImageView)findViewById(R.id.re_two2);
+			mReThree3=(ImageView)findViewById(R.id.re_three3);
+			mReFour4=(ImageView)findViewById(R.id.re_four4);
+			mReOne.setVisibility(View.INVISIBLE);
+			mReTwo2.setVisibility(View.INVISIBLE);
+			mReThree3.setVisibility(View.INVISIBLE);
+			mReFour4.setVisibility(View.INVISIBLE);
+
 
 			intent = getIntent();
 			choice = intent.getStringExtra("choice");
@@ -494,6 +512,15 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo.setVisibility(View.INVISIBLE);
 			mReThree.setVisibility(View.INVISIBLE);
 			mReFour.setVisibility(View.INVISIBLE);
+			mReOne=(ImageView)findViewById(R.id.re_one);
+			mReTwo2=(ImageView)findViewById(R.id.re_two2);
+			mReThree3=(ImageView)findViewById(R.id.re_three3);
+			mReFour4=(ImageView)findViewById(R.id.re_four4);
+			mReOne.setVisibility(View.INVISIBLE);
+			mReTwo2.setVisibility(View.INVISIBLE);
+			mReThree3.setVisibility(View.INVISIBLE);
+			mReFour4.setVisibility(View.INVISIBLE);
+
 
 			intent = getIntent();
 			choice = intent.getStringExtra("choice");
@@ -583,6 +610,15 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo.setVisibility(View.INVISIBLE);
 			mReThree.setVisibility(View.INVISIBLE);
 			mReFour.setVisibility(View.INVISIBLE);
+			mReOne=(ImageView)findViewById(R.id.re_one);
+			mReTwo2=(ImageView)findViewById(R.id.re_two2);
+			mReThree3=(ImageView)findViewById(R.id.re_three3);
+			mReFour4=(ImageView)findViewById(R.id.re_four4);
+			mReOne.setVisibility(View.INVISIBLE);
+			mReTwo2.setVisibility(View.INVISIBLE);
+			mReThree3.setVisibility(View.INVISIBLE);
+			mReFour4.setVisibility(View.INVISIBLE);
+
 
 			intent = getIntent();
 			choice = intent.getStringExtra("choice");
@@ -650,6 +686,15 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo.setVisibility(View.INVISIBLE);
 			mReThree.setVisibility(View.INVISIBLE);
 			mReFour.setVisibility(View.INVISIBLE);
+			mReOne=(ImageView)findViewById(R.id.re_one);
+			mReTwo2=(ImageView)findViewById(R.id.re_two2);
+			mReThree3=(ImageView)findViewById(R.id.re_three3);
+			mReFour4=(ImageView)findViewById(R.id.re_four4);
+			mReOne.setVisibility(View.INVISIBLE);
+			mReTwo2.setVisibility(View.INVISIBLE);
+			mReThree3.setVisibility(View.INVISIBLE);
+			mReFour4.setVisibility(View.INVISIBLE);
+
 
 			intent = getIntent();
 			choice = intent.getStringExtra("choice");
@@ -722,6 +767,15 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo.setVisibility(View.INVISIBLE);
 			mReThree.setVisibility(View.INVISIBLE);
 			mReFour.setVisibility(View.INVISIBLE);
+			mReOne=(ImageView)findViewById(R.id.re_one);
+			mReTwo2=(ImageView)findViewById(R.id.re_two2);
+			mReThree3=(ImageView)findViewById(R.id.re_three3);
+			mReFour4=(ImageView)findViewById(R.id.re_four4);
+			mReOne.setVisibility(View.INVISIBLE);
+			mReTwo2.setVisibility(View.INVISIBLE);
+			mReThree3.setVisibility(View.INVISIBLE);
+			mReFour4.setVisibility(View.INVISIBLE);
+
 
 			intent = getIntent();
 			choice = intent.getStringExtra("choice");
@@ -766,7 +820,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mFinishBut3=(ImageView)findViewById(R.id.finish_but3);
 			mFinishBut3.setVisibility(View.INVISIBLE);
 			mStreamCup2.setOnTouchListener(this);
-			
+
 			mShot=(TextView)findViewById(R.id.re_shot);
 			mHotW=(TextView)findViewById(R.id.re_hotw);
 			mMlik=(TextView)findViewById(R.id.re_mlik);
@@ -790,6 +844,15 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo.setVisibility(View.INVISIBLE);
 			mReThree.setVisibility(View.INVISIBLE);
 			mReFour.setVisibility(View.INVISIBLE);
+			mReOne=(ImageView)findViewById(R.id.re_one);
+			mReTwo2=(ImageView)findViewById(R.id.re_two2);
+			mReThree3=(ImageView)findViewById(R.id.re_three3);
+			mReFour4=(ImageView)findViewById(R.id.re_four4);
+			mReOne.setVisibility(View.INVISIBLE);
+			mReTwo2.setVisibility(View.INVISIBLE);
+			mReThree3.setVisibility(View.INVISIBLE);
+			mReFour4.setVisibility(View.INVISIBLE);
+
 
 			intent = getIntent();
 			choice = intent.getStringExtra("choice");
@@ -837,7 +900,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mFinishBut4=(ImageView)findViewById(R.id.finish_but4);
 			mFinishBut4.setVisibility(View.INVISIBLE);
 			mWaterCup.setOnTouchListener(this);
-			
+
 			mShot=(TextView)findViewById(R.id.re_shot);
 			mHotW=(TextView)findViewById(R.id.re_hotw);
 			mMlik=(TextView)findViewById(R.id.re_mlik);
@@ -861,6 +924,15 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo.setVisibility(View.INVISIBLE);
 			mReThree.setVisibility(View.INVISIBLE);
 			mReFour.setVisibility(View.INVISIBLE);
+			mReOne=(ImageView)findViewById(R.id.re_one);
+			mReTwo2=(ImageView)findViewById(R.id.re_two2);
+			mReThree3=(ImageView)findViewById(R.id.re_three3);
+			mReFour4=(ImageView)findViewById(R.id.re_four4);
+			mReOne.setVisibility(View.INVISIBLE);
+			mReTwo2.setVisibility(View.INVISIBLE);
+			mReThree3.setVisibility(View.INVISIBLE);
+			mReFour4.setVisibility(View.INVISIBLE);
+
 
 			intent = getIntent();
 			choice = intent.getStringExtra("choice");
@@ -923,6 +995,18 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			setContentView(R.layout.make);
 			mReTwo.setVisibility(View.INVISIBLE);
 			mReTwo2.setVisibility(View.VISIBLE);
+			break;
+		case R.id.bean :
+			break;
+		case R.id.chocosyrup :
+			break;
+		case R.id.valillasyrup :
+			break;
+		case R.id.chocodrizzle :
+			break;
+		case R.id.carameldrizzle :
+			break;
+		case R.id.cinnamonpowder :
 			break;
 		}
 	}

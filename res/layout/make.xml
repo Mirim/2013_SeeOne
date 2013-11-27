@@ -109,7 +109,19 @@
             android:layout_marginBottom="5dp"
             android:layout_marginRight="10dp"
             android:layout_toLeftOf="@+id/cup"
-            android:background="@drawable/img_caps" />
+            android:background="@drawable/img_caps"
+            android:onClick="mOnClick" />
+        
+        <ImageView 
+            android:id="@+id/bean"
+            android:layout_width="36dp"
+            android:layout_height="50dp"
+            android:layout_toLeftOf="@+id/caps"
+            android:layout_alignBottom="@+id/sideboard"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/img_bean1"
+            android:onClick="mOnClick"/>
 
         <ImageView
             android:id="@+id/cup"
