@@ -2,17 +2,26 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/back_setting"
+    android:background="@drawable/back"
     android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/setBoard"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/img_settingboard" />
 
     <ImageView
         android:id="@+id/setBgm"
         android:layout_width="100dp"
         android:layout_height="30dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="160dp"
-        android:layout_marginTop="60dp"
+        android:layout_alignTop="@+id/setBoard"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="62dp"
+        android:layout_alignLeft="@+id/setBoard"
+        android:layout_marginLeft="150dp"
+        android:layout_marginRight="30dp"
         android:src="@drawable/img_setbgm" />
 
     <ImageView
@@ -20,9 +29,9 @@
         android:layout_width="29dp"
         android:layout_height="15dp"
         android:layout_alignBottom="@+id/setBgm"
+        android:layout_margin="10dp"
         android:layout_toRightOf="@+id/setBgm"
-        android:src="@drawable/img_seton"
-        android:layout_margin="10dp" />
+        android:src="@drawable/img_seton" />
 
     <ImageView
         android:id="@+id/setSound"
@@ -30,17 +39,18 @@
         android:layout_height="30dp"
         android:layout_alignLeft="@+id/setBgm"
         android:layout_below="@+id/setOn"
-        android:src="@drawable/img_setsound" 
-        android:layout_marginTop="5dp"/>
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="30dp"
+        android:src="@drawable/img_setsound" />
 
     <ImageView
         android:id="@+id/setOn2"
         android:layout_width="29dp"
         android:layout_height="15dp"
         android:layout_alignBottom="@+id/setSound"
+        android:layout_margin="10dp"
         android:layout_toRightOf="@+id/setSound"
-        android:src="@drawable/img_seton" 
-        android:layout_margin="10dp" />
+        android:src="@drawable/img_seton" />
 
     <ImageView
         android:id="@+id/setViv"
@@ -48,16 +58,17 @@
         android:layout_height="30dp"
         android:layout_alignLeft="@+id/setBgm"
         android:layout_below="@+id/setOn2"
-        android:src="@drawable/img_setviv"
-        android:layout_marginTop="5dp" />
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="30dp"
+        android:src="@drawable/img_setviv" />
 
     <ImageView
         android:id="@+id/setOn3"
         android:layout_width="29dp"
         android:layout_height="15dp"
         android:layout_alignBottom="@+id/setViv"
+        android:layout_margin="10dp"
         android:layout_toRightOf="@+id/setViv"
-        android:src="@drawable/img_seton"
-        android:layout_margin="10dp"  />
+        android:src="@drawable/img_seton" />
 
 </RelativeLayout>
