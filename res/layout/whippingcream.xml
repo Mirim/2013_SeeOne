@@ -60,40 +60,12 @@
         android:src="@drawable/img_whipping2" />
 
     <ImageView
-        android:id="@+id/whipping_3"
+        android:id="@+id/whipping_view"
         android:layout_width="220dp"
         android:layout_height="350dp"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="35dp"
-        android:src="@drawable/img_whipping3" />
-
-    <ImageView
-        android:id="@+id/whipping_4"
-        android:layout_width="220dp"
-        android:layout_height="350dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="35dp"
-        android:src="@drawable/img_whipping4" />
-
-    <ImageView
-        android:id="@+id/whipping_5"
-        android:layout_width="220dp"
-        android:layout_height="350dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="35dp"
-        android:src="@drawable/img_whipping5" />
-
-    <ImageView
-        android:id="@+id/whipping_6"
-        android:layout_width="220dp"
-        android:layout_height="350dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="35dp"
-        android:src="@drawable/img_whipping6" />
+        android:layout_marginBottom="35dp"/>
 
     <ImageView
         android:id="@+id/memo"

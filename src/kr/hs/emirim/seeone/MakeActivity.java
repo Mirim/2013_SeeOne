@@ -7,7 +7,10 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.Typeface;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.EventLog.Event;
 import android.util.Log;
 import android.view.Display;
@@ -63,10 +66,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	ImageView mWhippingMachine2;
 	ImageView mWhipping1;
 	ImageView mWhipping2;
-	ImageView mWhipping3;
-	ImageView mWhipping4;
-	ImageView mWhipping5;
-	ImageView mWhipping6;
+	ImageView mWhippingView;
 	TextView mShot;
 	TextView mHotW;
 	TextView mMlik;
@@ -78,13 +78,15 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	TextView mCaramel;
 
 	Animation alphaAnim;
-	
+	AnimationDrawable frameAnim;
+
 	String choice;
 	Display mDisplay;
 	int width;
 	int i=2;
 	int ok;
 	int ok2;
+	int ok3;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +97,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		setContentView(R.layout.make);
 
 		alphaAnim=AnimationUtils.loadAnimation(MakeActivity.this, R.anim.alpha);
-		
+
 		mSideboard=(Button)findViewById(R.id.sideboard);
 		mOpenSideboard=(Button)findViewById(R.id.opensideboard);
 		mRefrigerator=(Button)findViewById(R.id.refrigerator);
@@ -474,26 +476,13 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mWhippingMachine2=(ImageView)findViewById(R.id.whippingmachine2);
 			mWhipping1=(ImageView)findViewById(R.id.whipping_1);
 			mWhipping2=(ImageView)findViewById(R.id.whipping_2);
-			mWhipping3=(ImageView)findViewById(R.id.whipping_3);
-			mWhipping4=(ImageView)findViewById(R.id.whipping_4);
-			mWhipping5=(ImageView)findViewById(R.id.whipping_5);
-			mWhipping6=(ImageView)findViewById(R.id.whipping_6);
+			mWhippingView=(ImageView)findViewById(R.id.whipping_view);
 			mWhippingMachine2.setVisibility(View.INVISIBLE);
 			mWhipping1.setVisibility(View.INVISIBLE);
 			mWhipping2.setVisibility(View.INVISIBLE);
-			mWhipping3.setVisibility(View.INVISIBLE);
-			mWhipping4.setVisibility(View.INVISIBLE);
-			mWhipping5.setVisibility(View.INVISIBLE);
-			mWhipping6.setVisibility(View.INVISIBLE);
 			mWhippingMachine.setOnTouchListener(this);
 			mMWhippingC.setOnTouchListener(this);
-			
-			mWhipping2.startAnimation(alphaAnim);
-			mWhipping3.startAnimation(alphaAnim);
-			mWhipping4.startAnimation(alphaAnim);
-			mWhipping5.startAnimation(alphaAnim);
-			mWhipping6.startAnimation(alphaAnim);
-			mWhipping1.setVisibility(View.VISIBLE);
+			mWhipping2.setOnTouchListener(this);
 
 			mShot=(TextView)findViewById(R.id.re_shot);
 			mHotW=(TextView)findViewById(R.id.re_hotw);
@@ -651,6 +640,23 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				mWhipping2.setVisibility(View.VISIBLE);
 			}
 		}
+		if(v==mWhipping2){
+			if(event.getAction()==MotionEvent.ACTION_DOWN){
+				mWhipping2.setVisibility(View.INVISIBLE);
+				mWhippingView.setBackgroundResource(R.drawable.whipping);
+				frameAnim=(AnimationDrawable)mWhippingView.getBackground();
+				frameAnim.start();
+				mAnimHandler.sendEmptyMessageDelayed(0, 1200);
+			}
+		}
 		return true;
 	}
+	Handler mAnimHandler=new Handler(){
+		public void handleMessage(Message msg){
+			frameAnim.stop();
+			mWhippingView.setVisibility(View.INVISIBLE);
+			mWhipping1.setVisibility(View.VISIBLE);
+			ok3=1;
+		}
+	};
 }
