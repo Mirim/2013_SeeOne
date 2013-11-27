@@ -1033,26 +1033,31 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mB.setVisibility(View.VISIBLE);
 			break;
 		case R.id.chocosyrup :
+			mTableChocosy.setVisibility(View.VISIBLE);
 			mTableChocosy.setBackgroundResource(R.drawable.chocosy);
 			chocosyAnim=(AnimationDrawable)mTableChocosy.getBackground();
 			chocosyAnim.start();
 			break;
 		case R.id.valillasyrup :
+			mTableValillasy.setVisibility(View.VISIBLE);
 			mTableValillasy.setBackgroundResource(R.drawable.valillasy);
 			valillasyAnim=(AnimationDrawable)mTableValillasy.getBackground();
 			valillasyAnim.start();
 			break;
 		case R.id.chocodrizzle :
+			mTableChocodriz.setVisibility(View.VISIBLE);
 			mTableChocodriz.setBackgroundResource(R.drawable.chocodriz);
 			chocodrizAnim=(AnimationDrawable)mTableChocodriz.getBackground();
 			chocodrizAnim.start();
 			break;
 		case R.id.carameldrizzle :
+			mTableCarameldriz.setVisibility(View.VISIBLE);
 			mTableCarameldriz.setBackgroundResource(R.drawable.carameldriz);
 			carameldrizAnim=(AnimationDrawable)mTableCarameldriz.getBackground();
 			carameldrizAnim.start();
 			break;
 		case R.id.cinnamonpowder :
+			mTableCinnamonpow.setVisibility(View.VISIBLE);
 			mTableCinnamonpow.setBackgroundResource(R.drawable.cinnamonpow);
 			cinnamonpowAnim=(AnimationDrawable)mTableCinnamonpow.getBackground();
 			cinnamonpowAnim.start();
