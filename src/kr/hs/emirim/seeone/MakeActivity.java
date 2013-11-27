@@ -212,10 +212,6 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		mWhipping.setVisibility(View.INVISIBLE);
 		mCinnamon.setVisibility(View.INVISIBLE);
 		mCaramel.setVisibility(View.INVISIBLE);
-		mReTwo.setVisibility(View.INVISIBLE);
-		mReThree.setVisibility(View.INVISIBLE);
-		mReFour.setVisibility(View.INVISIBLE);
-		mReOne.setVisibility(View.INVISIBLE);
 		mReOne1.setVisibility(View.INVISIBLE);
 		mReTwo2.setVisibility(View.INVISIBLE);
 		mReThree3.setVisibility(View.INVISIBLE);
@@ -297,7 +293,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo.setVisibility(View.VISIBLE);
 		}
 
-		//技掳青
+		//技锅掳青
 		if(coffee.mChoice == Coffee.CAPPUCCINO && coffee.mMilk){
 			mReThree3.setVisibility(View.VISIBLE);
 			mReThree.setVisibility(View.INVISIBLE);
@@ -326,15 +322,24 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	}
 	private void showRecipe(int mChoice) {
 		switch(coffee.mChoice){
+		case Coffee.ESPRESSO:
+			mReTwo.setVisibility(View.INVISIBLE);
+			mReThree.setVisibility(View.INVISIBLE);
+			mReFour.setVisibility(View.INVISIBLE);
+			break;
 		case Coffee.AMERICANO:
 			mReOne.setVisibility(View.VISIBLE);
 			mHotW.setVisibility(View.VISIBLE);
 			mReTwo.setVisibility(View.VISIBLE);
+			mReThree.setVisibility(View.INVISIBLE);
+			mReFour.setVisibility(View.INVISIBLE);
 			break;
 		case Coffee.CAFFELATTE:
 			mReOne.setVisibility(View.VISIBLE);
 			mMlik.setVisibility(View.VISIBLE);
 			mReTwo.setVisibility(View.VISIBLE);
+			mReThree.setVisibility(View.INVISIBLE);
+			mReFour.setVisibility(View.INVISIBLE);
 			break;
 		case Coffee.CAFFEMOCHA:
 			mReOne.setVisibility(View.VISIBLE);
