@@ -165,8 +165,8 @@
 		
 		<ImageView 
 		    android:id="@+id/table_chocosy"
-		    android:layout_width="45dp"
-		    android:layout_height="115dp"
+		    android:layout_width="90dp"
+		    android:layout_height="230dp"
 		    android:layout_alignBottom="@+id/coffeemachine"
 		    android:layout_toRightOf="@+id/table_cup"/>
 		

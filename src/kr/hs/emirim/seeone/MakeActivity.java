@@ -348,7 +348,11 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo.setVisibility(View.INVISIBLE);
 
 			if(coffee.mChoice==Coffee.CAPPUCCINO){
-				Toast.makeText(this, "ss", 1000).show();
+				mReThree3.setVisibility(View.VISIBLE);
+				mReThree.setVisibility(View.INVISIBLE);
+			}else{
+				mReThree3.setVisibility(View.INVISIBLE);
+				mReThree.setVisibility(View.VISIBLE);
 			}
 		}else{
 			mReTwo2.setVisibility(View.INVISIBLE);
@@ -583,9 +587,9 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		case R.id.machine_but :
 			mMachine2.setVisibility(View.INVISIBLE);
 			mShotMachine1.setVisibility(View.VISIBLE);
-			mShotMachine2.startAnimation(alphaAnim);			
-			mShotMachine2.setVisibility(View.VISIBLE);
-			mFinishBut1.setVisibility(View.VISIBLE);
+			mShotMachine2.startAnimation(alphaAnim);	
+			//핸들러 호출
+			mCoffeeHandler.sendEmptyMessageDelayed(0, 1500);
 			break;
 		case R.id.whippingCream :
 			setContentView(R.layout.whippingcream);
@@ -1206,6 +1210,14 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		}
 		return true;
 	}
+	Handler mCoffeeHandler=new Handler(){
+		public void handleMessage(Message msg){
+			mShotMachine2.clearAnimation();
+			mShotMachine2.setVisibility(View.VISIBLE);
+			mFinishBut1.setVisibility(View.VISIBLE);
+		}
+	};
+	
 	Handler mAnimHandler=new Handler(){
 		public void handleMessage(Message msg){
 			frameAnim.stop();
