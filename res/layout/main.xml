@@ -68,7 +68,7 @@
         android:id="@+id/main_anim2"
         android:layout_width="80dp"
         android:layout_height="5dp"
-        android:layout_alignLeft="@+id/coffee_set"
+        android:layout_alignLeft="@+id/coffee_start"
         android:layout_below="@+id/coffee_set"
         android:background="#00000000"/>
     
@@ -87,7 +87,7 @@
         android:id="@+id/main_anim3"
         android:layout_width="80dp"
         android:layout_height="5dp"
-        android:layout_alignLeft="@+id/coffee_help"
+        android:layout_alignLeft="@+id/coffee_start"
         android:layout_below="@+id/coffee_help"
         android:background="#00000000"/>
     
