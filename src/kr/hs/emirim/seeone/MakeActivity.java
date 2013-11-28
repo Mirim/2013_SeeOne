@@ -282,7 +282,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		case Coffee.ESPRESSO:
 			if(coffee.mShot==true){
 				intent=new Intent(MakeActivity.this, InfoActivity.class);
-				intent.putExtra("에스프레소", 1);
+				intent.putExtra("choice", coffee.mChoice);
 				startActivity(intent);
 				finish();
 			}
@@ -290,7 +290,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		case Coffee.AMERICANO:
 			if(coffee.mShot==true && coffee.mHotWater==true){
 				intent=new Intent(MakeActivity.this, InfoActivity.class);
-				intent.putExtra("아메리카노", 1);
+				intent.putExtra("choice", coffee.mChoice);
 				startActivity(intent);
 				finish();
 			}
@@ -298,7 +298,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		case Coffee.CAFFELATTE:
 			if(coffee.mShot==true && coffee.mMilk==true){
 				intent=new Intent(MakeActivity.this, InfoActivity.class);
-				intent.putExtra("카페라떼", 1);
+				intent.putExtra("choice", coffee.mChoice);
 				startActivity(intent);
 				finish();
 			}
@@ -306,7 +306,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		case Coffee.CAPPUCCINO:
 			if(coffee.mShot==true && coffee.mMilk==true && coffee.mCinnamonPowder){
 				intent=new Intent(MakeActivity.this, InfoActivity.class);
-				intent.putExtra("카푸치노", 1);
+				intent.putExtra("choice", coffee.mChoice);
 				startActivity(intent);
 				finish();
 			}
@@ -314,7 +314,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		case Coffee.CAFFEMOCHA:
 			if(coffee.mShot==true && coffee.mMilk==true && (coffee.mChocoSyrup==true || coffee.mCaramelDrizzle==true) && coffee.mWhipping==true){
 				intent=new Intent(MakeActivity.this, InfoActivity.class);
-				intent.putExtra("카페모카", 1);
+				intent.putExtra("choice", coffee.mChoice);
 				startActivity(intent);
 				finish();
 			}
@@ -322,7 +322,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		case Coffee.CARAMELMACHIATTO:
 			if(coffee.mShot==true && coffee.mMilk==true && coffee.mVanillaSyrup==true && coffee.mCaramelDrizzle==true){
 				intent=new Intent(MakeActivity.this, InfoActivity.class);
-				intent.putExtra("카라멜마끼아또", 1);
+				intent.putExtra("choice", coffee.mChoice);
 				startActivity(intent);
 				finish();
 			}
@@ -346,20 +346,12 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		if(coffee.mHotWater || coffee.mMilk ){
 			mReTwo2.setVisibility(View.VISIBLE);
 			mReTwo.setVisibility(View.INVISIBLE);
-
-			if(coffee.mChoice==Coffee.CAPPUCCINO){
-				mReThree3.setVisibility(View.VISIBLE);
-				mReThree.setVisibility(View.INVISIBLE);
-			}else{
-				mReThree3.setVisibility(View.INVISIBLE);
-				mReThree.setVisibility(View.VISIBLE);
-			}
 		}else{
 			mReTwo2.setVisibility(View.INVISIBLE);
 			mReTwo.setVisibility(View.VISIBLE);
 		}
 		//세번째행
-		if(coffee.mChocoSyrup || coffee.mVanillaSyrup){
+		if(coffee.mChocoSyrup || coffee.mVanillaSyrup || coffee.mMilk && coffee.mChoice==Coffee.CAPPUCCINO){
 			mReThree3.setVisibility(View.VISIBLE);
 			mReThree.setVisibility(View.INVISIBLE);
 		}else{

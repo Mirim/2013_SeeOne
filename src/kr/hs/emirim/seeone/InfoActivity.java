@@ -16,6 +16,7 @@ public class InfoActivity extends Activity{
 	ImageView finishView2;
 	ImageView coffeeView;
 	ImageView coffeeBut;
+	int mCoffee;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,30 +26,40 @@ public class InfoActivity extends Activity{
 				WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
 		setContentView(R.layout.info);
 
+		Intent intent = getIntent();
+		mCoffee = intent.getIntExtra("choice", Coffee.ESPRESSO);
+		
 		finishView=(ImageView)findViewById(R.id.info);
 		finishView2=(ImageView)findViewById(R.id.info2);
 		coffeeView=(ImageView)findViewById(R.id.coffee_view1);
 		coffeeBut=(ImageView)findViewById(R.id.coffee_but);
 		finishView2.setVisibility(View.INVISIBLE);
 
-		if(getIntent().getExtras().equals("에스프레소")){
+		switch(mCoffee){
+		case Coffee.ESPRESSO:
 			coffeeView.setBackgroundResource(R.drawable.img_espresso);
 			coffeeView.getBackground();
-		}else if(getIntent().getExtras().equals("아메리카노")){
+			break;
+		case Coffee.AMERICANO:
 			coffeeView.setBackgroundResource(R.drawable.img_americano);
 			coffeeView.getBackground();
-		}else if(getIntent().getExtras().equals("카페라떼")){
+			break;
+		case Coffee.CAFFELATTE:
 			coffeeView.setBackgroundResource(R.drawable.img_caffelatte);
 			coffeeView.getBackground();
-		}else if(getIntent().getExtras().equals("카푸치노")){
+			break;
+		case Coffee.CAPPUCCINO:
 			coffeeView.setBackgroundResource(R.drawable.img_cappuccino);
 			coffeeView.getBackground();
-		}else if(getIntent().getExtras().equals("카페모카")){
+			break;
+		case Coffee.CAFFEMOCHA:
 			coffeeView.setBackgroundResource(R.drawable.img_caffemocha);
 			coffeeView.getBackground();
-		}else if(getIntent().getExtras().equals("카라멜마끼아또")){
+			break;
+		case Coffee.CARAMELMACHIATTO:
 			coffeeView.setBackgroundResource(R.drawable.img_caramelmacchiato);
 			coffeeView.getBackground();
+			break;
 		}
 	}
 	public void mOnClick(View v){
