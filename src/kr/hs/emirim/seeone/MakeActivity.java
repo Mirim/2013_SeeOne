@@ -16,6 +16,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -127,7 +128,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 	int ok2;
 	int ok3;
 	int k=0;
-	
+
 	boolean cup;
 
 	private Coffee coffee;
@@ -187,7 +188,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		mTableCinnamonpow.setVisibility(View.INVISIBLE);
 		mTableCap=(ImageView)findViewById(R.id.table_cap);
 		mTableCap.setVisibility(View.INVISIBLE);
-		
+
 		mShot=(TextView)findViewById(R.id.re_shot);
 		mHotW=(TextView)findViewById(R.id.re_hotw);
 		mMlik=(TextView)findViewById(R.id.re_mlik);
@@ -276,6 +277,16 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReFour.setVisibility(View.VISIBLE);
 			break;
 		}
+
+		switch (coffee.mChoice) {
+			case Coffee.ESPRESSO:
+				if(coffee.mShot==true){
+					intent=new Intent(MakeActivity.this, InfoActivity.class);
+					intent.putExtra("에스프레소", 1);
+					startActivity(intent);
+				}
+			break;
+		}
 	}
 	private void showMemo(Coffee coffee) {
 		//TODO 돌아와도 다시 컵을 보여줘! 근데 다른거 
@@ -294,7 +305,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		if(coffee.mHotWater || coffee.mMilk ){
 			mReTwo2.setVisibility(View.VISIBLE);
 			mReTwo.setVisibility(View.INVISIBLE);
-			
+
 			if(coffee.mChoice==Coffee.CAPPUCCINO){
 				Toast.makeText(this, "ss", 1000).show();
 			}
@@ -370,7 +381,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			break;
 		}	
 	}
-	
+
 	private void makeClick(int mChoice) {
 		switch(coffee.mChoice){
 		case Coffee.ESPRESSO:
@@ -428,7 +439,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			break;
 		}
 	}
-	
+
 	public void mOnClick(View v) {
 		switch (v.getId()) {
 		case R.id.sideboard : 
@@ -524,7 +535,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo2.setVisibility(View.INVISIBLE);
 			mReThree3.setVisibility(View.INVISIBLE);
 			mReFour4.setVisibility(View.INVISIBLE);
-			
+
 			showMemo(coffee);
 			showRecipe(coffee.mChoice);
 			break;
@@ -592,7 +603,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo2.setVisibility(View.INVISIBLE);
 			mReThree3.setVisibility(View.INVISIBLE);
 			mReFour4.setVisibility(View.INVISIBLE);
-			
+
 			showMemo(coffee);
 			showRecipe(coffee.mChoice);
 			break;
@@ -638,7 +649,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo2.setVisibility(View.INVISIBLE);
 			mReThree3.setVisibility(View.INVISIBLE);
 			mReFour4.setVisibility(View.INVISIBLE);
-			
+
 			showMemo(coffee);
 			showRecipe(coffee.mChoice);
 			break;
@@ -689,7 +700,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo2.setVisibility(View.INVISIBLE);
 			mReThree3.setVisibility(View.INVISIBLE);
 			mReFour4.setVisibility(View.INVISIBLE);
-			
+
 			showMemo(coffee);
 			showRecipe(coffee.mChoice);
 			break;
@@ -736,7 +747,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo2.setVisibility(View.INVISIBLE);
 			mReThree3.setVisibility(View.INVISIBLE);
 			mReFour4.setVisibility(View.INVISIBLE);
-			
+
 			showMemo(coffee);
 			showRecipe(coffee.mChoice);
 			break;
@@ -786,7 +797,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			mReTwo2.setVisibility(View.INVISIBLE);
 			mReThree3.setVisibility(View.INVISIBLE);
 			mReFour4.setVisibility(View.INVISIBLE);
-			
+
 			showMemo(coffee);
 			showRecipe(coffee.mChoice);
 			break;
