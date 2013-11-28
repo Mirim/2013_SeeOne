@@ -1241,6 +1241,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				chocosyAnim.stop();
 				mTableChocosy.setVisibility(View.INVISIBLE);
 				intent.putExtra("chocoSyrup", true);
+				intent.putExtra("cup", coffee.mCup);
 				startActivity(intent);
 				finish();
 				break;
@@ -1248,6 +1249,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				valillasyAnim.stop();
 				mTableValillasy.setVisibility(View.INVISIBLE);
 				intent.putExtra("vanilla", true);
+				intent.putExtra("cup", coffee.mCup);
 				startActivity(intent);
 				finish();
 				break;
@@ -1255,6 +1257,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				carameldrizAnim.stop();
 				mTableCarameldriz.setVisibility(View.INVISIBLE);
 				intent.putExtra("carameldrizzle", true);
+				intent.putExtra("cup", coffee.mCup);
 				startActivity(intent);
 				finish();
 				break;
@@ -1262,6 +1265,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				cinnamonpowAnim.stop();
 				mTableCinnamonpow.setVisibility(View.INVISIBLE);
 				intent.putExtra("cinnamonpowder", true);
+				intent.putExtra("cup", coffee.mCup);
 				startActivity(intent);
 				finish();
 				break;
@@ -1269,6 +1273,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				chocodrizAnim.stop();
 				mTableChocodriz.setVisibility(View.INVISIBLE);
 				intent.putExtra("chocoSyrup", true);
+				intent.putExtra("cup", coffee.mCup);
 				startActivity(intent);
 				finish();
 				break;
