@@ -54,18 +54,21 @@ public class MainActivity extends Activity {
 			mainAnim=(AnimationDrawable)mMainAnimView.getBackground();
 			mainAnim.start();
 			mAnimHandler.sendEmptyMessageDelayed(0, 430);
+			mMainAnimView.setVisibility(View.VISIBLE);
 			break;
 		case R.id.coffee_set :
 			mMainAnimView2.setBackgroundResource(R.drawable.mainanim);
 			mainAnim=(AnimationDrawable)mMainAnimView2.getBackground();
 			mainAnim.start();
 			mAnimHandler2.sendEmptyMessageDelayed(0, 430);
+			mMainAnimView2.setVisibility(View.VISIBLE);
 			break;
 		case R.id.coffee_help : 
 			mMainAnimView3.setBackgroundResource(R.drawable.mainanim);
 			mainAnim=(AnimationDrawable)mMainAnimView3.getBackground();
 			mainAnim.start();
 			mAnimHandler3.sendEmptyMessageDelayed(0, 430);
+			mMainAnimView3.setVisibility(View.VISIBLE);
 			break;
 		}
 	}
