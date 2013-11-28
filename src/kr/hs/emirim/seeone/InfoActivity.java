@@ -16,7 +16,12 @@ public class InfoActivity extends Activity{
 	ImageView finishView2;
 	ImageView coffeeView;
 	ImageView coffeeBut;
-	String s;
+	String es;
+	String am;
+	String lat;
+	String cap;
+	String moc;
+	String cara;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +37,12 @@ public class InfoActivity extends Activity{
 		coffeeBut=(ImageView)findViewById(R.id.coffee_but);
 		finishView2.setVisibility(View.INVISIBLE);
 
-		s=getIntent().getExtras().getString("에스프레소");
+		es=getIntent().getExtras().getString("에스프레소");
+		am=getIntent().getExtras().getString("아메리카노");
+		lat=getIntent().getExtras().getString("카페라떼");
+		cap=getIntent().getExtras().getString("카푸치노");
+		moc=getIntent().getExtras().getString("카페모카");
+		cara=getIntent().getExtras().getString("카라멜마끼아또");
 
 		coffeeView.setBackgroundResource(R.drawable.img_espresso);
 		coffeeView.getBackground();

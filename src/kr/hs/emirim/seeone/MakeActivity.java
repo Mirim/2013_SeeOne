@@ -279,54 +279,54 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		}
 
 		switch (coffee.mChoice) {
-			case Coffee.ESPRESSO:
-				if(coffee.mShot==true){
-					intent=new Intent(MakeActivity.this, InfoActivity.class);
-					intent.putExtra("에스프레소", 1);
-					startActivity(intent);
-					finish();
-				}
+		case Coffee.ESPRESSO:
+			if(coffee.mShot==true){
+				intent=new Intent(MakeActivity.this, InfoActivity.class);
+				intent.putExtra("에스프레소", 1);
+				startActivity(intent);
+				finish();
+			}
 			break;
-			case Coffee.AMERICANO:
-				if(coffee.mShot==true && coffee.mHotWater==true){
-					intent=new Intent(MakeActivity.this, InfoActivity.class);
-					intent.putExtra("아메리카노", 1);
-					startActivity(intent);
-					finish();
-				}
-				break;
-			case Coffee.CAFFELATTE:
-				if(coffee.mShot==true && coffee.mMilk==true){
-					intent=new Intent(MakeActivity.this, InfoActivity.class);
-					intent.putExtra("카페라떼", 1);
-					startActivity(intent);
-					finish();
-				}
-				break;
-			case Coffee.CAPPUCCINO:
-				if(coffee.mShot==true && coffee.mMilk==true && coffee.mCinnamonPowder){
-					intent=new Intent(MakeActivity.this, InfoActivity.class);
-					intent.putExtra("카푸치논", 1);
-					startActivity(intent);
-					finish();
-				}
-				break;
-			case Coffee.CAFFEMOCHA:
-				if(coffee.mShot==true && coffee.mMilk==true && (coffee.mChocoSyrup==true || coffee.mCaramelDrizzle==true) && coffee.mWhipping==true){
-					intent=new Intent(MakeActivity.this, InfoActivity.class);
-					intent.putExtra("카페모카", 1);
-					startActivity(intent);
-					finish();
-				}
-				break;
-			case Coffee.CARAMELMACHIATTO:
-				if(coffee.mShot==true && coffee.mMilk==true && coffee.mVanillaSyrup==true && coffee.mCaramelDrizzle==true){
-					intent=new Intent(MakeActivity.this, InfoActivity.class);
-					intent.putExtra("카라멜마끼아또", 1);
-					startActivity(intent);
-					finish();
-				}
-				break;
+		case Coffee.AMERICANO:
+			if(coffee.mShot==true && coffee.mHotWater==true){
+				intent=new Intent(MakeActivity.this, InfoActivity.class);
+				intent.putExtra("아메리카노", 1);
+				startActivity(intent);
+				finish();
+			}
+			break;
+		case Coffee.CAFFELATTE:
+			if(coffee.mShot==true && coffee.mMilk==true){
+				intent=new Intent(MakeActivity.this, InfoActivity.class);
+				intent.putExtra("카페라떼", 1);
+				startActivity(intent);
+				finish();
+			}
+			break;
+		case Coffee.CAPPUCCINO:
+			if(coffee.mShot==true && coffee.mMilk==true && coffee.mCinnamonPowder){
+				intent=new Intent(MakeActivity.this, InfoActivity.class);
+				intent.putExtra("카푸치논", 1);
+				startActivity(intent);
+				finish();
+			}
+			break;
+		case Coffee.CAFFEMOCHA:
+			if(coffee.mShot==true && coffee.mMilk==true && (coffee.mChocoSyrup==true || coffee.mCaramelDrizzle==true) && coffee.mWhipping==true){
+				intent=new Intent(MakeActivity.this, InfoActivity.class);
+				intent.putExtra("카페모카", 1);
+				startActivity(intent);
+				finish();
+			}
+			break;
+		case Coffee.CARAMELMACHIATTO:
+			if(coffee.mShot==true && coffee.mMilk==true && coffee.mVanillaSyrup==true && coffee.mCaramelDrizzle==true){
+				intent=new Intent(MakeActivity.this, InfoActivity.class);
+				intent.putExtra("카라멜마끼아또", 1);
+				startActivity(intent);
+				finish();
+			}
+			break;
 		}
 	}
 	private void showMemo(Coffee coffee) {
