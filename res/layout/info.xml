@@ -11,12 +11,17 @@
         android:layout_height="fill_parent"
         android:src="@drawable/img_popup1"/>
     
+    <ImageView
+        android:id="@+id/info2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:src="@drawable/img_popup2"/>
+    
     <ImageView 
         android:id="@+id/coffee_view1"
         android:layout_width="100dp"
         android:layout_height="150dp"
-        android:layout_centerInParent="true"
-        android:src="@drawable/img_espresso"/>
+        android:layout_centerInParent="true"/>
 
     <ImageView 
         android:id="@+id/coffee_but"
@@ -26,6 +31,6 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="15dp"
         android:layout_marginRight="15dp"
-        android:onClick="mOnClick"
-        android:src="@drawable/img_butnext" />
+        android:src="@drawable/img_butnext"
+        android:onClick="mOnClick"/>
 </RelativeLayout>
