@@ -15,7 +15,6 @@ public class SetActivity extends Activity{
 	ImageView mOffBut1;
 	ImageView mOffBut2;
 	ImageView mOffBut3;
-	MediaPlayer mp;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
