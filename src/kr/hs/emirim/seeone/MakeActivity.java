@@ -6,6 +6,7 @@ import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
@@ -16,6 +17,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MakeActivity extends Activity implements OnTouchListener{
 	Intent intent;
@@ -231,9 +233,6 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				);
 		showMemo(coffee);
 		makeClick(coffee.mChoice);
-		
-		//코드를 구현해야댕!
-		
 		switch(coffee.mChoice){
 		case Coffee.AMERICANO:
 			mHotW.setVisibility(View.VISIBLE);
@@ -279,7 +278,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		}
 	}
 	private void showMemo(Coffee coffee) {
-		//TODO 돌아와도 다시 컵을 보여줘!
+		//TODO 돌아와도 다시 컵을 보여줘! 근데 다른거 
 		if(coffee.mCup){
 			mTCup.setVisibility(View.VISIBLE);
 		}
@@ -295,18 +294,15 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		if(coffee.mHotWater || coffee.mMilk ){
 			mReTwo2.setVisibility(View.VISIBLE);
 			mReTwo.setVisibility(View.INVISIBLE);
+			
+			if(coffee.mChoice==Coffee.CAPPUCCINO){
+				Toast.makeText(this, "ss", 1000).show();
+			}
 		}else{
 			mReTwo2.setVisibility(View.INVISIBLE);
 			mReTwo.setVisibility(View.VISIBLE);
 		}
 		//세번째행
-		if(coffee.mChoice == Coffee.CAPPUCCINO && coffee.mMilk){
-			mReThree3.setVisibility(View.VISIBLE);
-			mReThree.setVisibility(View.INVISIBLE);
-		}else{
-			mReThree3.setVisibility(View.INVISIBLE);
-			mReThree.setVisibility(View.VISIBLE);
-		}
 		if(coffee.mChocoSyrup || coffee.mVanillaSyrup){
 			mReThree3.setVisibility(View.VISIBLE);
 			mReThree.setVisibility(View.INVISIBLE);
@@ -1182,7 +1178,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 				mTableChocosy.setVisibility(View.INVISIBLE);
 				intent.putExtra("chocoSyrup", true);
 				startActivity(intent);
-				finish();	
+				finish();
 				break;
 			case 2 :
 				valillasyAnim.stop();
@@ -1208,8 +1204,10 @@ public class MakeActivity extends Activity implements OnTouchListener{
 			case 5 :
 				chocodrizAnim.stop();
 				mTableChocodriz.setVisibility(View.INVISIBLE);
+				intent.putExtra("chocoSyrup", true);
 				startActivity(intent);
 				finish();
+				break;
 			}
 		}
 	};
