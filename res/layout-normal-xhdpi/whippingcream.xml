@@ -5,94 +5,122 @@
     android:background="@drawable/back" >
 
     <ImageView
+        android:id="@+id/grindcounter"
         android:layout_width="1280dp"
         android:layout_height="200dp"
         android:layout_alignParentBottom="true"
-        android:adjustViewBounds="true"
         android:src="@drawable/img_grindcounter" />
 
     <ImageView
-        android:id="@+id/steamcup"
-        android:layout_width="198dp"
-        android:layout_height="204dp"
+        android:id="@+id/whippingmachine"
+        android:layout_width="440dp"
+        android:layout_height="700dp"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="60dp"
-        android:src="@drawable/img_milksteamcup" />
+        android:layout_marginBottom="70dp"
+        android:src="@drawable/img_whippingmachine" />
 
     <ImageView
-        android:id="@+id/openmilk"
-        android:layout_width="67dp"
-        android:layout_height="130dp"
+        android:id="@+id/machine_whipping"
+        android:layout_width="128dp"
+        android:layout_height="220dp"
+        android:layout_alignLeft="@+id/grindcounter"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="35dp"
-        android:layout_marginRight="80dp"
-        android:layout_toLeftOf="@+id/steamcup"
-        android:background="@drawable/img_openmilk" />
+        android:layout_marginBottom="70dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/img_whippingcream2" />
 
     <ImageView
-        android:id="@+id/milkcup1"
-        android:layout_width="307dp"
-        android:layout_height="350dp"
+        android:id="@+id/whippingmachine2"
+        android:layout_width="300dp"
+        android:layout_height="224dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="30dp"
-        android:src="@drawable/img_milkintocup1" />
+        android:layout_alignRight="@+id/grindcounter"
+        android:layout_marginBottom="70dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/img_whippingmachine2" />
 
     <ImageView
-        android:id="@+id/milkcup2"
-        android:layout_width="307dp"
-        android:layout_height="350dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="30dp"
-        android:src="@drawable/img_milkintocup2" />
-
-    <ImageView
-        android:id="@+id/milkcup_view"
-        android:layout_width="307dp"
-        android:layout_height="350dp"
+        android:id="@+id/whipping_1"
+        android:layout_width="440dp"
+        android:layout_height="700dp"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="30dp"/>
+        android:layout_marginBottom="70dp"
+        android:src="@drawable/img_whipping1" />
+
+    <ImageView
+        android:id="@+id/whipping_2"
+        android:layout_width="440dp"
+        android:layout_height="700dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="70dp"
+        android:src="@drawable/img_whipping2" />
+
+    <ImageView
+        android:id="@+id/whipping_view"
+        android:layout_width="440dp"
+        android:layout_height="700dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="70dp"/>
     
     <ImageView
-        android:id="@+id/next_but3"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:id="@+id/shake_whipping1"
+        android:layout_width="440dp"
+        android:layout_height="700dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/img_wippingshake1"/>
+    
+    <ImageView
+        android:id="@+id/shake_whipping2"
+        android:layout_width="440dp"
+        android:layout_height="700dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="70dp"
+        android:src="@drawable/img_wippingshake2"/>
+    
+    <ImageView
+        android:id="@+id/next_but2"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="15dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="30dp"
         android:onClick="mOnClick"
         android:src="@drawable/img_butnext" />
-    
+
     <ImageView
         android:id="@+id/memo"
-        android:layout_width="120dp"
-        android:layout_height="117dp"
+        android:layout_width="240dp"
+        android:layout_height="234dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/img_memo" />
 
     <ImageView
         android:id="@+id/re_img_shot"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignLeft="@+id/memo"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="60dp"
         android:src="@drawable/img_checkbox1" />
     
     <ImageView
         android:id="@+id/re_one"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignLeft="@+id/memo"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="60dp"
         android:src="@drawable/img_checkbox2" />
 
 <TextView
@@ -101,12 +129,13 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/re_img_shot"
         android:layout_toRightOf="@+id/re_img_shot"
-        android:text="샷" />
+        android:text="샷" 
+        android:textSize="30dp"/>
 
     <ImageView
         android:id="@+id/re_two"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignLeft="@+id/re_img_shot"
         android:layout_below="@+id/re_img_shot"
         android:layout_marginTop="2dp"
@@ -114,8 +143,8 @@
 
     <ImageView
         android:id="@+id/re_two2"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignLeft="@+id/re_img_shot"
         android:layout_below="@+id/re_img_shot"
         android:layout_marginTop="2dp"
@@ -127,7 +156,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/re_two"
         android:layout_alignLeft="@+id/re_shot"
-        android:text="뜨거운 물" />
+        android:text="뜨거운 물" 
+        android:textSize="30dp"/>
 
     <TextView
         android:id="@+id/re_mlik"
@@ -135,12 +165,13 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/re_two"
         android:layout_alignLeft="@+id/re_shot"
-        android:text="스팀우유" />
+        android:text="스팀우유" 
+        android:textSize="30dp"/>
 
     <ImageView
         android:id="@+id/re_three"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignLeft="@+id/re_two"
         android:layout_below="@+id/re_two"
         android:layout_marginTop="2dp"
@@ -148,8 +179,8 @@
 
     <ImageView
         android:id="@+id/re_three3"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignLeft="@+id/re_two"
         android:layout_below="@+id/re_two"
         android:layout_marginTop="2dp"
@@ -161,7 +192,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/re_three"
         android:layout_alignLeft="@+id/re_shot"
-        android:text="초코시럽" />
+        android:text="초코시럽"
+        android:textSize="30dp" />
 
     <TextView
         android:id="@+id/re_mlikbubble"
@@ -169,7 +201,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/re_three"
         android:layout_alignLeft="@+id/re_shot"
-        android:text="우유거품" />
+        android:text="우유거품"
+        android:textSize="30dp" />
 
     <TextView
         android:id="@+id/re_vanilla"
@@ -177,12 +210,13 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/re_three"
         android:layout_alignLeft="@+id/re_shot"
-        android:text="바닐라시럽" />
+        android:text="바닐라시럽"
+        android:textSize="30dp" />
 
     <ImageView
         android:id="@+id/re_four"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignLeft="@+id/re_three"
         android:layout_below="@+id/re_three"
         android:layout_marginTop="2dp"
@@ -190,8 +224,8 @@
 
     <ImageView
         android:id="@+id/re_four4"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignLeft="@+id/re_three"
         android:layout_below="@+id/re_three"
         android:layout_marginTop="2dp"
@@ -203,7 +237,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/re_four"
         android:layout_alignLeft="@+id/re_shot"
-        android:text="휘핑크림" />
+        android:text="휘핑크림" 
+        android:textSize="30dp"/>
 
     <TextView
         android:id="@+id/re_cinnamon"
@@ -211,7 +246,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/re_four"
         android:layout_alignLeft="@+id/re_shot"
-        android:text="시나몬파우더" />
+        android:text="시나몬파우더" 
+        android:textSize="30dp"/>
 
     <TextView
         android:id="@+id/re_caramel"
@@ -219,6 +255,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/re_four"
         android:layout_alignLeft="@+id/re_shot"
-        android:text="카라멜드리즐" />
+        android:text="카라멜드리즐"
+        android:textSize="30dp" />
 
 </RelativeLayout>

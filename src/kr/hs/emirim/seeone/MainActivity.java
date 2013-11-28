@@ -1,11 +1,13 @@
 package kr.hs.emirim.seeone;
 
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -24,6 +26,8 @@ public class MainActivity extends Activity {
 	ImageView mMainAnimView2;
 	ImageView mMainAnimView3;
 	AnimationDrawable mainAnim;
+	AudioManager aManager;
+	Context context;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,8 @@ public class MainActivity extends Activity {
 		win.requestFeature(Window.FEATURE_NO_TITLE);
 		win.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.main);
+		context=this;
+		aManager = (AudioManager)context.getSystemService(Context.AUDIO_SERVICE);
 		
 		mMainAnimView=(ImageView)findViewById(R.id.main_anim);
 		mMainAnimView2=(ImageView)findViewById(R.id.main_anim2);
@@ -70,8 +76,10 @@ public class MainActivity extends Activity {
 		   			setPositiveButton("나가기", new DialogInterface.OnClickListener() {
 				    @Override
 				    public void onClick(DialogInterface dialog, int which) {
+				    	aManager.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
 				    	moveTaskToBack(true);  
 				    	mp.stop();
+				    	
 				    	finish();  
 				    }
 		   			}).setNegativeButton("머무르기", null).show();

@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/back">
+
+        <ImageView
+        android:layout_width="800dp"
+        android:layout_height="180dp"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/img_maincounter" />
+
+	 
+    <Button
+        android:id="@+id/refrigerator"
+        android:layout_width="300dp"
+        android:layout_height="452dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/img_refrigerator"
+        android:onClick="mOnClick" />
+
+     <Button
+        android:id="@+id/openrefrigerator"
+        android:layout_width="300dp"
+        android:layout_height="452dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/img_openrefrigerator"
+        android:onClick="mOnClick" />
+
+    <ImageView
+        android:id="@+id/memo"
+        android:layout_width="240dp"
+        android:layout_height="234dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/img_memo" />
+
+    <ImageView
+        android:id="@+id/re_img_shot"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/memo"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/img_checkbox1"/>
+    
+    <ImageView
+        android:id="@+id/re_one"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/memo"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/img_checkbox2" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+       <Button
+            android:id="@+id/sideboard"
+            android:layout_width="560dp"
+            android:layout_height="260dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/img_sideboard"
+            android:onClick="mOnClick" />
+
+        <Button
+            android:id="@+id/opensideboard"
+            android:layout_width="640dp"
+            android:layout_height="316dp"
+            android:layout_alignTop="@id/sideboard"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/img_opensideboard"
+            android:onClick="mOnClick" />
+
+        <ImageView
+            android:id="@+id/caps"
+            android:layout_width="70dp"
+            android:layout_height="62dp"
+            android:layout_alignBottom="@+id/sideboard"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/cup"
+            android:background="@drawable/img_caps" />
+        
+        <ImageView 
+            android:id="@+id/bean"
+            android:layout_width="72dp"
+            android:layout_height="100dp"
+            android:layout_toLeftOf="@+id/caps"
+            android:layout_alignBottom="@+id/sideboard"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/img_bean1"
+            android:onClick="mOnClick"/>
+
+        <ImageView
+            android:id="@+id/cup"
+            android:layout_width="70dp"
+            android:layout_height="96dp"
+            android:layout_alignBottom="@+id/sideboard"
+            android:layout_alignRight="@+id/sideboard"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/img_cup"
+            android:onClick="mOnClick" />
+
+       <ImageView
+            android:id="@+id/coffeemachine"
+            android:layout_width="300dp"
+            android:layout_height="180dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="60dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/img_coffeemachine" 
+            android:onClick="mOnClick"/>
+
+        <ImageView
+            android:id="@+id/table_cup"
+            android:layout_width="120dp"
+            android:layout_height="172dp"
+            android:layout_alignBottom="@+id/coffeemachine"
+            android:layout_alignLeft="@+id/cup"
+            android:background="@drawable/img_cup" />
+        
+         <ImageView 
+            android:id="@+id/table_cap"
+            android:layout_width="114dp"
+            android:layout_height="54dp"
+            android:layout_alignBottom="@+id/coffeemachine"
+            android:layout_toRightOf="@+id/table_cup"
+            android:layout_marginLeft="50dp"
+            android:src="@drawable/img_cap"
+            android:onClick="mOnClick"/>
+         
+        <ImageView 
+            android:id="@+id/table_bean1"
+            android:layout_width="116dp"
+            android:layout_height="160dp"
+            android:layout_alignBottom="@+id/coffeemachine"
+            android:layout_toRightOf="@+id/table_cup"
+            android:layout_marginLeft="50dp"
+            android:src="@drawable/img_bean1"
+            android:onClick="mOnClick"/>
+        
+		<ImageView 
+            android:id="@+id/table_bean2"
+            android:layout_width="116dp"
+            android:layout_height="160dp"
+            android:layout_alignBottom="@+id/coffeemachine"
+            android:layout_toRightOf="@+id/table_cup"
+            android:layout_marginLeft="50dp"
+            android:src="@drawable/img_bean2"/>
+		
+		<ImageView 
+		    android:id="@+id/table_chocosy"
+		    android:layout_width="45dp"
+		    android:layout_height="115dp"
+		    android:layout_alignBottom="@+id/coffeemachine"
+		    android:layout_toRightOf="@+id/table_cup"/>
+		
+		<ImageView 
+		    android:id="@+id/table_valillasy"
+		    android:layout_width="90dp"
+		    android:layout_height="230dp"
+		    android:layout_alignBottom="@+id/coffeemachine"
+		    android:layout_toRightOf="@+id/table_cup"/>
+		
+		<ImageView 
+		    android:id="@+id/table_chochdri"
+		    android:layout_width="116dp"
+		    android:layout_height="240dp"
+		    android:layout_above="@+id/table_cup"
+		    android:layout_alignLeft="@+id/table_cup"/>
+		
+		<ImageView 
+		    android:id="@+id/table_carameldri"
+		    android:layout_width="116dp"
+		    android:layout_height="240dp"
+		    android:layout_above="@+id/table_cup"
+		    android:layout_alignLeft="@+id/table_cup"/>
+		
+		<ImageView 
+		    android:id="@+id/table_cinnamonpow"
+		    android:layout_width="52dp"
+		    android:layout_height="120dp"
+		    android:layout_above="@+id/table_cup"
+		    android:layout_alignLeft="@+id/table_cup"
+		    android:layout_marginLeft="30dp"
+		    android:layout_marginBottom="20dp"/>
+		
+        <ImageView
+            android:id="@+id/chocosyrup"
+            android:layout_width="50dp"
+            android:layout_height="130dp"
+            android:layout_alignTop="@+id/opensideboard"
+            android:layout_marginTop="10dp"
+            android:layout_alignRight="@+id/cup"
+            android:src="@drawable/img_chococsyrup" 
+            android:onClick="mOnClick"/>
+        
+        <ImageView 
+            android:id="@+id/valillasyrup"
+            android:layout_width="50dp"
+            android:layout_height="130dp"
+            android:layout_alignTop="@+id/opensideboard"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@+id/chocosyrup"
+            android:layout_marginRight="7dp"
+            android:src="@drawable/img_valillasyrup"
+            android:onClick="mOnClick"/>
+
+        <ImageView 
+            android:id="@+id/chocodrizzle"
+            android:layout_width="83dp"
+            android:layout_height="100dp"
+            android:layout_alignBottom="@+id/valillasyrup"
+            android:layout_toLeftOf="@+id/valillasyrup"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/img_chocodrizzleout"
+            android:onClick="mOnClick"/>
+        
+        <ImageView 
+            android:id="@+id/carameldrizzle"
+            android:layout_width="38dp"
+            android:layout_height="100dp"
+            android:layout_alignBottom="@+id/chocodrizzle"
+            android:layout_toLeftOf="@+id/chocodrizzle"
+            android:layout_marginRight="3dp"
+            android:src="@drawable/img_carameldrizzleout"
+            android:onClick="mOnClick"/>
+        
+        <ImageView 
+            android:id="@+id/cinnamonpowder"
+            android:layout_width="30dp"
+            android:layout_height="60dp"
+            android:layout_alignBottom="@+id/carameldrizzle"
+            android:layout_toLeftOf="@+id/carameldrizzle"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/img_cinnamonpowder"
+            android:onClick="mOnClick"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/re_shot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_img_shot"
+        android:layout_toRightOf="@+id/re_img_shot"
+        android:text="샷" 
+        android:textSize="30dp"/>
+
+     <ImageView
+        android:id="@+id/re_two"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/re_img_shot"
+        android:layout_below="@+id/re_img_shot"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/img_checkbox1" />
+
+    <ImageView
+        android:id="@+id/re_two2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/re_img_shot"
+        android:layout_below="@+id/re_img_shot"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/img_checkbox2" />
+    
+    <TextView
+        android:id="@+id/re_hotw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_two"
+        android:layout_alignLeft="@+id/re_shot"
+        android:text="뜨거운 물" 
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/re_mlik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_two"
+        android:layout_alignLeft="@+id/re_shot"
+        android:text="스팀우유" 
+        android:textSize="30dp"/>
+   
+
+    <ImageView
+        android:id="@+id/re_three"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/re_two"
+        android:layout_below="@+id/re_two"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/img_checkbox1" />
+
+    <ImageView
+        android:id="@+id/re_three3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/re_two"
+        android:layout_below="@+id/re_two"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/img_checkbox2" />
+    
+   <TextView
+        android:id="@+id/re_choco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_three"
+        android:layout_alignLeft="@+id/re_shot"
+        android:text="초코시럽"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/re_mlikbubble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_three"
+        android:layout_alignLeft="@+id/re_shot"
+        android:text="우유거품" 
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/re_vanilla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_three"
+        android:layout_alignLeft="@+id/re_shot"
+        android:text="바닐라시럽"
+        android:textSize="30dp" />
+
+    <ImageView
+        android:id="@+id/re_four"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/re_three"
+        android:layout_below="@+id/re_three"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/img_checkbox1" />
+
+    <ImageView
+        android:id="@+id/re_four4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/re_three"
+        android:layout_below="@+id/re_three"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/img_checkbox2" />
+    
+   <TextView
+        android:id="@+id/re_whipping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_four"
+        android:layout_alignLeft="@+id/re_shot"
+        android:text="휘핑크림" 
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/re_cinnamon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_four"
+        android:layout_alignLeft="@+id/re_shot"
+        android:text="시나몬파우더"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/re_caramel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/re_four"
+        android:layout_alignLeft="@+id/re_shot"
+        android:text="카라멜드리즐" 
+        android:textSize="30dp"/>
+
+    <ImageView
+        android:id="@+id/mlik"
+        android:layout_width="62dp"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="190dp"
+        android:layout_marginRight="60dp"
+        android:onClick="mOnClick"
+        android:src="@drawable/img_milk" />
+
+    <ImageView
+        android:id="@+id/whippingCream"
+        android:layout_width="70dp"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="320dp"
+        android:layout_marginRight="60dp"
+        android:onClick="mOnClick"
+        android:src="@drawable/img_whippingcream1" />
+
+</RelativeLayout>

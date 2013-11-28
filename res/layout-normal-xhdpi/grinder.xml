@@ -8,82 +8,118 @@
         android:layout_width="1280dp"
         android:layout_height="200dp"
         android:layout_alignParentBottom="true"
-        android:adjustViewBounds="true"
         android:src="@drawable/img_grindcounter" />
 
-    <ImageView
-        android:id="@+id/steamcup"
-        android:layout_width="198dp"
-        android:layout_height="204dp"
+     <ImageView
+        android:id="@+id/grinder_1"
+        android:layout_width="320dp"
+        android:layout_height="610dp"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="60dp"
-        android:src="@drawable/img_milksteamcup" />
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/img_grinder1" />
 
     <ImageView
-        android:id="@+id/openmilk"
-        android:layout_width="67dp"
-        android:layout_height="130dp"
+        android:id="@+id/grinder_2"
+        android:layout_width="320dp"
+        android:layout_height="610dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/img_grinder2" />
+
+    <ImageView
+        android:id="@+id/grinder_3"
+        android:layout_width="320dp"
+        android:layout_height="610dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/img_grinder3" />
+
+    <ImageView
+        android:id="@+id/grinder_4"
+        android:layout_width="320dp"
+        android:layout_height="610dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/img_grinder4" />
+
+    <ImageView
+        android:id="@+id/grinder_5"
+        android:layout_width="320dp"
+        android:layout_height="610dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/img_grinder5" />
+
+    <ImageView
+        android:id="@+id/grinder_6"
+        android:layout_width="320dp"
+        android:layout_height="610dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/img_grinder6" />
+
+    <ImageView
+        android:id="@+id/grinder_7"
+        android:layout_width="320dp"
+        android:layout_height="610dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/img_grinder7" />
+
+    <ImageView
+        android:id="@+id/grinder_8"
+        android:layout_width="320dp"
+        android:layout_height="610dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/img_grinder8" />
+
+    <ImageView
+        android:id="@+id/handler"
+        android:layout_width="260dp"
+        android:layout_height="166dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="35dp"
-        android:layout_marginRight="80dp"
-        android:layout_toLeftOf="@+id/steamcup"
-        android:background="@drawable/img_openmilk" />
+        android:layout_marginRight="40dp"
+        android:layout_toLeftOf="@+id/grinder_1"
+        android:background="@drawable/img_handler" />
 
     <ImageView
-        android:id="@+id/milkcup1"
-        android:layout_width="307dp"
-        android:layout_height="350dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="30dp"
-        android:src="@drawable/img_milkintocup1" />
-
-    <ImageView
-        android:id="@+id/milkcup2"
-        android:layout_width="307dp"
-        android:layout_height="350dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="30dp"
-        android:src="@drawable/img_milkintocup2" />
-
-    <ImageView
-        android:id="@+id/milkcup_view"
-        android:layout_width="307dp"
-        android:layout_height="350dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="30dp"/>
-    
-    <ImageView
-        android:id="@+id/next_but3"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:id="@+id/next_but"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="15dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="30dp"
         android:onClick="mOnClick"
         android:src="@drawable/img_butnext" />
-    
-    <ImageView
+
+   <ImageView
         android:id="@+id/memo"
-        android:layout_width="120dp"
-        android:layout_height="117dp"
+        android:layout_width="240dp"
+        android:layout_height="234dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/img_memo" />
 
-    <ImageView
+     <ImageView
         android:id="@+id/re_img_shot"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignLeft="@+id/memo"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="60dp"
         android:src="@drawable/img_checkbox1" />
     
     <ImageView
@@ -101,12 +137,13 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/re_img_shot"
         android:layout_toRightOf="@+id/re_img_shot"
-        android:text="샷" />
+        android:text="샷" 
+        android:textSize="30dp"/>
 
     <ImageView
         android:id="@+id/re_two"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignLeft="@+id/re_img_shot"
         android:layout_below="@+id/re_img_shot"
         android:layout_marginTop="2dp"
@@ -114,8 +151,8 @@
 
     <ImageView
         android:id="@+id/re_two2"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignLeft="@+id/re_img_shot"
         android:layout_below="@+id/re_img_shot"
         android:layout_marginTop="2dp"
@@ -127,7 +164,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/re_two"
         android:layout_alignLeft="@+id/re_shot"
-        android:text="뜨거운 물" />
+        android:text="뜨거운 물"
+        android:textSize="30dp" />
 
     <TextView
         android:id="@+id/re_mlik"
@@ -135,12 +173,13 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/re_two"
         android:layout_alignLeft="@+id/re_shot"
-        android:text="스팀우유" />
+        android:text="스팀우유"
+        android:textSize="30dp" />
 
     <ImageView
         android:id="@+id/re_three"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignLeft="@+id/re_two"
         android:layout_below="@+id/re_two"
         android:layout_marginTop="2dp"
@@ -148,8 +187,8 @@
 
     <ImageView
         android:id="@+id/re_three3"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignLeft="@+id/re_two"
         android:layout_below="@+id/re_two"
         android:layout_marginTop="2dp"
@@ -161,7 +200,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/re_three"
         android:layout_alignLeft="@+id/re_shot"
-        android:text="초코시럽" />
+        android:text="초코시럽"
+        android:textSize="30dp" />
 
     <TextView
         android:id="@+id/re_mlikbubble"
@@ -169,7 +209,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/re_three"
         android:layout_alignLeft="@+id/re_shot"
-        android:text="우유거품" />
+        android:text="우유거품" 
+        android:textSize="30dp"/>
 
     <TextView
         android:id="@+id/re_vanilla"
@@ -177,12 +218,13 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/re_three"
         android:layout_alignLeft="@+id/re_shot"
-        android:text="바닐라시럽" />
+        android:text="바닐라시럽"
+        android:textSize="30dp" />
 
     <ImageView
         android:id="@+id/re_four"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignLeft="@+id/re_three"
         android:layout_below="@+id/re_three"
         android:layout_marginTop="2dp"
@@ -190,8 +232,8 @@
 
     <ImageView
         android:id="@+id/re_four4"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignLeft="@+id/re_three"
         android:layout_below="@+id/re_three"
         android:layout_marginTop="2dp"
@@ -203,7 +245,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/re_four"
         android:layout_alignLeft="@+id/re_shot"
-        android:text="휘핑크림" />
+        android:text="휘핑크림"
+        android:textSize="30dp" />
 
     <TextView
         android:id="@+id/re_cinnamon"
@@ -211,7 +254,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/re_four"
         android:layout_alignLeft="@+id/re_shot"
-        android:text="시나몬파우더" />
+        android:text="시나몬파우더" 
+        android:textSize="30dp"/>
 
     <TextView
         android:id="@+id/re_caramel"
@@ -219,6 +263,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/re_four"
         android:layout_alignLeft="@+id/re_shot"
-        android:text="카라멜드리즐" />
+        android:text="카라멜드리즐" 
+        android:textSize="30dp"/>
 
 </RelativeLayout>

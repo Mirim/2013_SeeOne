@@ -39,10 +39,11 @@
            />
             <Button
                 android:id="@+id/gamestart"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/img_butstart"
-                android:layout_gravity="bottom"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="400dp"
+                android:background="@drawable/img_butstart"
+                android:layout_gravity="center_horizontal"
                 />
         </FrameLayout>
         

@@ -306,7 +306,7 @@ public class MakeActivity extends Activity implements OnTouchListener{
 		case Coffee.CAPPUCCINO:
 			if(coffee.mShot==true && coffee.mMilk==true && coffee.mCinnamonPowder){
 				intent=new Intent(MakeActivity.this, InfoActivity.class);
-				intent.putExtra("Ä«ÇªÄ¡³í", 1);
+				intent.putExtra("Ä«ÇªÄ¡³ë", 1);
 				startActivity(intent);
 				finish();
 			}

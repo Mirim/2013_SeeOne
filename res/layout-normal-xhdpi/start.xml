@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/back"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/espresso"
+                android:layout_width="160dp"
+                android:layout_height="240dp"
+                android:background="@drawable/img_espresso"
+                android:src="@drawable/img_espresso"
+                android:onClick="mOnClick" />
+
+            <ImageView 
+                android:layout_width="160dp"
+                android:layout_height="50dp"
+                android:src="@drawable/k_espresso"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/americano"
+                android:layout_width="160dp"
+                android:layout_height="240dp"
+                android:background="@drawable/img_americano"
+                android:onClick="mOnClick"  />
+
+            <ImageView 
+                android:layout_width="160dp"
+                android:layout_height="50dp"
+                android:src="@drawable/k_americano"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/caffelatte"
+                android:layout_width="160dp"
+                android:layout_height="240dp"
+                android:background="@drawable/img_caffelatte"
+                android:onClick="mOnClick"  />
+
+            <ImageView 
+                android:layout_width="160dp"
+                android:layout_height="50dp"
+                android:src="@drawable/k_caffelatte"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
+            android:gravity="center_horizontal"
+            
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/cappuccino"
+                android:layout_width="160dp"
+                android:layout_height="240dp"
+
+                android:background="@drawable/img_cappuccino"
+                android:onClick="mOnClick"  />
+
+            <ImageView 
+                android:layout_width="160dp"
+                android:layout_height="50dp"
+                android:src="@drawable/k_cappuchino"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/caffemocha"
+                android:layout_width="160dp"
+                android:layout_height="240dp"
+                android:background="@drawable/img_caffemocha"
+                android:onClick="mOnClick"  />
+
+           <ImageView 
+                android:layout_width="160dp"
+                android:layout_height="50dp"
+                android:src="@drawable/k_caffemocha"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/caramelmacchiato"
+                android:layout_width="160dp"
+                android:layout_height="240dp"
+                android:background="@drawable/img_caramelmacchiato"
+                android:onClick="mOnClick"  />
+
+            <ImageView 
+                android:layout_width="160dp"
+                android:layout_height="50dp"
+                android:src="@drawable/k_caramel"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back" >
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/info_caramelmacchiato" />
+
+        <Button
+            android:id="@+id/but_start"
+            android:layout_width="120dp"
+            android:layout_height="166dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="65dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/img_butmake"
+            android:onClick="mOnClick" />
+
+        <Button
+            android:id="@+id/but_reorder"
+            android:layout_width="120dp"
+            android:layout_height="166dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/but_start"
+            android:background="@drawable/img_butreorder"
+            android:onClick="mOnClick" />
+    </RelativeLayout>
+</merge>
